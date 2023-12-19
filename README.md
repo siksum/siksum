@@ -1,7 +1,23 @@
-![header](https://capsule-render.vercel.app/api?type=venom&color=auto&height=400&section=header&text=Sikk&fontSize=80&animation=fadeIn&fontColor=ffffff)
+![header](https://capsule-render.vercel.app/api?type=venom&color=auto&height=300&section=header&text=Sikk&fontSize=80&animation=fadeIn&fontColor=ffffff)
+
+
+# 김남령 (Namryeong Kim)
+
+<p align="center">  
+  <img src="./profile.jpeg" align="left" width="32%">
+  
+  <p align="center" >
+    안녕하세요 ✨
+    누구나 쉽게 보안을 접하고 관심 가질 수 있도록 경험과 지식을 공유하는 사람이 되고 싶은  <span style='color:pink'> 김남령 </span> 입니다.
+  </p>
+
+</p>
+
+
+<br>
 
 ![](./profile-3d-contrib/profile-night-rainbow.svg)
-...
+
 
 <a href="https://github.com/anuraghazra/github-readme-stats">
   <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=siksum&show_icons=true&theme=material-palenight" />
