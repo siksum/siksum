@@ -1,7 +1,7 @@
 ![header](https://capsule-render.vercel.app/api?type=venom&color=auto&height=400&section=header&text=Sikk&fontSize=80&animation=fadeIn&fontColor=ffffff)
 
 ![](./profile-3d-contrib/profile-night-rainbow.svg)
-
+.
 
 <a href="https://github.com/anuraghazra/github-readme-stats">
   <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=siksum&show_icons=true&theme=material-palenight" />
