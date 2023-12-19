@@ -6,11 +6,9 @@
 <p align="center">  
   <img src="./profile.jpeg" align="left" width="32%">
   
-  <p align="center" >
-    안녕하세요 ✨
-    누구나 쉽게 보안을 접하고 관심 가질 수 있도록 경험과 지식을 공유하는 사람이 되고 싶은  <span style='color:pink'> 김남령 </span> 입니다.
-  </p>
-
+  <p align="center">안녕하세요 ✨</p>
+  <p align="center"> 누구나 쉽게 보안을 접하고 관심 가질 수 있도록 경험과 지식을 공유하는 사람이 되고 싶은 김남령입니다.</p>
+	  
 </p>
 
 
