@@ -1,5 +1,6 @@
 ![header](https://capsule-render.vercel.app/api?type=venom&color=auto&height=300&section=header&text=Sikk&fontSize=80&animation=fadeIn&fontColor=ffffff)
 
+![Banner](https://raw.githubusercontent.com/drewbi/drewbi/master/welcome_banner2.svg)
 
 # 김남령 (Namryeong Kim)
 
