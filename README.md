@@ -28,7 +28,7 @@
 </a>
 
 ---
-## Skills
+## Skills.
 
 <details>
   <summary> Social </summary>
