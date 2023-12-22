@@ -93,7 +93,7 @@
 
 
 <style>
-  .stack-box{
+  .markdown-body .stack-box{
     border: 1px solid white;
     padding: 10px 0 0 0;
   }
