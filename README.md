@@ -1,5 +1,6 @@
 <!-- ![header](https://capsule-render.vercel.app/api?type=venom&color=auto&height=300&section=header&text=Sikk&fontSize=80&animation=fadeIn&fontColor=ffffff) -->
 
+
 ![Banner](https://raw.githubusercontent.com/drewbi/drewbi/master/welcome_banner2.svg)
 
 <img src="https://img.shields.io/github/followers/siksum.svg?style=social&label=Follow&maxAge=2592000" align="right"/>
@@ -7,13 +8,13 @@
 <br>
 <br>
 
-<div align="center">  
+<div align="center" style="border-color:white;">  
   <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Nanum+Gothic&weight=800&size=30&duration=7000&pause=1000&color=FFD1E3&center=true&vCenter=true&multiline=true&repeat=false&random=false&width=700&height=100&lines=%22%EB%88%84%EA%B5%AC%EB%82%98+%EC%89%BD%EA%B2%8C+%EB%B3%B4%EC%95%88%EC%9D%84+%EC%A0%91%ED%95%98%EA%B3%A0+%EA%B4%80%EC%8B%AC%EA%B0%80%EC%A7%88+%EC%88%98+%EC%9E%88%EB%8F%84%EB%A1%9D;%EA%B2%BD%ED%97%98%EA%B3%BC+%EC%A7%80%EC%8B%9D%EC%9D%84+%EA%B3%B5%EC%9C%A0%ED%95%98%EB%8A%94+%EC%82%AC%EB%9E%8C%EC%9D%B4+%EB%90%98%EA%B3%A0+%EC%8B%B6%EC%8A%B5%EB%8B%88%EB%8B%A4+%F0%9F%98%8A%22" alt="Typing SVG" /></a>
 </div>
 
 <p markdown='1'>
 
-## Github Stats
+## 📊 Github Stats
 
 ![](./profile-3d-contrib/profile-night-rainbow.svg)
 
@@ -24,16 +25,32 @@
   <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=siksum&layout=donut&langs_count=6&card_width=320&theme=material-palenight" />
 </a>
 
----
-## Interest
+<br>
+
+## 📑 Interest & Learning .. 🎶
+
+☑️ Security
+
+    - System
+    - Personal Privacy
 
 
----
-## Tech Stacks
+☑️ Blockchain (Smart Contract)
+    
+    - Smart Contract Audit
+    - Blockchain Security
 
-### Language
+☑️ Web Development
 
-<div align="center">
+    - Web publishing
+    - Design
+
+<br>
+
+## 💻 Tech Stacks
+
+<div align="center" class="stack-box">
+  <p style="font-size:18px;font-weight:bold;"> 🏳️‍🌈 Language </p>
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
   <img src="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white"/>
   <img src="https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white"/>
@@ -45,16 +62,13 @@
 
 <br>
 
-### Tools
-<div align="center">
+<div align="center" class="stack-box">
+  <p style="font-size:18px;font-weight:bold;"> 🛠️ Tools </p>
   <img src="https://img.shields.io/badge/Debian-A81D33?style=for-the-badge&logo=debian&logoColor=white"/>
   <img src="https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kali-linux&logoColor=white"/>
   <img src="https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white"/>
   <img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white"/>
 </div>
-
-
-
 
 
 <!-- [![GitHub Streak](https://streak-stats.demolab.com?user=siksum&theme=material-palenight)](https://git.io/streak-stats) -->
@@ -76,3 +90,11 @@
   [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fsiksum&count_bg=%237DDDF6&title_bg=%23CFA1F6&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
 </div>
+
+
+<style>
+  .stack-box{
+    border: 1px solid white;
+    padding: 10px 0 0 0;
+  }
+</style>
