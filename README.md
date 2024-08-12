@@ -45,7 +45,7 @@
 
 ## 💻 Tech Stacks
 
-<div align="center" style="border: 1px solid white;">
+<div style="border: 1px solid white;">
   <p style="font-size:18px;font-weight:bold;"> 🏳️‍🌈 Language </p>
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
   <img src="https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white"/>
@@ -58,7 +58,7 @@
 
 <br>
 
-<div align="center" style="border: 1px solid white;">
+<div style="border: 1px solid white;">
   <p style="font-size:18px;font-weight:bold;"> 🛠️ Tools </p>
   <img src="https://img.shields.io/badge/Debian-A81D33?style=for-the-badge&logo=debian&logoColor=white"/>
   <img src="https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kali-linux&logoColor=white"/>
