@@ -8,10 +8,6 @@
 <br>
 <br>
 
-<div align="center" style="border-color:white;">  
-  <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Nanum+Gothic&weight=800&size=30&duration=7000&pause=1000&color=FFD1E3&center=true&vCenter=true&multiline=true&repeat=false&random=false&width=700&height=100&lines=%22%EB%88%84%EA%B5%AC%EB%82%98+%EC%89%BD%EA%B2%8C+%EB%B3%B4%EC%95%88%EC%9D%84+%EC%A0%91%ED%95%98%EA%B3%A0+%EA%B4%80%EC%8B%AC%EA%B0%80%EC%A7%88+%EC%88%98+%EC%9E%88%EB%8F%84%EB%A1%9D;%EA%B2%BD%ED%97%98%EA%B3%BC+%EC%A7%80%EC%8B%9D%EC%9D%84+%EA%B3%B5%EC%9C%A0%ED%95%98%EB%8A%94+%EC%82%AC%EB%9E%8C%EC%9D%B4+%EB%90%98%EA%B3%A0+%EC%8B%B6%EC%8A%B5%EB%8B%88%EB%8B%A4+%F0%9F%98%8A%22" alt="Typing SVG" /></a>
-</div>
-
 <p markdown='1'>
 
 ## 📊 Github Stats
