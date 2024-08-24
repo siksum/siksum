@@ -10,10 +10,6 @@
 
 <p markdown='1'>
 
-## 📊 Github Stats
-
-![](./profile-3d-contrib/profile-night-rainbow.svg)
-
 <a href="https://github.com/anuraghazra/github-readme-stats">
   <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=siksum&show_icons=true&theme=material-palenight" />
 </a>
