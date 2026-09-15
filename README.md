@@ -15,12 +15,12 @@
 
 ## Projects
 
-| Project | 기간, 기관 | 내용 | Code |
-| --- | --- | --- | --- |
-| SafeDevAnalyzer | 2023.09–2023.12<br>DREAMPLUS × Hashed | 스마트 컨트랙트 개발, 테스트, 보안 분석을 하나로 묶은 VS Code 도구. 3인 팀 팀장으로 Slither 기반 분석 코어와 컴파일 파이프라인 구현. Protocol Camp 5기 대상 | [vscode-extension-antibug](https://github.com/siksum/vscode-extension-antibug)<br>[SafeDevAnalyzer](https://github.com/siksum/SafeDevAnalyzer) |
-| JOIN | 2023.03–2023.06<br>DREAMPLUS × Theori | 버전과 분석 환경이 다른 외부 컨트랙트를 같은 절차로 검토하는 Slither 기반 Python CLI | [Join_Project](https://github.com/siksum/Join_Project) |
-| SolcParser | 2025.08 저작권 등록<br>C-2025-031742 | `pragma`를 읽어 필요한 Solidity 컴파일러를 탐지, 설치, 전환 | [Solc-Parser](https://github.com/siksum/Solc-Parser) |
-| rPBFT | IEEE Transactions on Big Data, 2026 | 비악의적 장애가 있는 분산 네트워크에서 신뢰도가 높은 노드로 합의 그룹을 구성하는 합의 메커니즘. 공동 제1저자 | [rPBFT](https://github.com/siksum/rPBFT) |
+| Project | 기간, 기관 | 내용 |
+| --- | --- | --- |
+| SafeDevAnalyzer | 2023.09–2023.12<br>DREAMPLUS × Hashed | 스마트 컨트랙트 개발, 테스트, 보안 분석을 하나로 묶은 VS Code 도구. 3인 팀 팀장으로 Slither 기반 분석 코어와 컴파일 파이프라인 구현. Protocol Camp 5기 대상 |
+| JOIN | 2023.03–2023.06<br>DREAMPLUS × Theori | 버전과 분석 환경이 다른 외부 컨트랙트를 같은 절차로 검토하는 Slither 기반 Python CLI |
+| [SolcParser](https://github.com/siksum/Solc-Parser) | 2025.08 저작권 등록<br>C-2025-031742 | `pragma`를 읽어 필요한 Solidity 컴파일러를 탐지, 설치, 전환 |
+| rPBFT | IEEE Transactions on Big Data, 2026 | 비악의적 장애가 있는 분산 네트워크에서 신뢰도가 높은 노드로 합의 그룹을 구성하는 합의 메커니즘. 공동 제1저자 |
 
 ## Current Research
 
