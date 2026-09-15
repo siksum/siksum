@@ -407,6 +407,10 @@ code {
   gap: 0 32px;
 }
 
+/* 연구 수에 맞춰 열 수를 정한다. 2개면 넓은 화면에서 오른쪽이 비지 않게 2열. */
+.rs-grid[data-cols="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px; }
+.rs-grid[data-cols="1"] { grid-template-columns: minmax(0, 1fr); }
+
 .rs {
   display: grid;
   align-content: start;
@@ -589,9 +593,40 @@ details[open] > summary .pub-toggle::after { content: "접기"; }
   font-size: .8125rem;
 }
 
+/* ---------- 영상 ---------- */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 16px 20px;
+}
+
+.video-grid.is-single { grid-template-columns: minmax(0, 1fr); max-width: 720px; }
+
+.video { margin: 0; min-width: 0; }
+
+.video video,
+.video iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: #0b1220;
+}
+
+.video figcaption {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: .8125rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.arc .video-grid.is-single { max-width: 640px; }
+
 /* ---------- 반응형 ---------- */
 @media (max-width: 1099px) {
-  .rs-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .rs-grid:not([data-cols="2"]) { grid-template-columns: minmax(0, 1fr); gap: 28px; }
 }
 
 @media (max-width: 1023px) {
@@ -620,6 +655,14 @@ details[open] > summary .pub-toggle::after { content: "접기"; }
   .pub { grid-template-columns: minmax(0, 1fr); padding-block: 18px; }
   .pub-year { font-size: .8125rem; }
   .nav-list { gap: 2px 20px; }
+  .rs-grid[data-cols="2"] { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+}
+
+/* 320px대 화면에서 Archive만 다음 줄로 떨어지지 않게 */
+@media (max-width: 374px) {
+  :root { --gutter: 14px; }
+  .nav-list { gap: 2px 11px; }
+  .nav-list a { font-size: .8125rem; }
 }
 
 @media print {

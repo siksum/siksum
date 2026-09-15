@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<!-- 이 파일은 /home/sikk/work/portfolio-content/build.py 가 content.md 로부터 생성합니다. 직접 고치지 마세요. -->
 <a class="skip-link" href="#main">본문 바로가기</a>
 
 <header class="topbar">
@@ -53,11 +52,13 @@
         <li>Web3 입문 개발자가 스마트 컨트랙트를 배포하기 전에 코드와 취약점을 점검할 수 있도록 개발, 테스트, 보안 분석 기능을 하나의 VS Code 도구로 만들었습니다.</li>
         <li>3인 팀의 팀장으로 Slither 기반 분석 코어와 컴파일 파이프라인을 구현했습니다. 탐지 결과는 원인, 공격 시나리오와 개선안을 담은 국문 및 영문 Audit Report로 제공해 개발자는 수정 방향을 확인하고 검토자는 배포 전에 남은 위험을 파악할 수 있게 했습니다.</li>
       </ul>
+      <div class="video-grid">
+        <figure class="video"><video controls preload="none" playsinline poster="assets/video/compile-and-interaction-demo.jpg" aria-label="Compile and Interaction Demo"><source src="assets/video/compile-and-interaction-demo.mp4" type="video/mp4"><a href="assets/video/compile-and-interaction-demo.mp4">Compile and Interaction Demo</a></video><figcaption>Compile and Interaction Demo</figcaption></figure>
+        <figure class="video"><video controls preload="none" playsinline poster="assets/video/security-analysis-demo.jpg" aria-label="Security Analysis Demo"><source src="assets/video/security-analysis-demo.mp4" type="video/mp4"><a href="assets/video/security-analysis-demo.mp4">Security Analysis Demo</a></video><figcaption>Security Analysis Demo</figcaption></figure>
+      </div>
       <div class="resources">
         <a class="res res-link" href="https://github.com/siksum/vscode-extension-antibug" target="_blank" rel="noopener">GitHub: vscode-extension-antibug<span class="res-ext" aria-hidden="true">↗</span></a>
         <a class="res res-link" href="https://github.com/siksum/SafeDevAnalyzer" target="_blank" rel="noopener">GitHub: SafeDevAnalyzer<span class="res-ext" aria-hidden="true">↗</span></a>
-        <a class="res res-video" href="assets/video/compile-and-interaction-demo.mp4" target="_blank" rel="noopener" data-kind="video" data-title="Compile and Interaction Demo" aria-controls="panel-1" aria-expanded="false" data-poster="assets/video/compile-and-interaction-demo.jpg">영상: Compile and Interaction Demo</a>
-        <a class="res res-video" href="assets/video/security-analysis-demo.mp4" target="_blank" rel="noopener" data-kind="video" data-title="Security Analysis Demo" aria-controls="panel-1" aria-expanded="false" data-poster="assets/video/security-analysis-demo.jpg">영상: Security Analysis Demo</a>
         <a class="res res-pdf" href="assets/pdf/antibug-safedevanalyzer.pdf" target="_blank" rel="noopener" data-kind="pdf" data-title="antibug-safedevanalyzer" aria-controls="panel-1" aria-expanded="false" data-download="antibug-safedevanalyzer.pdf">PDF: antibug-safedevanalyzer <span class="res-size">19.9MB</span></a>
       </div>
       <div class="res-panel" id="panel-1" hidden></div>
@@ -74,13 +75,15 @@
         <li>Solidity 버전과 분석 환경이 서로 다른 외부 컨트랙트도 같은 절차로 검토하도록 Slither 기반 Python CLI를 개발했습니다. 컴파일러 관리, 사용자 정의 탐지 규칙과 코드 분석 기능을 한 번에 실행합니다.</li>
         <li>반복적인 환경 설정과 분석 절차를 자동화해 검토 기준을 일정하게 유지했습니다. 정해진 코드 패턴은 규칙으로 찾을 수 있지만 비즈니스 로직 취약점은 거래 구조와 상태 변화를 함께 살펴야 한다는 한계도 확인했습니다.</li>
       </ul>
+      <div class="video-grid">
+        <figure class="video"><video controls preload="none" playsinline poster="assets/video/code-similar.jpg" aria-label="code-similar"><source src="assets/video/code-similar.mp4" type="video/mp4"><a href="assets/video/code-similar.mp4">code-similar</a></video><figcaption>code-similar</figcaption></figure>
+        <figure class="video"><video controls preload="none" playsinline poster="assets/video/logic.jpg" aria-label="logic"><source src="assets/video/logic.mp4" type="video/mp4"><a href="assets/video/logic.mp4">logic</a></video><figcaption>logic</figcaption></figure>
+        <figure class="video"><video controls preload="none" playsinline poster="assets/video/detect-vuln.jpg" aria-label="detect vuln"><source src="assets/video/detect-vuln.mp4" type="video/mp4"><a href="assets/video/detect-vuln.mp4">detect vuln</a></video><figcaption>detect vuln</figcaption></figure>
+        <figure class="video"><video controls preload="none" playsinline poster="assets/video/flat.jpg" aria-label="flat"><source src="assets/video/flat.mp4" type="video/mp4"><a href="assets/video/flat.mp4">flat</a></video><figcaption>flat</figcaption></figure>
+        <figure class="video"><video controls preload="none" playsinline poster="assets/video/ruleset.jpg" aria-label="ruleset"><source src="assets/video/ruleset.mp4" type="video/mp4"><a href="assets/video/ruleset.mp4">ruleset</a></video><figcaption>ruleset</figcaption></figure>
+      </div>
       <div class="resources">
         <a class="res res-link" href="https://github.com/siksum/Join_Project" target="_blank" rel="noopener">GitHub: Join_Project<span class="res-ext" aria-hidden="true">↗</span></a>
-        <a class="res res-video" href="assets/video/code-similar.mp4" target="_blank" rel="noopener" data-kind="video" data-title="code-similar" aria-controls="panel-2" aria-expanded="false" data-poster="assets/video/code-similar.jpg">영상: code-similar</a>
-        <a class="res res-video" href="assets/video/logic.mp4" target="_blank" rel="noopener" data-kind="video" data-title="logic" aria-controls="panel-2" aria-expanded="false" data-poster="assets/video/logic.jpg">영상: logic</a>
-        <a class="res res-video" href="assets/video/detect-vuln.mp4" target="_blank" rel="noopener" data-kind="video" data-title="detect vuln" aria-controls="panel-2" aria-expanded="false" data-poster="assets/video/detect-vuln.jpg">영상: detect vuln</a>
-        <a class="res res-video" href="assets/video/flat.mp4" target="_blank" rel="noopener" data-kind="video" data-title="flat" aria-controls="panel-2" aria-expanded="false" data-poster="assets/video/flat.jpg">영상: flat</a>
-        <a class="res res-video" href="assets/video/ruleset.mp4" target="_blank" rel="noopener" data-kind="video" data-title="ruleset" aria-controls="panel-2" aria-expanded="false" data-poster="assets/video/ruleset.jpg">영상: ruleset</a>
         <a class="res res-pdf" href="assets/pdf/join.pdf" target="_blank" rel="noopener" data-kind="pdf" data-title="JOIN" aria-controls="panel-2" aria-expanded="false" data-download="JOIN.pdf">PDF: JOIN <span class="res-size">29.1MB</span></a>
       </div>
       <div class="res-panel" id="panel-2" hidden></div>
@@ -141,7 +144,7 @@
 
 <section class="section section-research" id="current-research" aria-labelledby="current-research-title">
   <h2 class="section-title" id="current-research-title">Current Research</h2>
-<div class="rs-grid">
+<div class="rs-grid" data-cols="2">
   <article class="rs" id="defisense">
     <p class="rs-status">Ongoing Research</p>
     <h3 class="rs-title">DeFiSense</h3>
@@ -213,7 +216,7 @@
         <h4 class="pub-title">어텐션 패턴 분석을 활용한 다층 프롬프트 인젝션 탐지 프레임워크</h4>
         <p class="pub-authors">Sunwoo Jeong, <strong>Namryeong Kim</strong>, Ilgu Lee</p>
         <p class="pub-venue">정보처리학회 논문지, Vol. 15, No. 4, pp. 281–289, 2026</p>
-        <p class="pub-tags"><span class="pub-role">공저자, 연구 지도</span></p>
+        <p class="pub-tags"><span class="pub-role">공저자</span></p>
         <p class="pub-desc">금지어가 포함된 입력은 1단계 필터로 분류하고, 이를 통과한 입력은 Focus Score로 어텐션 변화를 분석합니다. 공격 탐지 범위를 넓히면서 LLM 서비스의 응답 지연을 줄이도록 두 단계를 나눴습니다.</p>
         <p class="xref"><span class="xref-label">Extended from</span><a href="#publications-15">어텐션 패턴 분석을 활용한 프롬프트 인젝션 탐지</a> <span class="xref-note">(ACK 2025 회장상 수상 연구를 확장해 KCI 게재)</span></p>
       </div>
@@ -224,7 +227,7 @@
         <h4 class="pub-title">DeFi 스마트 컨트랙트 접근 제어 취약점 탐지를 위한 지능형 정적 분석 프레임워크의 설계 및 평가</h4>
         <p class="pub-authors">Hyobeen Cho, <strong>Namryeong Kim</strong>, Ilgu Lee</p>
         <p class="pub-venue">정보보호학회논문지, Vol. 35, No. 6, pp. 1601–1609, 2025.12</p>
-        <p class="pub-tags"><span class="pub-role">공저자, 연구 지도</span></p>
+        <p class="pub-tags"><span class="pub-role">공저자</span></p>
         <p class="pub-desc">스마트 컨트랙트의 중간 표현에서 연산 흐름, 상태 변경과 접근 제어 로직을 추출하고 AI 모델로 권한 검증의 누락과 우회 가능성을 찾습니다. 자금이나 관리 권한을 다루는 함수에 필요한 검증이 갖춰졌는지 배포 전에 확인하는 분석 절차입니다.</p>
         <p class="xref"><span class="xref-label">Extended from</span><a href="#defi-2">DeFi 스마트 컨트랙트 접근 제어 취약점 탐지를 위한 정적 분석 접근법</a> <span class="xref-note">(ACK 2025 발표 연구를 확장해 KCI 게재)</span></p>
       </div>
@@ -277,7 +280,7 @@
         <h4 class="pub-title">Enhancing DeFi Smart Contract Security via LangChain and Retrieval-Augmented Generation</h4>
         <p class="pub-authors">Hyobeen Cho, <strong>Namryeong Kim</strong>, Sunwoo Jeong, Ilgu Lee</p>
         <p class="pub-venue">WISA 2025, Jeju, Korea, 2025.08.21</p>
-        <p class="pub-tags"><span class="pub-role">공저자, 연구 지도</span></p>
+        <p class="pub-tags"><span class="pub-role">공저자</span></p>
         <p class="pub-desc">스마트 컨트랙트를 함수 단위로 나눠 과거 DeFi 사고에서 비슷한 코드를 찾고, 해당 사고의 맥락을 LLM에 제공합니다. 가격 조작으로 판단한 근거와 문제가 된 함수 위치를 함께 제시해 분석 결과를 다시 확인할 수 있게 했습니다.</p>
       </div>
     </article>
@@ -322,7 +325,7 @@
         <h4 class="pub-title">어텐션 패턴 분석을 활용한 프롬프트 인젝션 탐지</h4>
         <p class="pub-authors">Sunwoo Jeong, <strong>Namryeong Kim</strong>, Ilgu Lee</p>
         <p class="pub-venue">ACK 2025, 한국정보처리학회, 2025.11.07</p>
-        <p class="pub-tags"><span class="pub-role">공저자, 연구 지도</span></p>
+        <p class="pub-tags"><span class="pub-role">공저자</span></p>
         <p class="award"><span class="award-label">Award</span>한국정보기술학술단체총연합회 회장상</p>
         <p class="pub-desc">금지어가 포함된 입력은 필터로 먼저 분류하고, 문맥 속에 숨은 공격은 Attention Tracker로 분석합니다. 탐지 정확도와 처리 속도를 함께 측정하도록 두 단계를 나눴습니다.</p>
         <p class="xref"><span class="xref-label">Extended to</span><a href="#publications-3">어텐션 패턴 분석을 활용한 다층 프롬프트 인젝션 탐지 프레임워크</a></p>
@@ -334,7 +337,7 @@
         <h4 class="pub-title">워터마크 기반 프롬프트 인젝션 위협 분석</h4>
         <p class="pub-authors">Sunwoo Jeong, <strong>Namryeong Kim</strong>, Hyobeen Cho, Eunseo Youk, Ilgu Lee</p>
         <p class="pub-venue">ACK 2025, 한국정보처리학회, 2025.11.07</p>
-        <p class="pub-tags"><span class="pub-role">제2저자, 연구 지도</span></p>
+        <p class="pub-tags"><span class="pub-role">공저자</span></p>
         <p class="award"><span class="award-label">Award</span>논문경진대회 동상</p>
         <p class="pub-desc">문서의 진위를 확인하는 워터마크가 텍스트 추출 과정에서는 숨겨진 공격 명령을 전달할 수 있음을 감정 호소형 프롬프트 인젝션으로 확인했습니다. 외부 문서를 LLM에 입력할 때 본문뿐 아니라 워터마크에서 추출된 텍스트도 검사해야 합니다.</p>
       </div>
@@ -345,7 +348,7 @@
         <h4 class="pub-title">스마트 컨트랙트 비즈니스 로직 취약점 탐지를 위한 정적 분석 프레임워크</h4>
         <p class="pub-authors">Eunseo Youk, <strong>Namryeong Kim</strong>, Hyobeen Cho, Sunwoo Jeong, Ilgu Lee</p>
         <p class="pub-venue">ACK 2025, 한국정보처리학회, 2025.11.07</p>
-        <p class="pub-tags"><span class="pub-role">공저자, 연구 지도</span></p>
+        <p class="pub-tags"><span class="pub-role">공저자</span></p>
         <p class="award"><span class="award-label">Award</span>국가보안기술연구소장상</p>
         <p class="pub-desc">DeFi 대출 프로토콜과 ERC-4626의 예치, 인출, 대출과 청산 기능을 AST, CFG, IR로 분석합니다. 자금이 움직이는 함수에 필요한 검증 로직이 빠졌거나 실행 순서가 잘못된 부분을 배포 전에 찾습니다.</p>
       </div>
@@ -356,7 +359,7 @@
         <h4 class="pub-title">DeFi 스마트 컨트랙트 접근 제어 취약점 탐지를 위한 정적 분석 접근법</h4>
         <p class="pub-authors">Hyobeen Cho, <strong>Namryeong Kim</strong>, Sunwoo Jeong, Eunseo Youk, Ilgu Lee</p>
         <p class="pub-venue">ACK 2025, 한국정보처리학회, 2025.11.07</p>
-        <p class="pub-tags"><span class="pub-role">공저자, 연구 지도, 발표</span></p>
+        <p class="pub-tags"><span class="pub-role">공저자, 발표</span></p>
         <p class="pub-desc">외부 호출 가능 여부, 민감 기능 수행 여부, 권한 제한 modifier와 추가 검증을 차례로 확인합니다. 컨트랙트마다 다르게 구현된 접근 권한을 같은 순서와 기준으로 점검하는 분석 절차입니다.</p>
         <p class="xref"><span class="xref-label">Extended to</span><a href="#defi">DeFi 스마트 컨트랙트 접근 제어 취약점 탐지를 위한 지능형 정적 분석 프레임워크의 설계 및 평가</a></p>
       </div>
@@ -367,7 +370,7 @@
         <h4 class="pub-title">위성 간 통신을 위한 네트워크 코딩 기반 다중 링크 전송</h4>
         <p class="pub-authors">Hyobeen Cho, <strong>Namryeong Kim</strong>, Ilgu Lee</p>
         <p class="pub-venue">ASK 2025, 한국정보처리학회, Vol. 32, No. 1, pp. 85–87, 2025.05.31</p>
-        <p class="pub-tags"><span class="pub-role">공저자, 연구 지도</span></p>
+        <p class="pub-tags"><span class="pub-role">공저자</span></p>
         <p class="pub-desc">서로 다른 데이터 두 개와 이를 XOR한 패킷을 여러 링크로 나눠 보냈습니다. 잡음이나 DoS 공격으로 링크 하나가 끊겼을 때 남은 패킷만으로 원본 데이터를 복구하는지 확인했습니다.</p>
       </div>
     </article>
