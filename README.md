@@ -1,53 +1,36 @@
-<!-- ![header](https://capsule-render.vercel.app/api?type=venom&color=auto&height=300&section=header&text=Sikk&fontSize=80&animation=fadeIn&fontColor=ffffff) -->
+# Namryeong Kim
 
+연구가 실제 문제를 푸는 데 어떻게 쓰일지 고민합니다.
 
-![Banner](https://raw.githubusercontent.com/drewbi/drewbi/master/welcome_banner2.svg)
+논문으로 정리하는 데서 멈추지 않고, 구현할 수 있는 부분은 도구와 프레임워크로 직접 만들어 봅니다. 결과를 사용하는 사람이 원인과 다음 행동을 이해할 수 있는 형태로 전달하는 것도 중요하게 생각합니다.
 
-<img src="https://img.shields.io/github/followers/siksum.svg?style=social&label=Follow&maxAge=2592000" align="right"/>
+**Portfolio** [siksum.github.io/siksum](https://siksum.github.io/siksum/)<br>
+**Email** [namyoung0718@gmail.com](mailto:namyoung0718@gmail.com)
 
-<br>
+## Core Areas
 
-<br>
+- 스마트 컨트랙트 배포 전 검증
+- 온체인 거래와 자금 흐름 분석
+- 분산원장 인프라 신뢰성 평가
 
-<p markdown='1'>
+## Projects
 
-<a href="https://github.com/anuraghazra/github-readme-stats">
-  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=siksum&show_icons=true&theme=material-palenight" />
-</a>
-<a href="https://github.com/anuraghazra/convoychat">
-  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=siksum&layout=donut&langs_count=6&card_width=320&theme=material-palenight" />
-</a>
+| Project | 기간, 기관 | 내용 | Code |
+| --- | --- | --- | --- |
+| SafeDevAnalyzer | 2023.09–2023.12<br>DREAMPLUS × Hashed | 스마트 컨트랙트 개발, 테스트, 보안 분석을 하나로 묶은 VS Code 도구. 3인 팀 팀장으로 Slither 기반 분석 코어와 컴파일 파이프라인 구현. Protocol Camp 5기 대상 | [vscode-extension-antibug](https://github.com/siksum/vscode-extension-antibug)<br>[SafeDevAnalyzer](https://github.com/siksum/SafeDevAnalyzer) |
+| JOIN | 2023.03–2023.06<br>DREAMPLUS × Theori | 버전과 분석 환경이 다른 외부 컨트랙트를 같은 절차로 검토하는 Slither 기반 Python CLI | [Join_Project](https://github.com/siksum/Join_Project) |
+| SolcParser | 2025.08 저작권 등록<br>C-2025-031742 | `pragma`를 읽어 필요한 Solidity 컴파일러를 탐지, 설치, 전환 | [Solc-Parser](https://github.com/siksum/Solc-Parser) |
+| rPBFT | IEEE Transactions on Big Data, 2026 | 비악의적 장애가 있는 분산 네트워크에서 신뢰도가 높은 노드로 합의 그룹을 구성하는 합의 메커니즘. 공동 제1저자 | [rPBFT](https://github.com/siksum/rPBFT) |
 
-<br>
+## Current Research
 
-## 📑 Interest & Learning .. 🎶
+- **DeFiSense** 여러 DeFi 프로토콜을 거친 이벤트 로그와 거래 트레이스를 경제행위 단위로 연결해 공격 과정, 자금 이동, 손익과 원인을 하나의 그래프로 복원
+- **T-DID** DID/VC 환경에 맞는 위협 분류체계와, 어떤 보안 검사가 실제로 수행됐는지 기록하는 공통 로그 스키마 및 탐지 프레임워크
 
-☑️ Security
+## Publications
 
-    - System
-    - Personal Privacy
+게재 저널 5편, 심사 중 저널 1편, 국제학회 3편, 국내학회 11편. 전체 목록과 설명은 [포트폴리오](https://siksum.github.io/siksum/#publications)에 있습니다.
 
-
-☑️ Blockchain (Smart Contract)
-    
-    - Smart Contract Audit
-    - Blockchain Security
-
-☑️ Web Development
-
-    - Web publishing
-    - Design
-
-<br>
-
-<!-- [![GitHub Streak](https://streak-stats.demolab.com?user=siksum&theme=material-palenight)](https://git.io/streak-stats) -->
-
----
-
-![footer](https://capsule-render.vercel.app/api?type=waving&color=auto&height=100&section=footer&text=Namryeong-Kim&fontSize=30&animation=fadeIn&fontColor=ffffff)
-
-<div align="center">
-
-  [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fsiksum&count_bg=%237DDDF6&title_bg=%23CFA1F6&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
-
-</div>
+- **rPBFT: Reliable Practical Byzantine Fault Tolerance Mechanism for Faulty Distributed Networks**<br>IEEE Transactions on Big Data, 2026. 공동 제1저자
+- **When LLM Agents Act On-Chain: A Systematic Cross-Layer Security Analysis across Reasoning, Identity, and Execution**<br>ICT Express, Major Revision Resubmitted. 제1저자
+- **코드 유사성 비교 기반의 스마트 컨트랙트 공격 표면 분석 프레임워크**<br>융합보안논문지, 2024. 제1저자
