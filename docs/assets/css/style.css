@@ -796,6 +796,7 @@ details[open] > summary .pub-toggle::after { content: "접기"; }
 
 .section-heading .section-title { margin-bottom: 0; }
 .section-heading p { color: var(--muted); font-size: .875rem; }
+.section-more { font-size: .875rem; font-weight: 650; text-decoration: none; }
 
 .project-gallery {
   display: grid;
@@ -922,6 +923,22 @@ details[open] > summary .pub-toggle::after { content: "접기"; }
   font-weight: 650;
   text-decoration: none;
 }
+
+.project-notes { display: grid; gap: 0; }
+.project-notes > .section-title { margin-bottom: 8px; }
+
+.project-entry {
+  display: grid;
+  gap: 8px;
+  max-width: 54em;
+  padding-block: 30px;
+  border-top: 1px solid var(--line);
+}
+
+.project-entry:first-of-type { border-top: 0; }
+.project-entry h2 { color: var(--ink); font-size: 1.25rem; line-height: 1.4; }
+.project-entry > p:not(.project-kind):not(.project-entry-meta) { font-size: .975rem; line-height: 1.75; }
+.project-entry-meta { color: var(--muted); font-size: .8125rem; line-height: 1.6; }
 
 .breadcrumb {
   display: flex;
