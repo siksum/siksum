@@ -38,7 +38,7 @@
   <dl class="project-meta"><div><dt>상태</dt><dd>Ongoing Research</dd></div></dl>
 </section>
 
-<nav class="detail-toc" aria-label="프로젝트 상세 목차"><a href="#detail-overview-title">개요</a><a href="#detail-problem-title">문제와 목표</a><a href="#detail-decision-title">검토와 선택</a><a href="#detail-build-title">구현과 난관</a><a href="#detail-result-title">검증 결과</a><a href="#detail-learning-title">기여와 다음 단계</a><a href="#detail-business-title">금융·기업에서 보는 의미</a><a href="#detail-evidence-title">근거 자료</a></nav>
+<nav class="detail-toc" aria-label="프로젝트 상세 목차"><a href="#detail-overview-title">개요</a><a href="#detail-problem-title">문제와 목표</a><a href="#detail-decision-title">검토와 선택</a><a href="#detail-build-title">구현과 난관</a><a href="#detail-result-title">검증 결과</a><a href="#detail-learning-title">기여와 다음 단계</a><a href="#detail-business-title">이 경험이 만든 판단 기준</a><a href="#detail-evidence-title">근거 자료</a></nav>
 <section class="detail-section detail-overview" aria-labelledby="detail-overview-title">
   <h2 id="detail-overview-title">프로젝트 개요</h2>
   <ul class="detail-points">
@@ -47,47 +47,47 @@
 </section>
 <section class="detail-section detail-group detail-group-problem" aria-labelledby="detail-problem-title">
   <h2 id="detail-problem-title">문제와 목표</h2>
-  <article class="detail-block"><h3>해결해야 한 문제</h3><p>DID/VC 시스템은 발급이나 제시의 최종 성공만 남기고, 증명 검증·정책·객체 동일성·이전 사건과의 관계처럼 위협 판정에 필요한 사실을 서로 다른 위치와 형식으로 기록합니다. 기록이 없는데도 정상이나 공격으로 단정하면 감사 결과가 왜곡됩니다.</p></article>
+  <article class="detail-block"><h3>해결해야 한 문제</h3><p>DID/VC 시스템은 발급이나 제시의 최종 성공만 남기고, 증명 검증 / 정책 / 객체 동일성 / 이전 사건과의 관계처럼 위협 판정에 필요한 사실을 서로 다른 위치와 형식으로 기록합니다. 기록이 없는데도 정상이나 공격으로 단정하면 감사 결과가 왜곡됩니다.</p></article>
   <article class="detail-block"><h3>왜 이 문제였나</h3><p>디지털 신원은 인증 성공만으로 충분하지 않습니다. 어떤 증거를 어떤 구현체가 만들었고, 정책이 실제로 적용됐으며, 승인 결과가 이후 접근과 연결됐는지를 사후에 확인할 수 있어야 신원 기반 서비스의 책임 경계를 설명할 수 있습니다.</p></article>
   <article class="detail-block"><h3>목표</h3><p>DID/VC 위협의 성공 조건에서 필요한 런타임 증거를 역으로 도출합니다. 구현체별 기록은 공통 보안 이벤트로 바꾸고 현재와 과거 사건을 연결해 <code>threat_witness</code>, <code>no_witness</code>, <code>incomplete_evidence</code>, <code>engine_error</code>로 구분합니다.</p></article>
 </section>
 <section class="detail-section detail-group detail-group-decision" aria-labelledby="detail-decision-title">
   <h2 id="detail-decision-title">검토와 선택</h2>
-  <article class="detail-block"><h3>검토한 방법</h3><p>ATT&amp;CK, AADAPT, CAPEC, CWE의 분류 대응만으로는 런타임 관측 가능성을 알 수 없었습니다. 일반 개발 로그와 API·상태 추론, 정적 코드 분석, 추가 계측을 비교하고, 상태 없는 이진 판정과 상태·증거 인식 판정을 같은 통제 스트림에서 대조했습니다.</p></article>
-  <article class="detail-block"><h3>선택한 방법</h3><p>RawEvidence를 구현체 adapter에서 lift·enrich해 CanonicalSecurityEvent로 만들고, provenance·상관키·정책·증거 완전성을 함께 보존하는 구조를 선택했습니다. 필요한 사실이 없으면 실패나 정상으로 치환하지 않고 <code>incomplete_evidence</code>로 남깁니다.</p></article>
+  <article class="detail-block"><h3>검토한 방법</h3><p>ATT&amp;CK, AADAPT, CAPEC, CWE의 분류 대응만으로는 런타임 관측 가능성을 알 수 없었습니다. 일반 개발 로그와 API / 상태 추론, 정적 코드 분석, 추가 계측을 비교하고, 상태 없는 이진 판정과 상태 / 증거 인식 판정을 같은 통제 스트림에서 대조했습니다.</p></article>
+  <article class="detail-block"><h3>선택한 방법</h3><p>RawEvidence를 구현체 adapter에서 lift / enrich해 CanonicalSecurityEvent로 만들고, provenance / 상관키 / 정책 / 증거 완전성을 함께 보존하는 구조를 선택했습니다. 필요한 사실이 없으면 실패나 정상으로 치환하지 않고 <code>incomplete_evidence</code>로 남깁니다.</p></article>
 </section>
 <section class="detail-section detail-group detail-group-build" aria-labelledby="detail-build-title">
   <h2 id="detail-build-title">구현과 난관</h2>
-  <article class="detail-block"><h3>기술 스택</h3><ul class="stack-list"><li>Python 3.12 / Pydantic v2 / JSON Schema 2020-12</li><li>YAML rule specifications / SQLite / JSONL·CSV</li><li>pytest / Hypothesis / Docker Compose</li><li>walt.id / Credo TS controlled integrations / matplotlib</li></ul></article>
-  <article class="detail-block"><h3>구현</h3><p>21개 DID/VC 위협의 조건과 증거 요구사항을 명세하고, 15개 고정 구현체에서 해당 증거가 기본·추가 계측·파생·미가용 중 어디에 속하는지 원장으로 관리했습니다.</p><p>THR-015에서는 동일 증명 재사용의 다섯 조건, THR-019에서는 전달 주체와 결과 소비·접근 결정의 여섯 조건을 producer·상태 reducer·공통 판정 함수로 연결했습니다.</p></article>
+  <article class="detail-block"><h3>기술 스택</h3><ul class="stack-list"><li>Python 3.12 / Pydantic v2 / JSON Schema 2020-12</li><li>YAML rule specifications / SQLite / JSONL / CSV</li><li>pytest / Hypothesis / Docker Compose</li><li>walt.id / Credo TS controlled integrations / matplotlib</li></ul></article>
+  <article class="detail-block"><h3>구현</h3><p>21개 DID/VC 위협의 조건과 증거 요구사항을 명세하고, 15개 고정 구현체에서 해당 증거가 기본 / 추가 계측 / 파생 / 미가용 중 어디에 속하는지 원장으로 관리했습니다.</p><p>THR-015에서는 동일 증명 재사용의 다섯 조건, THR-019에서는 전달 주체와 결과 소비 / 접근 결정의 여섯 조건을 producer / 상태 reducer / 공통 판정 함수로 연결했습니다.</p></article>
   <article class="detail-block"><h3>어려움</h3><p>같은 보안 사실도 walt.id와 Credo TS에서 생성 위치가 달랐고, HTTP 실패나 발급 성공 같은 결과를 증명 검증 성공으로 오해할 수 있었습니다. 개발 로그의 메시지와 실제 보안 단계 증거를 구분하면서도 같은 실행에 묶는 작업이 필요했습니다.</p></article>
   <article class="detail-block"><h3>해결</h3><p>관측값의 생산 위치와 무결성, 사건 상관관계, oracle 분리를 명시하고 판정 출력을 먼저 봉인했습니다. 제품 오류 3건도 삭제하거나 임의로 음성 처리하지 않고 정답 미확정으로 보존했습니다.</p></article>
 </section>
 <section class="detail-section detail-group detail-group-result" aria-labelledby="detail-result-title">
   <h2 id="detail-result-title">검증 결과</h2>
   <article class="detail-block"><h3>정량 결과</h3><p>walt.id THR-015에서 기존 정보로 보류였던 9/15건은 보안 증거 추가 후 15/15 올바른 판정으로 바뀌었습니다. Credo TS는 기존 정보와 제안 조건 모두 확정 가능한 12/15건이 같았고 나머지 3건은 제품 오류로 보존했습니다.</p><p>Credo TS와 연구용 앱의 THR-019 비교에서는 일반 개발 로그의 12/12 보류가 추가 보안 증거에서 공격 3건과 비양성 9건의 올바른 판정으로 바뀌었습니다. 비용은 두 제품, 80개 15초 구간, 7,440개 작업에서 측정했으며 16/s 부하의 처리량은 walt.id 10.400→10.300/s, Credo TS 6.867→6.767/s였습니다.</p></article>
-  <article class="detail-block"><h3>목표 달성</h3><p>두 구현체·두 위협·세 통합에서 좁은 증거 수집과 공통 판정 경로의 가능성은 확인했습니다. 21개 위협과 15개 구현체 전체의 동적 성능이나 배포 환경의 범용성을 검증한 결과는 아닙니다.</p></article>
+  <article class="detail-block"><h3>목표 달성</h3><p>두 구현체 / 두 위협 / 세 통합에서 좁은 증거 수집과 공통 판정 경로의 가능성은 확인했습니다. 21개 위협과 15개 구현체 전체의 동적 성능이나 배포 환경의 범용성을 검증한 결과는 아닙니다.</p></article>
 </section>
 <section class="detail-section detail-group detail-group-learning" aria-labelledby="detail-learning-title">
   <h2 id="detail-learning-title">기여와 다음 단계</h2>
-  <article class="detail-block"><h3>기여</h3><p>위협 목록을 만드는 데서 끝내지 않고, 위협 판정에 필요한 사실·생산자·공통 이벤트 필드·상태·판정 결과를 추적 가능한 원장으로 연결했습니다. 모르는 값을 숨기지 않는 판정 경계와 실제 적용 비용도 함께 측정했습니다.</p></article>
+  <article class="detail-block"><h3>기여</h3><p>위협 목록을 만드는 데서 끝내지 않고, 위협 판정에 필요한 사실 / 생산자 / 공통 이벤트 필드 / 상태 / 판정 결과를 추적 가능한 원장으로 연결했습니다. 모르는 값을 숨기지 않는 판정 경계와 실제 적용 비용도 함께 측정했습니다.</p></article>
   <article class="detail-block"><h3>배운 점</h3><p>공통 스키마보다 먼저 합의해야 할 것은 ‘무엇이 확인돼야 위협이 성립하는가’였습니다. 기존 로그가 충분한 제품에서는 새 계측이 판정을 개선하지 않을 수 있다는 결과도 프레임워크의 적용 기준에 포함해야 했습니다.</p></article>
   <article class="detail-block"><h3>한계</h3><p>동적 실험은 THR-015와 THR-019의 통제 사례에 한정됩니다. 단일 사용 정책은 실험 조건이며 제품 기본 정책이 아니고, 21×15 표는 소스 기반 증거 인벤토리이지 315개 동적 공격 실험이 아닙니다.</p></article>
-  <article class="detail-block"><h3>후속 연구</h3><p>위협별 producer와 상태 모델의 적용 범위를 늘리고, 별도 구현체와 실제 서비스 경계에서 증거 계약·판정 재사용·운영 비용을 재검증해야 합니다.</p></article>
+  <article class="detail-block"><h3>후속 연구</h3><p>위협별 producer와 상태 모델의 적용 범위를 늘리고, 별도 구현체와 실제 서비스 경계에서 증거 계약 / 판정 재사용 / 운영 비용을 재검증해야 합니다.</p></article>
 </section>
 <section class="detail-section detail-group detail-group-business" aria-labelledby="detail-business-title">
-  <h2 id="detail-business-title">금융·기업에서 보는 의미</h2>
-  <article class="detail-block"><h3>금융·기업 관점</h3><p>고객·임직원·에이전트의 디지털 신원을 활용할 때 인증 성공만이 아니라 검증 절차, 적용 정책, 승인 주체와 최종 접근 결과를 감사 가능한 사건으로 남기는 통제 모델입니다. 금융 서비스 적용 가능성을 설명할 수 있지만 현재 결과는 통제된 DID/VC 실험 범위입니다.</p></article>
+  <h2 id="detail-business-title">이 경험이 만든 판단 기준</h2>
+  <article class="detail-block"><h3>조직에서 내리는 판단</h3><p>고객 / 임직원 / 에이전트의 디지털 신원을 활용할 때 인증 성공만이 아니라 검증 절차, 적용 정책, 승인 주체와 최종 접근 결과를 감사 가능한 사건으로 남기는 통제 모델입니다. 금융 서비스 적용 가능성을 설명할 수 있지만 현재 결과는 통제된 DID/VC 실험 범위입니다.</p></article>
 </section>
 <section class="detail-section" aria-labelledby="detail-evidence-title">
   <h2 id="detail-evidence-title">근거 자료</h2>
   <div class="evidence-gallery">
-    <figure class="evidence-image"><a href="assets/files/five-message-overview.png" target="_blank" rel="noopener"><img src="assets/files/five-message-overview.png" alt="기존 증거의 공백부터 판정 효과·비용·재사용까지의 결과 개요" loading="lazy"></a><figcaption>기존 증거의 공백부터 판정 효과·비용·재사용까지의 결과 개요</figcaption></figure>
+    <figure class="evidence-image"><a href="assets/files/five-message-overview.png" target="_blank" rel="noopener"><img src="assets/files/five-message-overview.png" alt="기존 증거의 공백부터 판정 효과 / 비용 / 재사용까지의 결과 개요" loading="lazy"></a><figcaption>기존 증거의 공백부터 판정 효과 / 비용 / 재사용까지의 결과 개요</figcaption></figure>
     <figure class="evidence-image"><a href="assets/files/identification-effect.png" target="_blank" rel="noopener"><img src="assets/files/identification-effect.png" alt="같은 실행에서 기존 정보와 추가 보안 증거의 판정 비교" loading="lazy"></a><figcaption>같은 실행에서 기존 정보와 추가 보안 증거의 판정 비교</figcaption></figure>
     <figure class="evidence-image"><a href="assets/files/operational-cost.png" target="_blank" rel="noopener"><img src="assets/files/operational-cost.png" alt="walt.id와 Credo TS의 적용 전후 처리 비용" loading="lazy"></a><figcaption>walt.id와 Credo TS의 적용 전후 처리 비용</figcaption></figure>
     <figure class="evidence-image"><a href="assets/files/framework-reuse.png" target="_blank" rel="noopener"><img src="assets/files/framework-reuse.png" alt="두 구현체와 두 위협에서 공통 판정 로직을 사용한 범위" loading="lazy"></a><figcaption>두 구현체와 두 위협에서 공통 판정 로직을 사용한 범위</figcaption></figure>
   </div>
-  <figure class="pdf-embed" data-pdf="assets/pdf/t-did.pdf" data-title="T-DID 연구 원고"><figcaption class="pdf-head"><span class="pdf-name">PDF: T-DID 연구 원고</span><span class="pdf-info">4.4MB, 17쪽</span><span class="pdf-actions"><a href="assets/pdf/t-did.pdf" target="_blank" rel="noopener">새 탭에서 열기</a><a href="assets/pdf/t-did.pdf" download="T_DID.pdf">다운로드</a></span></figcaption><div class="pdf-pages"><img src="assets/pdf-preview/t-did-p1.jpg" alt="T-DID 연구 원고 1쪽" loading="lazy" width="900"><img src="assets/pdf-preview/t-did-p2.jpg" alt="T-DID 연구 원고 2쪽" loading="lazy" width="900"><img src="assets/pdf-preview/t-did-p3.jpg" alt="T-DID 연구 원고 3쪽" loading="lazy" width="900"><a class="pdf-more" href="assets/pdf/t-did.pdf" target="_blank" rel="noopener">전체 17쪽 새 탭에서 보기</a></div></figure>
+  <figure class="pdf-embed" data-pdf="assets/pdf/t-did.pdf" data-title="T-DID 연구 원고"><figcaption class="pdf-head"><span class="pdf-name">PDF: T-DID 연구 원고</span><span class="pdf-info">4.4MB</span><span class="pdf-actions"><a href="assets/pdf/t-did.pdf" target="_blank" rel="noopener">새 탭에서 열기</a><a href="assets/pdf/t-did.pdf" download="T_DID.pdf">다운로드</a></span></figcaption><div class="pdf-pages"></div></figure>
 </section>
 
 </main>
