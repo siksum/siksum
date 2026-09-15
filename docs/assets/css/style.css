@@ -289,6 +289,11 @@ code {
 
 .xref a { overflow-wrap: anywhere; }
 
+.lineage { display: flex; flex-wrap: wrap; align-items: baseline; }
+.lineage-steps { display: flex; flex-wrap: wrap; gap: 0 6px; margin: 0; padding: 0; list-style: none; }
+.lineage-steps li + li::before { content: "→"; margin-right: 6px; color: var(--muted); }
+.lineage-current { color: var(--ink); font-weight: 600; }
+
 /* ---------- 자료 버튼(영상·PDF·코드) ---------- */
 .resources {
   display: flex;
