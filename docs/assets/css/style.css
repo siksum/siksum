@@ -598,6 +598,59 @@ details[open] > summary .pub-toggle::after { content: "접기"; }
   font-size: .8125rem;
 }
 
+/* ---------- PDF (펼친 상태) ---------- */
+.pdf-embed {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--bg);
+  overflow: hidden;
+  min-width: 0;
+}
+
+.pdf-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--bg-soft);
+  font-size: .8125rem;
+  line-height: 1.5;
+}
+
+.pdf-name { color: var(--ink); font-weight: 600; overflow-wrap: anywhere; }
+.pdf-info { color: var(--muted); }
+.pdf-actions { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-left: auto; }
+
+.pdf-frame {
+  display: block;
+  width: 100%;
+  height: min(72vh, 640px);
+  border: 0;
+  background: #525659;
+}
+
+.pdf-pages {
+  display: grid;
+  gap: 8px;
+  max-height: 560px;
+  overflow-y: auto;
+  padding: 10px;
+  background: #525659;
+}
+
+.pdf-pages img { display: block; width: 100%; height: auto; background: #fff; }
+
+.pdf-more {
+  justify-self: center;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background: #fff;
+  font-size: .8125rem;
+}
+
 /* ---------- 영상 ---------- */
 .video-grid {
   display: grid;
@@ -671,6 +724,6 @@ details[open] > summary .pub-toggle::after { content: "접기"; }
 }
 
 @media print {
-  .topbar, .skip-link, .res-panel { display: none !important; }
+  .topbar, .skip-link, .res-panel, .pdf-frame { display: none !important; }
   .section { padding-block: 24px; }
 }

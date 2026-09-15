@@ -114,6 +114,22 @@
     });
   });
 
+  // PDF는 처음부터 펼쳐 둔다. 브라우저에 PDF 뷰어가 있는 데스크톱에서만 페이지 이미지 자리를 실제 뷰어로 바꾼다.
+  // 모바일이나 뷰어가 꺼진 브라우저는 iframe PDF를 다운로드로 처리할 수 있으므로 이미지 미리보기를 그대로 둔다.
+  if (!coarse && navigator.pdfViewerEnabled !== false) {
+    document.querySelectorAll(".pdf-embed[data-pdf]").forEach(function (fig) {
+      var pages = fig.querySelector(".pdf-pages");
+      if (!pages) return;
+      var frame = h("iframe", {
+        class: "pdf-frame",
+        src: fig.getAttribute("data-pdf") + "#view=FitH",
+        title: fig.getAttribute("data-title") || "PDF",
+        loading: "lazy"
+      });
+      pages.replaceWith(frame);
+    });
+  }
+
   // 접힌 학회 목록 안의 논문으로 이동할 때 목록을 연다.
   function revealHash() {
     if (!location.hash) return;
