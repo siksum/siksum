@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Fault-Tolerant Consensus Mechanism for Scalable and Reliable Blockchain Systems | Namryeong Kim</title>
+    <meta name="description" content="Namryeong Kim | Blockchain Security Research, On-chain Risk Analysis, Distributed Ledger Reliability">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/apple.css">
+</head>
+<body class="detail-page">
+<a class="skip-link" href="#main">본문 바로가기</a>
+
+<aside class="topbar" aria-label="사이트 메뉴">
+  <div class="topbar-inner">
+    <a class="brand" href="./">Namryeong Kim</a>
+    <nav aria-label="주요 메뉴">
+      <ul class="nav-list">
+        <li><a href="./">Home</a></li>
+        <li><a href="projects">Projects</a></li>
+        <li><a href="experience">Experience</a></li>
+        <li><a href="publications" aria-current="page">Publications</a></li>
+        <li><a href="archive">Archive</a></li>
+      </ul>
+    </nav>
+    <p class="sidebar-note">Blockchain research<br>and implementation</p>
+  </div>
+</aside>
+
+<main id="main" class="wrap site-main">
+
+<nav class="breadcrumb" aria-label="현재 위치"><a href="publications">Publications</a><span aria-hidden="true">/</span><span>A Fault-Tolerant Consensus Mechanism for Scalable and Reliable Blockchain Systems</span></nav>
+<section class="project-hero">
+  <p class="project-kind">Publication</p>
+  <h1 class="is-long">A Fault-Tolerant Consensus Mechanism for Scalable and Reliable Blockchain Systems</h1>
+  <p class="project-hero-summary">초기 고장과 마모 고장처럼 장비에서 자연스럽게 생기는 장애를 신뢰도 모델로 예측했습니다. 신뢰도가 높은 소수의 노드만 합의에 참여시키고 100노드 환경에서 기존 PBFT와 지연시간을 비교했습니다.</p>
+  <dl class="project-meta"><div><dt>역할</dt><dd>제1저자, 발표</dd></div><div><dt>게재</dt><dd>2025 IEEE ICCT-Pacific, Matsue, Shimane, Japan, 2025</dd></div></dl>
+</section>
+<dl class="stat-row" data-count="2"><div class="stat"><dt>실험 규모</dt><dd>100노드, 1,000블록, 100회 반복</dd><p class="stat-note">욕조 곡선 신뢰도 모델, Python 시뮬레이터</p></div><div class="stat"><dt>합의 메시지 복잡도</dt><dd>2(n-f)² → 2(c-b)²</dd><p class="stat-note">n 전체 노드, f 결함 허용 수, c 위원회 크기(c &lt; n), b 고장 노드 수</p></div></dl>
+
+<nav class="detail-toc" aria-label="프로젝트 상세 목차"><a href="#detail-background-title">제안 배경</a><a href="#detail-related-title">선행 연구</a><a href="#detail-solution-title">해결책</a><a href="#detail-proof-title">입증</a><a href="#detail-learning-title">기여와 다음 단계</a></nav>
+<section class="detail-section detail-group detail-group-background" aria-labelledby="detail-background-title">
+  <h2 id="detail-background-title">제안 배경</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">노드가 늘수록 느려지는 PBFT에서 장비의 자연 고장을 다루는 방법을 연구했습니다.</p><dl class="detail-kv"><div><dt>문제</dt><dd>PBFT는 노드가 늘면 통신량이 제곱으로 늘어 대규모 환경에서 느려집니다.</dd></div><div><dt>연구 범위</dt><dd>장비 초기 불량이나 노후 같은 자연 고장만 다뤘고 악의적 행동은 제외했습니다.</dd></div></dl>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-related" aria-labelledby="detail-related-title">
+  <h2 id="detail-related-title">선행 연구</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">기존 개선안에서는 점수가 떨어진 노드가 회복돼도 합의에서 계속 배제됐습니다.</p><dl class="detail-kv"><div><dt>리더와 다층</dt><dd>권한이 몰린 리더나 상위 노드의 고장이 전체에 영향을 줍니다.</dd></div><div><dt>점수 기반</dt><dd>일시적 문제로 점수가 떨어진 노드는 회복돼도 계속 배제됩니다.</dd></div></dl>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-solution" aria-labelledby="detail-solution-title">
+  <h2 id="detail-solution-title">해결책</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">합의 참여 기록으로 노드 순위를 매기고, 상위 노드만으로 합의 그룹을 구성합니다.</p><dl class="detail-kv"><div><dt>상태 기록</dt><dd>합의 메시지의 성공과 실패를 기록하고 이웃과 합산해 순위를 매깁니다.</dd></div><div><dt>복귀</dt><dd>합의가 실패하면 갱신된 순위로 그룹을 다시 짜므로 점수가 낮아진 노드도 복귀합니다.</dd></div></dl>
+      <div class="inline-evidence">
+        <figure class="evidence-image"><a href="assets/files/architecture-5.png" target="_blank" rel="noopener"><img src="assets/files/architecture-5.png" alt="왼쪽은 합의 그룹 안의 합의, 오른쪽은 새 합의 그룹을 만드는 과정입니다." loading="lazy"></a><figcaption>왼쪽은 합의 그룹 안의 합의, 오른쪽은 새 합의 그룹을 만드는 과정입니다.</figcaption></figure>
+      </div>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-proof" aria-labelledby="detail-proof-title">
+  <h2 id="detail-proof-title">입증</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">고장이 많은 구간에서도 rPBFT의 지연시간은 0.2~0.3초 수준을 유지했습니다.</p><dl class="detail-kv"><div><dt>실험 설정</dt><dd>Python 시뮬레이터로 100노드가 1,000블록을 생성하는 실험을 100회 반복했습니다.</dd></div><div><dt>결과</dt><dd>기존 PBFT는 고장이 많은 구간에서 지연이 크게 올랐고 rPBFT는 0.2~0.3초였습니다.</dd></div><div><dt>한계</dt><dd>지연시간만 비교했고 고장이 없는 환경에서는 기존 PBFT의 부담이 더 낮았습니다.</dd></div></dl>
+      <div class="inline-evidence">
+        <figure class="evidence-image"><a href="assets/files/latency-bathtub-2.png" target="_blank" rel="noopener"><img src="assets/files/latency-bathtub-2.png" alt="고장이 많은 양 끝 구간에서 세 방식의 막대 높이 차이를 보면 됩니다." loading="lazy"></a><figcaption>고장이 많은 양 끝 구간에서 세 방식의 막대 높이 차이를 보면 됩니다.</figcaption></figure>
+      </div>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-learning" aria-labelledby="detail-learning-title">
+  <h2 id="detail-learning-title">기여와 다음 단계</h2>
+  <article class="detail-block">
+    <h3>기여</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">WISA 2024 포스터의 rPBFT를 논문 형식으로 정리해 학회에서 발표했습니다.</p><dl class="detail-kv"><div><dt>역할</dt><dd>제1저자로 연구를 수행하고 학회에서 발표했습니다.</dd></div><div><dt>추가한 내용</dt><dd>관련 연구 분류와 메시지 복잡도 식을 담았습니다.</dd></div></dl>
+    </div>
+  </article>
+  <article class="detail-block">
+    <h3>후속 연구</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">고장 없는 환경의 부담을 줄이는 것이 과제였고, 연구는 저널 논문으로 이어졌습니다.</p><dl class="detail-kv"><div><dt>향후 과제</dt><dd>합의 그룹 크기를 동적으로 조정해 고장 없는 환경의 부담을 줄이는 것입니다.</dd></div><div><dt>이어진 연구</dt><dd>저널 논문에서 1,000노드 규모와 악의적 노드 비율 실험을 추가했습니다.</dd></div></dl>
+    </div>
+  </article>
+</section>
+<section class="detail-section flow-nav" aria-labelledby="flow-nav-title"><h2 id="flow-nav-title">이어지는 흐름</h2><div class="flow-nav-block" data-flow="flow-3"><p class="flow-nav-track">분산원장 합의: 학부연구생 때의 평가 연구에서 rPBFT까지</p><div class="flow-nav-grid"><a class="flow-nav-card" href="rpbft-wisa2024?flow=flow-3"><span class="flow-nav-label">이전</span><strong>rPBFT 첫 발표</strong><span>비교 대상이 기본 PBFT 하나였고 선행 연구 분석과 통신량 분석이 부족했습니다.</span></a><a class="flow-nav-card" href="rpbft?flow=flow-3"><span class="flow-nav-label">다음</span><strong>rPBFT 저널 게재</strong><span>더 큰 규모와 다른 합의 방식과의 비교, 악의적 노드 조건의 검증이 남았습니다.</span></a></div><ol class="flow-nav-steps"><li><a href="pbft-evaluation-framework-kiice?flow=flow-3"><span>2021</span><strong>평가 기준 제안</strong></a></li><li><a href="pbft-evaluation-kci?flow=flow-3"><span>2022</span><strong>구현과 측정</strong></a></li><li><a href="rpbft-wisa2024?flow=flow-3"><span>2024</span><strong>rPBFT 첫 발표</strong></a></li><li class="is-current"><span>2025</span><strong>rPBFT 논문화</strong></li><li><a href="rpbft?flow=flow-3"><span>2026</span><strong>rPBFT 저널 게재</strong></a></li></ol></div><p class="flow-nav-links"><a href="projects#research-flow">전체 흐름 보기 <span aria-hidden="true">→</span></a><a href="./">홈으로 <span aria-hidden="true">→</span></a></p></section>
+
+</main>
+
+<footer class="site-footer">
+  <div>© 2026 Namryeong Kim</div>
+</footer>
+
+<script src="assets/js/media.js"></script>
+<script src="assets/js/apple.js"></script>
+</body>
+</html>

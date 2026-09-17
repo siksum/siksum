@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DeFi 스마트 컨트랙트 접근 제어 취약점 탐지를 위한 정적 분석 기법 | Namryeong Kim</title>
+    <meta name="description" content="Namryeong Kim | Blockchain Security Research, On-chain Risk Analysis, Distributed Ledger Reliability">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/apple.css">
+</head>
+<body class="detail-page">
+<a class="skip-link" href="#main">본문 바로가기</a>
+
+<aside class="topbar" aria-label="사이트 메뉴">
+  <div class="topbar-inner">
+    <a class="brand" href="./">Namryeong Kim</a>
+    <nav aria-label="주요 메뉴">
+      <ul class="nav-list">
+        <li><a href="./">Home</a></li>
+        <li><a href="projects">Projects</a></li>
+        <li><a href="experience">Experience</a></li>
+        <li><a href="publications" aria-current="page">Publications</a></li>
+        <li><a href="archive">Archive</a></li>
+      </ul>
+    </nav>
+    <p class="sidebar-note">Blockchain research<br>and implementation</p>
+  </div>
+</aside>
+
+<main id="main" class="wrap site-main">
+
+<nav class="breadcrumb" aria-label="현재 위치"><a href="publications">Publications</a><span aria-hidden="true">/</span><span>DeFi 스마트 컨트랙트 접근 제어 취약점 탐지를 위한 정적 분석 기법</span></nav>
+<section class="project-hero">
+  <p class="project-kind">Publication</p>
+  <h1 class="is-long">DeFi 스마트 컨트랙트 접근 제어 취약점 탐지를 위한 정적 분석 기법</h1>
+  <p class="project-hero-summary">함수마다 외부 호출 가능 여부, 민감 기능 여부, 권한 제한과 추가 검증을 차례로 확인합니다. 컨트랙트마다 다른 접근 권한을 같은 기준으로 점검하는 절차입니다.</p>
+  <dl class="project-meta"><div><dt>역할</dt><dd>공저자</dd></div><div><dt>게재</dt><dd>ACK 2025, 한국정보처리학회, 2025.11.07</dd></div></dl>
+</section>
+<dl class="stat-row" data-count="3"><div class="stat"><dt>해킹 사례 탐지</dt><dd>19/20 (95%)</dd><p class="stat-note">2020~2024년 해킹 사례 20건. Slither 3건, Echidna 9건</p></div><div class="stat"><dt>정밀도 / 재현율 / F1</dt><dd>0.79 / 0.95 / 0.86</dd><p class="stat-note">2020~2024년 해킹 사례 20건 기준</p></div><div class="stat"><dt>평균 탐지 지연 시간</dt><dd>2.12초</dd><p class="stat-note">Slither 1.86초보다 느리고 Echidna 15.24초보다 빠름</p></div></dl>
+
+<nav class="detail-toc" aria-label="프로젝트 상세 목차"><a href="#detail-background-title">제안 배경</a><a href="#detail-related-title">선행 연구</a><a href="#detail-solution-title">해결책</a><a href="#detail-proof-title">입증</a><a href="#detail-learning-title">기여와 다음 단계</a></nav>
+<p class="detail-origin"><a href="security-crew">ICT융합보안크루 2기에서 수행한 연구입니다 <span aria-hidden="true">→</span></a></p>
+<section class="detail-section detail-group detail-group-background" aria-labelledby="detail-background-title">
+  <h2 id="detail-background-title">제안 배경</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">권한 확인 없이 호출되는 함수가 탈중앙 금융(DeFi) 해킹 피해의 최대 원인입니다.</p><dl class="detail-kv"><div><dt>피해 규모</dt><dd>Xangle 집계로 2023년 DeFi 해킹 피해액의 65.1%를 차지했습니다.</dd></div><div><dt>필요성</dt><dd>컨트랙트는 배포하면 고치기 어려워 배포 전 점검이 필요합니다.</dd></div></dl>
+      <div class="inline-evidence">
+        <figure class="evidence-image"><a href="assets/files/fig1-protocol-structure.png" target="_blank" rel="noopener"><img src="assets/files/fig1-protocol-structure.png" alt="빨간 상자인 Core Protocol로 어떤 호출이 들어오는지 보면 됩니다." loading="lazy"></a><figcaption>빨간 상자인 Core Protocol로 어떤 호출이 들어오는지 보면 됩니다.</figcaption></figure>
+      </div>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-related" aria-labelledby="detail-related-title">
+  <h2 id="detail-related-title">선행 연구</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">기존 자동화 도구는 공격의 일부만 막는다고 보고됐습니다.</p><dl class="detail-kv"><div><dt>도구의 한계</dt><dd>Zhou 등은 자동화 도구가 프로토콜 수준의 취약점을 찾기 어렵다고 지적했습니다.</dd></div><div><dt>예방 비율</dt><dd>Chaliasos 등은 대표 도구들이 전체 공격의 8%만 예방한다고 보고했습니다.</dd></div></dl>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-solution" aria-labelledby="detail-solution-title">
+  <h2 id="detail-solution-title">해결책</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">함수마다 같은 다섯 가지를 차례로 확인해 권한 검증이 부족한 곳을 찾습니다.</p><dl class="detail-kv"><div><dt>점검 5단계</dt><dd>외부 호출 가능 여부, 민감한 이름, 권한 제한 유무와 수준, 추가 검증을 차례로 봅니다.</dd></div><div><dt>위험도 판정</dt><dd>검증이 부족한 함수는 핵심 기능을 수행하는지 확인해 위험도를 매깁니다.</dd></div></dl>
+      <div class="inline-evidence">
+        <figure class="evidence-image"><a href="assets/files/table1-criteria-3.png" target="_blank" rel="noopener"><img src="assets/files/table1-criteria-3.png" alt="5단계 점검 기준과 단계별 판정 예시를 위에서 아래로 보면 됩니다." loading="lazy"></a><figcaption>5단계 점검 기준과 단계별 판정 예시를 위에서 아래로 보면 됩니다.</figcaption></figure>
+      </div>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-proof" aria-labelledby="detail-proof-title">
+  <h2 id="detail-proof-title">입증</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">해킹 사례 20건 중 19건을 탐지했고 속도는 기존 도구 Slither보다 느렸습니다.</p><dl class="detail-kv"><div><dt>실험 설정</dt><dd>2020~2024년 해킹 사례 20건에 제안 방법과 기존 도구 두 개를 적용했습니다.</dd></div><div><dt>결과</dt><dd>제안 방법 19건, Echidna 9건, Slither 3건을 탐지했고 평균 지연은 2.12초였습니다.</dd></div><div><dt>한계</dt><dd>놓친 1건은 무제한 발행 취약점으로 정적 규칙만으로는 찾기 어려웠습니다.</dd></div></dl>
+      <div class="inline-evidence">
+        <figure class="evidence-image"><a href="assets/files/table2-performance.png" target="_blank" rel="noopener"><img src="assets/files/table2-performance.png" alt="세 방법의 탐지 건수, 정밀도, 재현율, F1, 평균 지연을 비교한 표입니다." loading="lazy"></a><figcaption>세 방법의 탐지 건수, 정밀도, 재현율, F1, 평균 지연을 비교한 표입니다.</figcaption></figure>
+        <figure class="evidence-image"><a href="assets/files/slide-detection-latency.png" target="_blank" rel="noopener"><img src="assets/files/slide-detection-latency.png" alt="성능 비교표를 그래프로 옮긴 발표 자료입니다." loading="lazy"></a><figcaption>성능 비교표를 그래프로 옮긴 발표 자료입니다.</figcaption></figure>
+      </div>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-learning" aria-labelledby="detail-learning-title">
+  <h2 id="detail-learning-title">기여와 다음 단계</h2>
+  <article class="detail-block">
+    <h3>기여</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">프로토콜마다 다른 접근 제어를 같은 기준으로 점검하는 절차를 제시했습니다.</p><dl class="detail-kv"><div><dt>참여</dt><dd>제가 지도하던 멘티의 연구에 공저자로 참여했습니다.</dd></div><div><dt>논문의 기여</dt><dd>같은 기준의 점검 절차를 실제 해킹 사례로 기존 도구와 비교했습니다.</dd></div></dl>
+    </div>
+  </article>
+  <article class="detail-block">
+    <h3>후속 연구</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">놓친 1건과 느린 속도가 한계이며 저널 논문으로 확장됐습니다.</p><dl class="detail-kv"><div><dt>향후 과제</dt><dd>동적 분석과 결합해 새 프로토콜로 범위를 넓히는 것입니다.</dd></div><div><dt>저널 확장</dt><dd>정보보호학회논문지 35권 6호의 지능형 정적 분석 프레임워크 논문으로 확장됐습니다.</dd></div></dl>
+    </div>
+  </article>
+</section>
+<section class="detail-section flow-nav"><p class="flow-nav-links"><a href="publications">논문 목록으로 <span aria-hidden="true">→</span></a><a href="projects#research-flow">연구 흐름 보기 <span aria-hidden="true">→</span></a><a href="./">홈으로 <span aria-hidden="true">→</span></a></p></section>
+
+</main>
+
+<footer class="site-footer">
+  <div>© 2026 Namryeong Kim</div>
+</footer>
+
+<script src="assets/js/media.js"></script>
+<script src="assets/js/apple.js"></script>
+</body>
+</html>

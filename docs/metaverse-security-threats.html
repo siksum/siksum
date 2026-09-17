@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>메타버스 내 보안 위협 분석 및 대책에 관한 연구 | Namryeong Kim</title>
+    <meta name="description" content="Namryeong Kim | Blockchain Security Research, On-chain Risk Analysis, Distributed Ledger Reliability">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/apple.css">
+</head>
+<body class="detail-page">
+<a class="skip-link" href="#main">본문 바로가기</a>
+
+<aside class="topbar" aria-label="사이트 메뉴">
+  <div class="topbar-inner">
+    <a class="brand" href="./">Namryeong Kim</a>
+    <nav aria-label="주요 메뉴">
+      <ul class="nav-list">
+        <li><a href="./">Home</a></li>
+        <li><a href="projects">Projects</a></li>
+        <li><a href="experience">Experience</a></li>
+        <li><a href="publications" aria-current="page">Publications</a></li>
+        <li><a href="archive">Archive</a></li>
+      </ul>
+    </nav>
+    <p class="sidebar-note">Blockchain research<br>and implementation</p>
+  </div>
+</aside>
+
+<main id="main" class="wrap site-main">
+
+<nav class="breadcrumb" aria-label="현재 위치"><a href="publications">Publications</a><span aria-hidden="true">/</span><span>메타버스 내 보안 위협 분석 및 대책에 관한 연구</span></nav>
+<section class="project-hero">
+  <p class="project-kind">Publication</p>
+  <h1 class="">메타버스 내 보안 위협 분석 및 대책에 관한 연구</h1>
+  <p class="project-hero-summary">메타버스의 위협을 플랫폼 연동, 아바타 범죄, 시스템 해킹으로 나누었습니다. 통합 인증, 데이터 보호, 제로 트러스트를 대책으로 정리했습니다.</p>
+  <dl class="project-meta"><div><dt>역할</dt><dd>제1저자, 발표</dd></div><div><dt>게재</dt><dd>한국융합보안학회 2022 하계학술대회, 2022.07.22</dd></div><div><dt>성과</dt><dd>장려상</dd></div></dl>
+</section>
+
+<nav class="detail-toc" aria-label="프로젝트 상세 목차"><a href="#detail-background-title">제안 배경</a><a href="#detail-related-title">선행 연구</a><a href="#detail-solution-title">해결책</a><a href="#detail-proof-title">입증</a><a href="#detail-learning-title">기여와 다음 단계</a></nav>
+<section class="detail-section detail-group detail-group-background" aria-labelledby="detail-background-title">
+  <h2 id="detail-background-title">제안 배경</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">메타버스 안의 사고는 현실의 금전과 개인정보 피해로 이어집니다.</p><dl class="detail-kv"><div><dt>금전 피해</dt><dd>논문에서 인용한 2022년 엑시 인피니티 해킹의 피해액은 약 7,540억 원입니다.</dd></div><div><dt>이용자 보호</dt><dd>주 이용자가 아동과 청소년인데 가상 환경 범죄의 처벌 규정은 명확하지 않습니다.</dd></div></dl>
+      <div class="inline-evidence">
+        <figure class="evidence-image"><a href="assets/files/slide-threat-platform-interop-3.png" target="_blank" rel="noopener"><img src="assets/files/slide-threat-platform-interop-3.png" alt="첫 번째 위협인 플랫폼 간 연동 불가와 반복 인증 부하를 나타냅니다." loading="lazy"></a><figcaption>첫 번째 위협인 플랫폼 간 연동 불가와 반복 인증 부하를 나타냅니다.</figcaption></figure>
+      </div>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-related" aria-labelledby="detail-related-title">
+  <h2 id="detail-related-title">선행 연구</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">기존 보호 조치는 저장 단계에 몰려 있었고 플랫폼 연동을 전제한 인증 체계는 없었습니다.</p><dl class="detail-kv"><div><dt>조사 범위</dt><dd>메타버스 개념과 보안 위협을 다룬 국내 문헌 3편과 정부 자료를 바탕으로 했습니다.</dd></div><div><dt>남은 공백</dt><dd>개인정보 보호가 수집, 저장, 이용, 파기 가운데 저장 단계에 몰려 있었습니다.</dd></div></dl>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-solution" aria-labelledby="detail-solution-title">
+  <h2 id="detail-solution-title">해결책</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">위협을 세 가지로 나누고 각각에 대책을 하나씩 짝지었습니다.</p><dl class="detail-kv"><div><dt>위협 3가지</dt><dd>플랫폼 간 연동 불가와 반복 인증, 아바타 신분 도용과 디지털 성범죄, 관리자 권한 탈취와 데이터 유출입니다.</dd></div><div><dt>대책 3가지</dt><dd>생체 인증과 사설 인증서를 결합한 통합 인증, 수집 단계부터의 데이터 암호화, 제로 트러스트입니다.</dd></div><div><dt>제로 트러스트</dt><dd>어떤 요청도 기본으로 신뢰하지 않고 검증한 뒤에만 권한을 주는 방식입니다.</dd></div></dl>
+      <div class="inline-evidence">
+        <figure class="evidence-image"><a href="assets/files/slide-measure-unified-auth.png" target="_blank" rel="noopener"><img src="assets/files/slide-measure-unified-auth.png" alt="대책 1인 생체 인증과 사설 인증서를 함께 쓰는 통합 인증을 나타냅니다." loading="lazy"></a><figcaption>대책 1인 생체 인증과 사설 인증서를 함께 쓰는 통합 인증을 나타냅니다.</figcaption></figure>
+        <figure class="evidence-image"><a href="assets/files/slide-measure-encryption-zero-trust.png" target="_blank" rel="noopener"><img src="assets/files/slide-measure-encryption-zero-trust.png" alt="대책 2와 3인 실시간 데이터 암호화와 제로 트러스트 권한 부여를 나타냅니다." loading="lazy"></a><figcaption>대책 2와 3인 실시간 데이터 암호화와 제로 트러스트 권한 부여를 나타냅니다.</figcaption></figure>
+      </div>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-proof" aria-labelledby="detail-proof-title">
+  <h2 id="detail-proof-title">입증</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">실험이나 구현 없이 문헌과 사례를 분석한 2쪽 분량의 논문입니다.</p><dl class="detail-kv"><div><dt>방법</dt><dd>문헌과 사례 분석으로 위협과 대책을 정리했습니다.</dd></div><div><dt>근거</dt><dd>2021년 로블록스 관리자 권한 탈취 사례, 엑시 인피니티 사고, 여성가족부 통계입니다.</dd></div></dl>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-learning" aria-labelledby="detail-learning-title">
+  <h2 id="detail-learning-title">기여와 다음 단계</h2>
+  <article class="detail-block">
+    <h3>기여</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">메타버스 위협을 세 축으로 나누고 각각에 대책을 짝지었습니다.</p><dl class="detail-kv"><div><dt>역할</dt><dd>제1저자로 연구를 수행하고 발표했습니다.</dd></div><div><dt>수상</dt><dd>한국융합보안학회 2022 하계학술대회 장려상을 받았습니다.</dd></div></dl>
+    </div>
+  </article>
+  <article class="detail-block">
+    <h3>후속 연구</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">아바타 신원 인증 강화는 현재 기술로 실현이 어렵다고 결론지었습니다.</p><dl class="detail-kv"><div><dt>한계</dt><dd>인증서 저장 위치와 절차의 복잡성 때문에 아바타의 강화된 신원 인증은 실현이 어렵습니다.</dd></div><div><dt>결론</dt><dd>편의와 보안을 함께 뒷받침할 연구가 필요하다고 봤고 구체적인 후속 실험 계획은 없습니다.</dd></div></dl>
+    </div>
+  </article>
+</section>
+<section class="detail-section flow-nav"><p class="flow-nav-links"><a href="publications">논문 목록으로 <span aria-hidden="true">→</span></a><a href="projects#research-flow">연구 흐름 보기 <span aria-hidden="true">→</span></a><a href="./">홈으로 <span aria-hidden="true">→</span></a></p></section>
+
+</main>
+
+<footer class="site-footer">
+  <div>© 2026 Namryeong Kim</div>
+</footer>
+
+<script src="assets/js/media.js"></script>
+<script src="assets/js/apple.js"></script>
+</body>
+</html>

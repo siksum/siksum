@@ -8,20 +8,21 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/apple.css">
 </head>
 <body class="">
 <a class="skip-link" href="#main">본문 바로가기</a>
 
 <aside class="topbar" aria-label="사이트 메뉴">
   <div class="topbar-inner">
-    <a class="brand" href="index.html">Namryeong Kim</a>
+    <a class="brand" href="./">Namryeong Kim</a>
     <nav aria-label="주요 메뉴">
       <ul class="nav-list">
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="archive.html">Archive</a></li>
+        <li><a href="./" aria-current="page">Home</a></li>
+        <li><a href="projects">Projects</a></li>
+        <li><a href="experience">Experience</a></li>
+        <li><a href="publications">Publications</a></li>
+        <li><a href="archive">Archive</a></li>
       </ul>
     </nav>
     <p class="sidebar-note">Blockchain research<br>and implementation</p>
@@ -32,47 +33,210 @@
 
 <section class="hero" aria-labelledby="hero-title">
   <p class="hero-name">Namryeong Kim</p>
-  <h1 class="hero-lead" id="hero-title">연구가 실제 문제를 푸는 데 어떻게 쓰일지 고민합니다.</h1>
-  <p class="hero-body">논문으로 정리하는 데서 멈추지 않고, 구현할 수 있는 부분은 도구와 프레임워크로 구현해 확인합니다. 결과를 사용하는 사람이 원인과 다음 행동을 이해할 수 있는 형태로 전달하는 것도 중요하게 생각합니다.</p>
+  <h1 class="hero-lead" id="hero-title">새로운 기술을 직접 검증하고, 함께 일하는 사람이 판단할 수 있게 나누는 사람이 되고 싶습니다.</h1>
+  <p class="hero-body">스마트 컨트랙트 보안 도구를 만들고 블록체인 합의 구조와 온체인 사고를 연구하면서, 기술이 어떤 조건에서 효과가 있고 어디에서 한계가 있는지 직접 확인해 왔습니다. 확인한 내용은 보고서와 교육, 연구팀 운영으로 나눠 왔으며, 블록체인을 금융 서비스에 적용하는 과정에서도 직접 검증한 근거로 판단을 돕고 싶습니다.</p>
   <dl class="facts">
     <div class="fact"><dt>Core Areas</dt><dd><ul class="inline-list"><li>스마트 컨트랙트 배포 전 검증</li><li>온체인 거래와 자금 흐름 분석</li><li>분산원장 인프라 신뢰성 평가</li></ul></dd></div>
     <div class="fact"><dt>Contact</dt><dd><ul class="inline-list"><li><a href="mailto:namyoung0718@gmail.com">namyoung0718@gmail.com</a></li><li><a href="https://github.com/siksum" target="_blank" rel="noopener">github.com/siksum</a></li></ul></dd></div>
   </dl>
 </section>
 
+<section class="section section-education" id="education" aria-labelledby="education-title">
+  <h2 class="section-title" id="education-title">Education</h2>
+  <article class="edu" id="education-1">
+    <p class="edu-period">2024.09–2026.08</p>
+    <div class="edu-main">
+      <h3 class="edu-title">성신여자대학교 일반대학원 융합보안공학과 석사</h3>
+      <p class="edu-fact"><span class="k">GPA</span>4.5 / 4.5</p>
+      <p class="edu-fact"><span class="k">학위논문</span>DeFiSense: 온체인 이벤트 로그 시맨틱 그래프 기반 DeFi 가격 조작 공격 탐지</p>
+      <p class="edu-fact"><span class="k">지도교수</span>이일구</p>
+    </div>
+  </article>
+  <article class="edu" id="education-2">
+    <p class="edu-period">2019.03–2023.02</p>
+    <div class="edu-main">
+      <h3 class="edu-title">성신여자대학교 융합보안공학과 학사</h3>
+      <p class="edu-fact"><span class="k">GPA</span>4.33 / 4.5</p>
+    </div>
+  </article>
+</section>
+
 <section class="section section-projects" id="selected-projects" aria-labelledby="selected-projects-title">
   <div class="section-heading">
     <h2 class="section-title" id="selected-projects-title">Selected Projects</h2>
-    <a class="section-more" href="projects.html">프로젝트 전체 보기 <span aria-hidden="true">→</span></a>
+    <a class="section-more" href="projects">프로젝트 전체 보기 <span aria-hidden="true">→</span></a>
   </div>
   <div class="project-gallery">
-  <a class="project-card" href="safedevanalyzer.html">
-    <span class="project-preview has-image"><img src="assets/files/feature-overview.jpg" alt="SafeDevAnalyzer 대표 화면" loading="lazy"></span>
+  <a class="project-card" href="safedevanalyzer">
+    <span class="project-preview has-image"><img src="assets/files/safedev.jpg" alt="SafeDevAnalyzer 대표 화면" loading="lazy"></span>
     <span class="project-card-body">
       <span class="project-kind">Tool / Smart Contract</span>
       <strong class="project-title">SafeDevAnalyzer</strong>
       <span class="project-summary">스마트 컨트랙트를 배포하기 전에 코드와 취약점을 확인하는 VS Code 도구입니다.</span>
-      <span class="project-proof">3인 팀장, Protocol Camp 5기 대상</span>
+      <span class="project-proof">3인 팀장, Protocol Camp 5기 최우수상</span>
     </span>
   </a>
-  <a class="project-card" href="defisense.html">
-    <span class="project-preview has-image"><img src="assets/files/current-method.svg" alt="DeFiSense 대표 화면" loading="lazy"></span>
+  <a class="project-card" href="join">
+    <span class="project-preview has-image"><img src="assets/files/join.jpg" alt="JOIN 대표 화면" loading="lazy"></span>
+    <span class="project-card-body">
+      <span class="project-kind">Tool / Static Analysis</span>
+      <strong class="project-title">JOIN</strong>
+      <span class="project-summary">버전과 분석 환경이 다른 외부 컨트랙트를 같은 절차로 검토하는 Python CLI입니다.</span>
+      <span class="project-proof">Static Analysis Development 담당</span>
+    </span>
+  </a>
+  <a class="project-card" href="defisense">
+    <span class="project-preview has-image"><img src="assets/files/defisense.jpg" alt="DeFiSense 대표 화면" loading="lazy"></span>
     <span class="project-card-body">
       <span class="project-kind">Research / On-chain</span>
       <strong class="project-title">DeFiSense</strong>
-      <span class="project-summary">여러 프로토콜을 거친 거래를 연결해 공격 과정과 자금 이동, 손익의 원인을 복원합니다.</span>
-      <span class="project-proof">Ongoing Research</span>
+      <span class="project-summary">공개 거래 기록만으로 DeFi 가격 조작 공격을 탐지하고, 누가 이익을 얻고 손실을 부담했는지 복원합니다.</span>
+      <span class="project-proof">석사 학위논문, 공격 220건 중 205건 탐지</span>
     </span>
   </a>
-  <a class="project-card" href="rpbft-reliable-practical-byzantine-fault-tolerance-mechanism.html">
-    <span class="project-preview has-image"><img src="assets/files/mechanism.jpg" alt="rPBFT: Reliable Practical Byzantine Fault Tolerance Mechanism for Faulty Distributed Networks 대표 화면" loading="lazy"></span>
+  <a class="project-card" href="rpbft">
+    <span class="project-preview has-image"><img src="assets/files/rpbft.jpg" alt="rPBFT: Reliable Practical Byzantine Fault Tolerance Mechanism for Faulty Distributed Networks 대표 화면" loading="lazy"></span>
     <span class="project-card-body">
       <span class="project-kind">Research / Distributed Ledger</span>
-      <strong class="project-title">rPBFT: Reliable Practical Byzantine Fault Tolerance Mechanism for Faulty Distributed Networks</strong>
-      <span class="project-summary">비악의적 장애가 발생한 분산 네트워크에서 합의 성능과 안정성을 함께 비교했습니다.</span>
+      <strong class="project-title">rPBFT</strong>
+      <span class="project-summary">일부 노드에 지연이나 장애가 생겨도 거래 합의 성능을 유지하는 합의 구조를 설계하고 비교했습니다.</span>
       <span class="project-proof">공동 제1저자, IEEE Transactions on Big Data 2026</span>
     </span>
   </a>
+  </div>
+</section>
+
+<section class="section section-flow section-flow-home" id="research-flow" aria-labelledby="research-flow-title">
+  <div class="section-heading">
+    <h2 class="section-title" id="research-flow-title">연구 흐름</h2>
+    <a class="section-more" href="projects">전체 흐름 보기 <span aria-hidden="true">→</span></a>
+  </div>
+  <article class="tl-tile">
+    <h3 class="tl-heading">한화생명 드림플러스와 이어 온 활동</h3>
+    <p class="tl-desc">한화생명 드림플러스의 교육 프로그램에 참가자로 두 번 참여했고, 이후 운영 매니저로 두 번 일했습니다.</p>
+    <ol class="tl" style="--n:4"><li class="tl-step"><a href="join?flow=flow-1"><span class="tl-when">2023.03</span><span class="tl-dot" aria-hidden="true"></span><strong class="tl-title">DREAMPLUS Academy 2기</strong><span class="tl-sub">참가, JOIN 개발</span></a></li><li class="tl-step"><a href="dreamplus-operations?flow=flow-1"><span class="tl-when">2023.07</span><span class="tl-dot" aria-hidden="true"></span><strong class="tl-title">SWF Accelerator</strong><span class="tl-sub">운영 매니저</span></a></li><li class="tl-step"><a href="safedevanalyzer?flow=flow-1"><span class="tl-when">2023.09</span><span class="tl-dot" aria-hidden="true"></span><strong class="tl-title">Protocol Camp 5기</strong><span class="tl-sub">참가, 최우수상</span></a></li><li class="tl-step"><a href="dreamplus-operations?flow=flow-1"><span class="tl-when">2024.03</span><span class="tl-dot" aria-hidden="true"></span><strong class="tl-title">Protocol Camp 6기</strong><span class="tl-sub">운영 매니저, 선배 연사</span></a></li></ol>
+  </article>
+  <article class="tl-tile">
+    <h3 class="tl-heading">스마트 컨트랙트 보안: 코드 점검에서 거래 분석으로</h3>
+    <p class="tl-desc">배포 전 코드 점검 도구에서 시작해, 코드만으로 설명되지 않는 사고를 실제 거래 기록으로 분석하는 연구로 옮겨 왔습니다.</p>
+    <ol class="tl" style="--n:6"><li class="tl-step"><a href="join?flow=flow-2"><span class="tl-when">2023.03</span><span class="tl-dot" aria-hidden="true"></span><strong class="tl-title">JOIN</strong><span class="tl-sub">정적 분석 명령줄 도구</span></a></li><li class="tl-step"><a href="safedevanalyzer?flow=flow-2"><span class="tl-when">2023.09</span><span class="tl-dot" aria-hidden="true"></span><strong class="tl-title">SafeDevAnalyzer</strong><span class="tl-sub">VS Code 보안 점검 도구</span></a></li><li class="tl-step"><a href="code-similarity-attack-surface-framework?flow=flow-2"><span class="tl-when">2024</span><span class="tl-dot" aria-hidden="true"></span><strong class="tl-title">Code Similarity</strong><span class="tl-sub">달라진 코드 우선 검토</span></a></li><li class="tl-step"><a href="rag-cot-defi-ack2025?flow=flow-2"><span class="tl-when">2025</span><span class="tl-dot" aria-hidden="true"></span><strong class="tl-title">RAG-CoT</strong><span class="tl-sub">사고 사례 근거 탐지</span></a></li><li class="tl-step"><a href="defisense?flow=flow-2"><span class="tl-when">2026</span><span class="tl-dot" aria-hidden="true"></span><strong class="tl-title">DeFiSense</strong><span class="tl-sub">거래 기록 기반 탐지</span></a></li><li class="tl-step"><a href="llm-agents-on-chain-cross-layer-security?flow=flow-2"><span class="tl-when">2026</span><span class="tl-dot" aria-hidden="true"></span><strong class="tl-title">On-Chain LLM Agents</strong><span class="tl-sub">AI 에이전트 거래 보안</span></a></li></ol>
+  </article>
+  <article class="tl-tile">
+    <h3 class="tl-heading">분산원장 합의: 학부연구생 때의 평가 연구에서 rPBFT까지</h3>
+    <p class="tl-desc">학부연구생 때 합의 구조를 같은 기준으로 평가하는 연구로 시작해, 석사과정에서 장애 상황에도 성능을 유지하는 합의 구조를 설계하고 국제 저널에 게재했습니다.</p>
+    <ol class="tl" style="--n:5"><li class="tl-step"><a href="pbft-evaluation-framework-kiice?flow=flow-3"><span class="tl-when">2021</span><span class="tl-dot" aria-hidden="true"></span><strong class="tl-title">평가 기준 제안</strong><span class="tl-sub">학부연구생, 우수논문상</span></a></li><li class="tl-step"><a href="pbft-evaluation-kci?flow=flow-3"><span class="tl-when">2022</span><span class="tl-dot" aria-hidden="true"></span><strong class="tl-title">구현과 측정</strong><span class="tl-sub">KCI 저널</span></a></li><li class="tl-step"><a href="rpbft-wisa2024?flow=flow-3"><span class="tl-when">2024</span><span class="tl-dot" aria-hidden="true"></span><strong class="tl-title">rPBFT 첫 발표</strong><span class="tl-sub">WISA 2024</span></a></li><li class="tl-step"><a href="fault-tolerant-consensus-icct?flow=flow-3"><span class="tl-when">2025</span><span class="tl-dot" aria-hidden="true"></span><strong class="tl-title">rPBFT 논문화</strong><span class="tl-sub">IEEE ICCT-Pacific</span></a></li><li class="tl-step"><a href="rpbft?flow=flow-3"><span class="tl-when">2026</span><span class="tl-dot" aria-hidden="true"></span><strong class="tl-title">rPBFT 저널 게재</strong><span class="tl-sub">IEEE TBD, 공동 제1저자</span></a></li></ol>
+  </article>
+</section>
+
+<section class="section section-home-experience" id="experience" aria-labelledby="experience-title">
+  <div class="section-heading">
+    <h2 class="section-title" id="experience-title">Experience</h2>
+    <a class="section-more" href="experience">경험 전체 보기 <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="home-rows">
+  <a class="home-row" href="safedevanalyzer">
+    <span class="home-row-when">2023.09–2023.12</span>
+    <span class="home-row-main">
+      <strong class="home-row-title">SafeDevAnalyzer</strong>
+      <span class="home-row-meta">Hanwha Life DREAMPLUS × Hashed / Protocol Camp 5th 팀장, Security Analysis Core 담당</span>
+      <span class="home-row-text">스마트 컨트랙트를 배포하기 전에 VS Code 안에서 컴파일과 실행, 보안 점검을 이어서 하는 도구를 3인 팀의 팀장으로 개발했습니다.</span>
+      <span class="home-row-award">Protocol Camp 5기 최우수상, 융합보안소프트웨어 경진대회 대상</span>
+    </span>
+  </a>
+  <a class="home-row" href="join">
+    <span class="home-row-when">2023.03–2023.06</span>
+    <span class="home-row-main">
+      <strong class="home-row-title">JOIN</strong>
+      <span class="home-row-meta">Hanwha Life DREAMPLUS × Theori / DREAMPLUS Academy 2nd 프로젝트 멤버, Static Analysis Development 담당</span>
+      <span class="home-row-text">Solidity 버전과 구조가 다른 외부 컨트랙트를 같은 절차로 컴파일하고 점검하는 Python 명령줄 도구를 개발했습니다.</span>
+    </span>
+  </a>
+  <a class="home-row" href="dreamplus-operations">
+    <span class="home-row-when">2024.03–2024.06 / 2023.07–2023.08</span>
+    <span class="home-row-main">
+      <strong class="home-row-title">Hanwha Life DREAMPLUS Program</strong>
+      <span class="home-row-meta">Protocol Camp 6th / SWF Accelerator / Community Manager</span>
+      <span class="home-row-text">참가자의 기술 진행 상황과 운영 이슈를 매주 정리해 운영진과 실무진에게 공유했습니다.</span>
+    </span>
+  </a>
+  <a class="home-row" href="security-crew">
+    <span class="home-row-when">2025.05–2025.12</span>
+    <span class="home-row-main">
+      <strong class="home-row-title">ICT Convergence Security Crew 2nd</strong>
+      <span class="home-row-meta">KISIA (Korea Information Security Industry Association) / Crew Leader</span>
+      <span class="home-row-text">4개 대학 10명이 참여한 AI 보안 연구팀에서 DeFi 취약점 탐지와 LLM 보안 연구를 총괄했습니다. 데이터 확보 가능성, 구현 난도, 평가 지표를 기준으로 각 연구의 범위와 팀 구성을 조정하고 결과물 완성까지 관리했습니다.</span>
+      <span class="home-row-award">ICT융합보안 우수크루상</span>
+    </span>
+  </a>
+  <a class="home-row" href="hash-club">
+    <span class="home-row-when">2021.01–2022.12</span>
+    <span class="home-row-main">
+      <strong class="home-row-title">HASH</strong>
+      <span class="home-row-meta">Cybersecurity Club / Founding Member, Vice President, President</span>
+      <span class="home-row-text">해킹 동아리 창설에 참여하고 1기 부회장과 2기 회장을 맡았습니다.</span>
+      <span class="home-row-award">동아리 연합 CTF 팀 1위</span>
+    </span>
+  </a>
+  </div>
+</section>
+
+<section class="section section-home-publications" id="publications" aria-labelledby="publications-title">
+  <div class="section-heading">
+    <h2 class="section-title" id="publications-title">Publications</h2>
+    <a class="section-more" href="publications">논문 전체 보기 <span aria-hidden="true">→</span></a>
+  </div>
+  <p class="home-note">저널 6편(게재 확정 1편 포함), 국제학회 3편, 국내학회 11편</p>
+  <div class="home-rows">
+  <a class="home-row" href="llm-agents-on-chain-cross-layer-security">
+    <span class="home-row-when">Journal Articles</span>
+    <span class="home-row-main">
+      <strong class="home-row-title">When LLM Agents Act On-Chain: A Systematic Cross-Layer Security Analysis across Reasoning, Identity, and Execution</strong>
+      <span class="home-row-meta">ICT Express, 2026, 게재 확정 (Accepted, 2026.09) / 제1저자 / SCIE, IF 4.1, Q1, JCR Top 23%</span>
+    </span>
+  </a>
+  <a class="home-row" href="rpbft">
+    <span class="home-row-when">Journal Articles</span>
+    <span class="home-row-main">
+      <strong class="home-row-title">rPBFT: Reliable Practical Byzantine Fault Tolerance Mechanism for Faulty Distributed Networks</strong>
+      <span class="home-row-meta">IEEE Transactions on Big Data, Vol. 12, No. 3, pp. 814–828, 2026 / 공동 제1저자 / SCIE, IF 5.7, Q1, JCR Top 11.9%</span>
+    </span>
+  </a>
+  <a class="home-row" href="attention-multilayer-prompt-injection-kips">
+    <span class="home-row-when">Journal Articles</span>
+    <span class="home-row-main">
+      <strong class="home-row-title">어텐션 패턴 분석을 활용한 다층 프롬프트 인젝션 탐지 프레임워크</strong>
+      <span class="home-row-meta">정보처리학회 논문지, Vol. 15, No. 4, pp. 281–289, 2026.04 / 공저자</span>
+    </span>
+  </a>
+  <a class="home-row" href="defi-access-control-intelligent-static-analysis">
+    <span class="home-row-when">Journal Articles</span>
+    <span class="home-row-main">
+      <strong class="home-row-title">DeFi 스마트 컨트랙트 접근 제어 취약점 탐지를 위한 지능형 정적 분석 프레임워크의 설계 및 평가</strong>
+      <span class="home-row-meta">정보보호학회논문지, Vol. 35, No. 6, pp. 1601–1609, 2025.12 / 공저자</span>
+    </span>
+  </a>
+  <a class="home-row" href="code-similarity-attack-surface-framework">
+    <span class="home-row-when">Journal Articles</span>
+    <span class="home-row-main">
+      <strong class="home-row-title">코드 유사성 비교 기반의 스마트 컨트랙트 공격 표면 분석 프레임워크</strong>
+      <span class="home-row-meta">융합보안논문지, Vol. 24, No. 5, pp. 161–169, 2024.12 / 제1저자</span>
+    </span>
+  </a>
+  <a class="home-row" href="pbft-evaluation-kci">
+    <span class="home-row-when">Journal Articles</span>
+    <span class="home-row-main">
+      <strong class="home-row-title">프랙티컬 비잔틴 장애 허용 기반 블록체인의 확장성과 내결함성 평가 및 비교분석</strong>
+      <span class="home-row-meta">한국정보통신학회논문지, Vol. 26, No. 2, pp. 271–277, 2022.02 / 공저자</span>
+    </span>
+  </a>
+  </div>
+</section>
+
+<section class="section section-certification" id="certification" aria-labelledby="certification-title">
+  <h2 class="section-title" id="certification-title">Certification</h2>
+  <div class="cert" id="engineer-information-processing">
+    <h3 class="cert-title">Engineer Information Processing (정보처리기사)</h3>
+    <p class="cert-meta">Human Resources Development Service of Korea, 2024.09.10</p>
   </div>
 </section>
 
@@ -83,5 +247,6 @@
 </footer>
 
 <script src="assets/js/media.js"></script>
+<script src="assets/js/apple.js"></script>
 </body>
 </html>

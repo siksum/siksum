@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>코드 유사성 비교 기반의 스마트 컨트랙트 공격 표면 분석 프레임워크 | Namryeong Kim</title>
+    <meta name="description" content="Namryeong Kim | Blockchain Security Research, On-chain Risk Analysis, Distributed Ledger Reliability">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/apple.css">
+</head>
+<body class="detail-page">
+<a class="skip-link" href="#main">본문 바로가기</a>
+
+<aside class="topbar" aria-label="사이트 메뉴">
+  <div class="topbar-inner">
+    <a class="brand" href="./">Namryeong Kim</a>
+    <nav aria-label="주요 메뉴">
+      <ul class="nav-list">
+        <li><a href="./">Home</a></li>
+        <li><a href="projects">Projects</a></li>
+        <li><a href="experience">Experience</a></li>
+        <li><a href="publications" aria-current="page">Publications</a></li>
+        <li><a href="archive">Archive</a></li>
+      </ul>
+    </nav>
+    <p class="sidebar-note">Blockchain research<br>and implementation</p>
+  </div>
+</aside>
+
+<main id="main" class="wrap site-main">
+
+<nav class="breadcrumb" aria-label="현재 위치"><a href="publications">Publications</a><span aria-hidden="true">/</span><span>Code Similarity</span></nav>
+<section class="project-hero">
+  <p class="project-kind">Research / Smart Contract</p>
+  <h1 class="is-long">코드 유사성 비교 기반의 스마트 컨트랙트 공격 표면 분석 프레임워크</h1>
+  <p class="project-hero-summary">오픈소스 컨트랙트를 수정해 쓸 때 원본에서 달라진 코드를 먼저 찾아 우선 검토하는 방법입니다.</p>
+  <dl class="project-meta"><div><dt>역할</dt><dd>제1저자</dd></div><div><dt>게재</dt><dd>융합보안논문지, Vol. 24, No. 5, pp. 161–169, 2024.12</dd></div></dl>
+</section>
+<dl class="stat-row" data-count="3"><div class="stat"><dt>Uniswap V2와 Uranium Finance swap 함수의 코드 유사도</dt><dd>84%</dd><p class="stat-note">텍스트 기반 유사도 측정</p></div><div class="stat"><dt>Uniswap V2와 BurgerSwap swap 함수의 코드 유사도</dt><dd>65%</dd><p class="stat-note">텍스트 기반 유사도 측정</p></div><div class="stat"><dt>Uniswap V2를 포크한 프로젝트 수</dt><dd>663개</dd><p class="stat-note">2024년 11월 DefiLlama 기준, 운영 중인 전체 DEX의 약 31.9%</p></div></dl>
+
+<nav class="detail-toc" aria-label="프로젝트 상세 목차"><a href="#detail-background-title">제안 배경</a><a href="#detail-related-title">선행 연구</a><a href="#detail-solution-title">해결책</a><a href="#detail-proof-title">입증</a><a href="#detail-learning-title">기여와 다음 단계</a></nav>
+<section class="detail-section detail-group detail-group-background" aria-labelledby="detail-background-title">
+  <h2 id="detail-background-title">제안 배경</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">복제한 오픈소스를 수정하다 생긴 결함을 바뀐 곳부터 찾는 절차가 없었습니다.</p><dl class="detail-kv"><div><dt>상황</dt><dd>스마트 컨트랙트는 배포 후 고칠 수 없어 코드 결함이 곧 자산 피해로 이어집니다.</dd></div><div><dt>복제 관행</dt><dd>선행 조사에서 컨트랙트 33,073개 중 79.2%가 다른 코드를 복제한 것이었습니다.</dd></div></dl>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-related" aria-labelledby="detail-related-title">
+  <h2 id="detail-related-title">선행 연구</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">기존 점검 도구와 코드 유사성 연구는 서로 연결되지 않았습니다.</p><dl class="detail-kv"><div><dt>점검 도구</dt><dd>정해진 패턴만 찾아 문법은 맞지만 설계 의도와 다른 동작을 놓칩니다.</dd></div><div><dt>유사성 연구</dt><dd>복제 여부를 식별하는 데 머물러 보안 점검으로 이어지지 않았습니다.</dd></div></dl>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-solution" aria-labelledby="detail-solution-title">
+  <h2 id="detail-solution-title">해결책</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">원본과 수정본을 비교해 달라진 함수를 먼저 찾고, 그 부분부터 점검합니다.</p><dl class="detail-kv"><div><dt>유사도 계산</dt><dd>코드 구조를 그래프로 바꿔 신경망으로 어느 함수가 원본과 달라졌는지 계산합니다.</dd></div><div><dt>우선순위</dt><dd>유사도, 복잡성, 변경 빈도로 함수별 순위를 매겨 높은 함수부터 점검합니다.</dd></div></dl>
+      <div class="inline-evidence">
+        <figure class="evidence-image"><a href="assets/files/fig1-framework-structure.png" target="_blank" rel="noopener"><img src="assets/files/fig1-framework-structure.png" alt="컴파일, 유사성 평가, 취약점 탐지의 3단 구조입니다." loading="lazy"></a><figcaption>컴파일, 유사성 평가, 취약점 탐지의 3단 구조입니다.</figcaption></figure>
+        <figure class="evidence-image"><a href="assets/files/fig2-framework-process-3.png" target="_blank" rel="noopener"><img src="assets/files/fig2-framework-process-3.png" alt="8번 단계에서 함수별 점검 우선순위 표가 나옵니다." loading="lazy"></a><figcaption>8번 단계에서 함수별 점검 우선순위 표가 나옵니다.</figcaption></figure>
+      </div>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-proof" aria-labelledby="detail-proof-title">
+  <h2 id="detail-proof-title">입증</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">실제 사고 2건에서 텍스트 비교로 드러난 변경 코드가 사고 원인과 일치했습니다.</p><dl class="detail-kv"><div><dt>실험 설정</dt><dd>Uniswap V2를 수정해 쓰다 사고가 난 두 프로젝트의 교환 함수를 비교했습니다.</dd></div><div><dt>결과</dt><dd>유사도는 84%와 65%였고 바뀐 상수와 삭제된 검증 줄이 사고 원인과 일치했습니다.</dd></div><div><dt>한계</dt><dd>텍스트 비교만 했고 신경망 학습과 탐지율 측정은 하지 않았습니다.</dd></div></dl>
+      <div class="inline-evidence">
+        <figure class="evidence-image"><a href="assets/files/fig3-uranium-diff.png" target="_blank" rel="noopener"><img src="assets/files/fig3-uranium-diff.png" alt="노란 상자가 잔액 계산 상수를 1000에서 10000으로 바꾼 줄입니다." loading="lazy"></a><figcaption>노란 상자가 잔액 계산 상수를 1000에서 10000으로 바꾼 줄입니다.</figcaption></figure>
+        <figure class="evidence-image"><a href="assets/files/fig4-burgerswap-diff.png" target="_blank" rel="noopener"><img src="assets/files/fig4-burgerswap-diff.png" alt="삭제된 검증 줄은 대응하는 + 줄이 없어 누락으로 드러납니다." loading="lazy"></a><figcaption>삭제된 검증 줄은 대응하는 + 줄이 없어 누락으로 드러납니다.</figcaption></figure>
+        <figure class="evidence-image"><a href="assets/files/table3-case-results.png" target="_blank" rel="noopener"><img src="assets/files/table3-case-results.png" alt="두 사례의 유사도, 주요 결함, 피해 영향을 요약한 표입니다." loading="lazy"></a><figcaption>두 사례의 유사도, 주요 결함, 피해 영향을 요약한 표입니다.</figcaption></figure>
+      </div>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-learning" aria-labelledby="detail-learning-title">
+  <h2 id="detail-learning-title">기여와 다음 단계</h2>
+  <article class="detail-block">
+    <h3>기여</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">수정된 코드에서 점검할 범위를 유사도 분석으로 미리 좁히는 절차를 제안했습니다.</p><dl class="detail-kv"><div><dt>역할</dt><dd>제1저자로 이 절차를 제안했습니다.</dd></div><div><dt>공격 유형</dt><dd>Uniswap V2를 수정한 코드에서 생길 수 있는 공격 유형 7가지를 정리했습니다.</dd></div></dl>
+    </div>
+  </article>
+  <article class="detail-block">
+    <h3>후속 연구</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">텍스트 비교에 그친 실험을 구조 기반 학습과 탐지 검증으로 넓히는 것이 과제입니다.</p><dl class="detail-kv"><div><dt>한계</dt><dd>텍스트 기반 유사도는 코드 구조나 논리 변화를 반영하지 못합니다.</dd></div><div><dt>향후 과제</dt><dd>신경망 학습을 적용하고 좁힌 영역에서 취약점이 실제로 탐지되는지 검증할 계획입니다.</dd></div></dl>
+    </div>
+  </article>
+</section>
+<section class="detail-section flow-nav" aria-labelledby="flow-nav-title"><h2 id="flow-nav-title">이어지는 흐름</h2><div class="flow-nav-block" data-flow="flow-2"><p class="flow-nav-track">스마트 컨트랙트 보안: 코드 점검에서 거래 분석으로</p><div class="flow-nav-grid"><a class="flow-nav-card" href="safedevanalyzer?flow=flow-2"><span class="flow-nav-label">이전</span><strong>SafeDevAnalyzer</strong><span>코드 유사도 탐지는 로직이 바뀌어도 같다고 판정해 제외했고, 이 문제를 따로 연구했습니다.</span></a><a class="flow-nav-card" href="rag-cot-defi-ack2025?flow=flow-2"><span class="flow-nav-label">다음</span><strong>RAG-CoT</strong><span>코드만 읽는 분석은 거래 순서나 가격 정보와 얽힌 사고를 설명하지 못했습니다.</span></a></div><ol class="flow-nav-steps"><li><a href="join?flow=flow-2"><span>2023.03</span><strong>JOIN</strong></a></li><li><a href="safedevanalyzer?flow=flow-2"><span>2023.09</span><strong>SafeDevAnalyzer</strong></a></li><li class="is-current"><span>2024</span><strong>Code Similarity</strong></li><li><a href="rag-cot-defi-ack2025?flow=flow-2"><span>2025</span><strong>RAG-CoT</strong></a></li><li><a href="defisense?flow=flow-2"><span>2026</span><strong>DeFiSense</strong></a></li><li><a href="llm-agents-on-chain-cross-layer-security?flow=flow-2"><span>2026</span><strong>On-Chain LLM Agents</strong></a></li></ol></div><p class="flow-nav-links"><a href="projects#research-flow">전체 흐름 보기 <span aria-hidden="true">→</span></a><a href="./">홈으로 <span aria-hidden="true">→</span></a></p></section>
+
+</main>
+
+<footer class="site-footer">
+  <div>© 2026 Namryeong Kim</div>
+</footer>
+
+<script src="assets/js/media.js"></script>
+<script src="assets/js/apple.js"></script>
+</body>
+</html>

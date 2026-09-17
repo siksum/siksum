@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>어텐션 패턴 분석 기반 프롬프트 인젝션 탐지 시스템 | Namryeong Kim</title>
+    <meta name="description" content="Namryeong Kim | Blockchain Security Research, On-chain Risk Analysis, Distributed Ledger Reliability">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/apple.css">
+</head>
+<body class="detail-page">
+<a class="skip-link" href="#main">본문 바로가기</a>
+
+<aside class="topbar" aria-label="사이트 메뉴">
+  <div class="topbar-inner">
+    <a class="brand" href="./">Namryeong Kim</a>
+    <nav aria-label="주요 메뉴">
+      <ul class="nav-list">
+        <li><a href="./">Home</a></li>
+        <li><a href="projects">Projects</a></li>
+        <li><a href="experience">Experience</a></li>
+        <li><a href="publications" aria-current="page">Publications</a></li>
+        <li><a href="archive">Archive</a></li>
+      </ul>
+    </nav>
+    <p class="sidebar-note">Blockchain research<br>and implementation</p>
+  </div>
+</aside>
+
+<main id="main" class="wrap site-main">
+
+<nav class="breadcrumb" aria-label="현재 위치"><a href="publications">Publications</a><span aria-hidden="true">/</span><span>어텐션 패턴 분석 기반 프롬프트 인젝션 탐지 시스템</span></nav>
+<section class="project-hero">
+  <p class="project-kind">Publication</p>
+  <h1 class="">어텐션 패턴 분석 기반 프롬프트 인젝션 탐지 시스템</h1>
+  <p class="project-hero-summary">금지어가 포함된 입력은 필터로 먼저 차단하고, 문맥 속에 숨은 공격은 모델의 주의 변화로 분석합니다. 탐지 정확도와 처리 속도를 함께 측정했습니다.</p>
+  <dl class="project-meta"><div><dt>역할</dt><dd>공저자</dd></div><div><dt>게재</dt><dd>ACK 2025, 한국정보처리학회, 2025.11.07</dd></div><div><dt>성과</dt><dd>한국정보기술학술단체총연합회 회장상</dd></div></dl>
+</section>
+<dl class="stat-row" data-count="2"><div class="stat"><dt>제안 방법의 탐지 정확도</dt><dd>약 83%</dd><p class="stat-note">악성 프롬프트 23개 기준, 금지어 필터 단독과 Attention Tracker 단독은 각각 43%</p></div><div class="stat"><dt>지연 시간 단축</dt><dd>44.6%</dd><p class="stat-note">Attention Tracker 단독 약 734ms 대비 제안 방법 약 406ms</p></div></dl>
+
+<nav class="detail-toc" aria-label="프로젝트 상세 목차"><a href="#detail-background-title">제안 배경</a><a href="#detail-related-title">선행 연구</a><a href="#detail-solution-title">해결책</a><a href="#detail-proof-title">입증</a><a href="#detail-learning-title">기여와 다음 단계</a></nav>
+<p class="detail-origin"><a href="security-crew">ICT융합보안크루 2기에서 수행한 연구입니다 <span aria-hidden="true">→</span></a></p>
+<section class="detail-section detail-group detail-group-background" aria-labelledby="detail-background-title">
+  <h2 id="detail-background-title">제안 배경</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">공격 문장은 자연스러운 말로 위장할 수 있어 한 가지 방법으로는 막기 어렵습니다.</p><dl class="detail-kv"><div><dt>공격 정의</dt><dd>악의적 입력을 정상처럼 꾸며 AI 언어 모델(LLM)이 의도하지 않은 동작을 하게 만듭니다.</dd></div><div><dt>간접 공격</dt><dd>문맥 조작이나 감정 호소처럼 자연스러운 문장으로 위장하면 탐지가 어렵습니다.</dd></div></dl>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-related" aria-labelledby="detail-related-title">
+  <h2 id="detail-related-title">선행 연구</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">기존 방법은 저마다 놓치는 공격이 있고, 모델을 돌리는 방법은 느리고 비쌉니다.</p><dl class="detail-kv"><div><dt>규칙 기반</dt><dd>키워드 차단에는 효과적이지만 우회에 약합니다.</dd></div><div><dt>어텐션 분석</dt><dd>모델의 주의가 주입된 지시로 옮겨가는 현상을 이용하지만 코드 삽입 공격에는 약합니다.</dd></div></dl>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-solution" aria-labelledby="detail-solution-title">
+  <h2 id="detail-solution-title">해결책</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">가벼운 금지어 필터로 먼저 거르고, 남은 입력만 무거운 어텐션 분석에 넘깁니다.</p><dl class="detail-kv"><div><dt>1단계</dt><dd>금지어 필터가 전형적인 공격 키워드를 가진 입력을 먼저 차단합니다.</dd></div><div><dt>2단계</dt><dd>통과한 입력만 모델의 주의가 원래 지시에 머무는 정도를 점수로 계산해 판정합니다.</dd></div></dl>
+      <div class="inline-evidence">
+        <figure class="evidence-image"><a href="assets/files/fig1-framework-6.png" target="_blank" rel="noopener"><img src="assets/files/fig1-framework-6.png" alt="두 단계의 순서와 차단, 통과가 갈리는 지점을 보면 됩니다." loading="lazy"></a><figcaption>두 단계의 순서와 차단, 통과가 갈리는 지점을 보면 됩니다.</figcaption></figure>
+      </div>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-proof" aria-labelledby="detail-proof-title">
+  <h2 id="detail-proof-title">입증</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">악성 프롬프트 23개로 정확도 약 83%와 지연 44.6% 단축을 확인했습니다.</p><dl class="detail-kv"><div><dt>실험 설정</dt><dd>여섯 유형의 악성 프롬프트 23개로 두 단독 방법과 비교했습니다.</dd></div><div><dt>결과</dt><dd>정확도는 약 83% 대 각 43%였고 평균 지연은 약 734ms에서 약 406ms로 줄었습니다.</dd></div><div><dt>한계</dt><dd>논문에 적힌 90% 향상은 43%에서 83%로 오른 상대 증가율입니다.</dd></div></dl>
+      <div class="inline-evidence">
+        <figure class="evidence-image"><a href="assets/files/fig2-accuracy-latency.png" target="_blank" rel="noopener"><img src="assets/files/fig2-accuracy-latency.png" alt="제안 방법은 정확도(막대)가 가장 높고 지연(선)은 어텐션 분석보다 낮습니다." loading="lazy"></a><figcaption>제안 방법은 정확도(막대)가 가장 높고 지연(선)은 어텐션 분석보다 낮습니다.</figcaption></figure>
+        <figure class="evidence-image"><a href="assets/files/slide-hybrid-per-prompt.png" target="_blank" rel="noopener"><img src="assets/files/slide-hybrid-per-prompt.png" alt="제안 방법이 놓친 4, 8, 12, 21번 프롬프트를 볼 수 있습니다." loading="lazy"></a><figcaption>제안 방법이 놓친 4, 8, 12, 21번 프롬프트를 볼 수 있습니다.</figcaption></figure>
+      </div>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-learning" aria-labelledby="detail-learning-title">
+  <h2 id="detail-learning-title">기여와 다음 단계</h2>
+  <article class="detail-block">
+    <h3>기여</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">규칙 필터와 어텐션 분석을 순서대로 묶으면 정확도와 지연이 함께 나아짐을 보였습니다.</p><dl class="detail-kv"><div><dt>참여</dt><dd>공저자로 참여했습니다.</dd></div><div><dt>논문의 기여</dt><dd>규칙 필터와 어텐션 분석의 결합 효과를 소규모 실험으로 보였습니다.</dd></div></dl>
+    </div>
+  </article>
+  <article class="detail-block">
+    <h3>후속 연구</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">이 연구는 2026년 정보처리학회 논문지 게재 논문으로 확장됐습니다.</p><dl class="detail-kv"><div><dt>향후 과제</dt><dd>탐지율이 낮았던 문맥 조작과 사회 공학 공격을 맥락 분석으로 개선하는 것입니다.</dd></div><div><dt>확장 논문</dt><dd>확장판에는 점수 계산 과정 설명, 비용 지표, 프롬프트 구성표가 추가됐습니다.</dd></div></dl>
+    </div>
+  </article>
+</section>
+<section class="detail-section flow-nav"><p class="flow-nav-links"><a href="publications">논문 목록으로 <span aria-hidden="true">→</span></a><a href="projects#research-flow">연구 흐름 보기 <span aria-hidden="true">→</span></a><a href="./">홈으로 <span aria-hidden="true">→</span></a></p></section>
+
+</main>
+
+<footer class="site-footer">
+  <div>© 2026 Namryeong Kim</div>
+</footer>
+
+<script src="assets/js/media.js"></script>
+<script src="assets/js/apple.js"></script>
+</body>
+</html>

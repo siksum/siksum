@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>코드 유사도 기법을 활용한 스마트 컨트랙트 공격 표면 탐지 방법 | Namryeong Kim</title>
+    <meta name="description" content="Namryeong Kim | Blockchain Security Research, On-chain Risk Analysis, Distributed Ledger Reliability">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/apple.css">
+</head>
+<body class="detail-page">
+<a class="skip-link" href="#main">본문 바로가기</a>
+
+<aside class="topbar" aria-label="사이트 메뉴">
+  <div class="topbar-inner">
+    <a class="brand" href="./">Namryeong Kim</a>
+    <nav aria-label="주요 메뉴">
+      <ul class="nav-list">
+        <li><a href="./">Home</a></li>
+        <li><a href="projects">Projects</a></li>
+        <li><a href="experience">Experience</a></li>
+        <li><a href="publications" aria-current="page">Publications</a></li>
+        <li><a href="archive">Archive</a></li>
+      </ul>
+    </nav>
+    <p class="sidebar-note">Blockchain research<br>and implementation</p>
+  </div>
+</aside>
+
+<main id="main" class="wrap site-main">
+
+<nav class="breadcrumb" aria-label="현재 위치"><a href="publications">Publications</a><span aria-hidden="true">/</span><span>코드 유사도 기법을 활용한 스마트 컨트랙트 공격 표면 탐지 방법</span></nav>
+<section class="project-hero">
+  <p class="project-kind">Publication</p>
+  <h1 class="is-long">코드 유사도 기법을 활용한 스마트 컨트랙트 공격 표면 탐지 방법</h1>
+  <p class="project-hero-summary">오픈소스 컨트랙트를 고쳐 쓸 때 원본과 달라진 코드를 유사도로 먼저 찾아 우선 검토하는 방법을 제안했습니다. 전체를 같은 비중으로 보지 않고 위험한 영역을 좁힙니다.</p>
+  <dl class="project-meta"><div><dt>역할</dt><dd>제1저자, 발표</dd></div><div><dt>게재</dt><dd>한국융합보안학회 2024 추계학술대회, 2024.11.08</dd></div><div><dt>성과</dt><dd>최우수논문상</dd></div></dl>
+</section>
+
+<nav class="detail-toc" aria-label="프로젝트 상세 목차"><a href="#detail-background-title">제안 배경</a><a href="#detail-related-title">선행 연구</a><a href="#detail-solution-title">해결책</a><a href="#detail-proof-title">입증</a><a href="#detail-learning-title">기여와 다음 단계</a></nav>
+<section class="detail-section detail-group detail-group-background" aria-labelledby="detail-background-title">
+  <h2 id="detail-background-title">제안 배경</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">오픈소스 컨트랙트를 복제해 고칠 때 원본에 없던 결함이 생깁니다.</p><dl class="detail-kv"><div><dt>피해 규모</dt><dd>2022년에는 탈중앙 금융(DeFi) 예치 자산의 약 6%인 30억 달러가 해킹으로 탈취됐습니다.</dd></div><div><dt>실제 사례</dt><dd>2021년 Uranium Finance는 Uniswap V2를 복제하며 비율 설정을 잘못 고쳐 약 5천만 달러를 잃었습니다.</dd></div></dl>
+      <div class="inline-evidence">
+        <figure class="evidence-image"><a href="assets/files/fig2-uniswap-vs-modified-code.png" target="_blank" rel="noopener"><img src="assets/files/fig2-uniswap-vs-modified-code.png" alt="검증식은 그대로 두고 상수만 바꾼 부분이며 약 5천만 달러 탈취로 이어졌습니다." loading="lazy"></a><figcaption>검증식은 그대로 두고 상수만 바꾼 부분이며 약 5천만 달러 탈취로 이어졌습니다.</figcaption></figure>
+      </div>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-related" aria-labelledby="detail-related-title">
+  <h2 id="detail-related-title">선행 연구</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">기존 도구는 정해진 패턴만 찾았고 코드 유사도를 보안 점검에 쓴 사례는 드물었습니다.</p><dl class="detail-kv"><div><dt>기존 도구</dt><dd>정해진 패턴으로 찾는 도구는 논리적 관계를 탐지하지 못하고 잘못된 경고가 많습니다.</dd></div><div><dt>유사도 연구</dt><dd>기존 코드 유사도 연구는 복제 비율을 재는 데 그쳤습니다.</dd></div></dl>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-solution" aria-labelledby="detail-solution-title">
+  <h2 id="detail-solution-title">해결책</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">원본과 달라진 부분을 유사도로 먼저 찾고 그 부분을 우선 검토합니다.</p><dl class="detail-kv"><div><dt>방법 1단계</dt><dd>코드의 문법 구조와 실행 경로를 비교해 수정된 부분과 취약점이 생기기 쉬운 곳을 찾습니다.</dd></div><div><dt>방법 2단계</dt><dd>두 특징을 신경망으로 학습해 유사도를 계산하고 위험한 영역에 우선순위를 매겨 경고합니다.</dd></div></dl>
+      <div class="inline-evidence">
+        <figure class="evidence-image"><a href="assets/files/fig1-process-3.png" target="_blank" rel="noopener"><img src="assets/files/fig1-process-3.png" alt="입력, 구조 추출, 학습 모델, 결과의 순서로 보면 됩니다." loading="lazy"></a><figcaption>입력, 구조 추출, 학습 모델, 결과의 순서로 보면 됩니다.</figcaption></figure>
+      </div>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-proof" aria-labelledby="detail-proof-title">
+  <h2 id="detail-proof-title">입증</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">논문 본문에는 정량 실험이 없고 사례 설명과 발표 시연으로 뒷받침했습니다.</p><dl class="detail-kv"><div><dt>논문 본문</dt><dd>Uranium Finance 사례로 필요성을 설명한 정성 논의입니다.</dd></div><div><dt>발표 시연</dt><dd>유사도가 0.95를 넘는 함수에 비즈니스 로직 규칙을 적용하는 시연을 했습니다.</dd></div><div><dt>한계</dt><dd>시연 대상은 Uniswap V2의 유동성 추가 함수 두 개뿐입니다.</dd></div></dl>
+      <div class="inline-evidence">
+        <figure class="evidence-image"><a href="assets/files/slide-experiment-function-similarity.png" target="_blank" rel="noopener"><img src="assets/files/slide-experiment-function-similarity.png" alt="논문에는 없는 발표 시연 화면으로 함수 유사도와 로직 충족 여부를 출력합니다." loading="lazy"></a><figcaption>논문에는 없는 발표 시연 화면으로 함수 유사도와 로직 충족 여부를 출력합니다.</figcaption></figure>
+      </div>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-learning" aria-labelledby="detail-learning-title">
+  <h2 id="detail-learning-title">기여와 다음 단계</h2>
+  <article class="detail-block">
+    <h3>기여</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">복제한 코드에서 달라진 부분을 유사도로 찾아 점검 범위를 좁히는 방법을 제안했습니다.</p><dl class="detail-kv"><div><dt>역할</dt><dd>제1저자로 연구를 수행하고 직접 발표했습니다.</dd></div><div><dt>수상</dt><dd>최우수논문상을 받았습니다.</dd></div></dl>
+    </div>
+  </article>
+  <article class="detail-block">
+    <h3>후속 연구</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">이 발표를 확장한 논문을 융합보안논문지에 게재했습니다.</p><dl class="detail-kv"><div><dt>향후 과제</dt><dd>유사도와 탐지율의 정량 비교, 다른 블록체인에서의 검증, 탐지 자동화입니다.</dd></div><div><dt>저널 확장</dt><dd>2024년 12월 확장본에서 두 해킹 사례의 유사도 수치(84%, 65%)를 추가했습니다.</dd></div></dl>
+    </div>
+  </article>
+</section>
+<section class="detail-section flow-nav"><p class="flow-nav-links"><a href="publications">논문 목록으로 <span aria-hidden="true">→</span></a><a href="projects#research-flow">연구 흐름 보기 <span aria-hidden="true">→</span></a><a href="./">홈으로 <span aria-hidden="true">→</span></a></p></section>
+
+</main>
+
+<footer class="site-footer">
+  <div>© 2026 Namryeong Kim</div>
+</footer>
+
+<script src="assets/js/media.js"></script>
+<script src="assets/js/apple.js"></script>
+</body>
+</html>

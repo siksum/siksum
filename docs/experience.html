@@ -8,20 +8,21 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/apple.css">
 </head>
 <body class="">
 <a class="skip-link" href="#main">본문 바로가기</a>
 
 <aside class="topbar" aria-label="사이트 메뉴">
   <div class="topbar-inner">
-    <a class="brand" href="index.html">Namryeong Kim</a>
+    <a class="brand" href="./">Namryeong Kim</a>
     <nav aria-label="주요 메뉴">
       <ul class="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="experience.html" aria-current="page">Experience</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="archive.html">Archive</a></li>
+        <li><a href="./">Home</a></li>
+        <li><a href="projects">Projects</a></li>
+        <li><a href="experience" aria-current="page">Experience</a></li>
+        <li><a href="publications">Publications</a></li>
+        <li><a href="archive">Archive</a></li>
       </ul>
     </nav>
     <p class="sidebar-note">Blockchain research<br>and implementation</p>
@@ -43,12 +44,11 @@
       <p class="xp-role">Protocol Camp 5th 팀장, Security Analysis Core 담당</p>
     </div>
     <div class="xp-body">
-      <p class="award"><span class="award-label">Award</span>Protocol Camp 5기 대상(1위), 융합보안소프트웨어 경진대회 대상</p>
+      <p class="award"><span class="award-label">Award</span>Protocol Camp 5기 최우수상, 융합보안소프트웨어 경진대회 대상</p>
       <ul class="points">
-        <li>Web3 입문 개발자가 스마트 컨트랙트를 배포하기 전에 코드와 취약점을 점검할 수 있도록 개발, 테스트, 보안 분석 기능을 하나의 VS Code 도구로 만들었습니다.</li>
-        <li>3인 팀의 팀장으로 Slither 기반 분석 코어와 컴파일 파이프라인을 구현했습니다. 탐지 결과는 원인, 공격 시나리오와 개선안을 담은 국문 및 영문 Audit Report로 제공해 개발자는 수정 방향을 확인하고 검토자는 배포 전에 남은 위험을 파악할 수 있게 했습니다.</li>
+        <li>스마트 컨트랙트를 배포하기 전에 VS Code 안에서 컴파일과 실행, 보안 점검을 이어서 하는 도구를 3인 팀의 팀장으로 개발했습니다.</li>
       </ul>
-      <a class="detail-link" href="safedevanalyzer.html">프로젝트 상세 보기 <span aria-hidden="true">→</span></a>
+      <a class="detail-link" href="safedevanalyzer">프로젝트 상세 보기 <span aria-hidden="true">→</span></a>
     </div>
   </article>
   <article class="xp" id="join">
@@ -59,13 +59,12 @@
     </div>
     <div class="xp-body">
       <ul class="points">
-        <li>Solidity 버전과 분석 환경이 서로 다른 외부 컨트랙트도 같은 절차로 검토하도록 Slither 기반 Python CLI를 개발했습니다. 컴파일러 관리, 사용자 정의 탐지 규칙과 코드 분석 기능을 한 번에 실행합니다.</li>
-        <li>반복적인 환경 설정과 분석 절차를 자동화해 검토 기준을 일정하게 유지했습니다. 정해진 코드 패턴은 규칙으로 찾을 수 있지만 비즈니스 로직 취약점은 거래 구조와 상태 변화를 함께 살펴야 한다는 한계도 확인했습니다.</li>
+        <li>Solidity 버전과 구조가 다른 외부 컨트랙트를 같은 절차로 컴파일하고 점검하는 Python 명령줄 도구를 개발했습니다.</li>
       </ul>
-      <a class="detail-link" href="join.html">프로젝트 상세 보기 <span aria-hidden="true">→</span></a>
+      <a class="detail-link" href="join">프로젝트 상세 보기 <span aria-hidden="true">→</span></a>
     </div>
   </article>
-  <article class="xp" id="hanwha-life-dreamplus-program">
+  <article class="xp" id="dreamplus-operations">
     <h3 class="xp-title">Hanwha Life DREAMPLUS Program</h3>
     <div class="xp-meta">
       <p class="xp-when"><span class="xp-period">2024.03–2024.06</span><span class="xp-org">Protocol Camp 6th</span></p>
@@ -76,10 +75,12 @@
       <ul class="points">
         <li>참가자의 기술 진행 상황과 운영 이슈를 매주 정리해 운영진과 실무진에게 공유했습니다.</li>
         <li>일정과 멘토링, 오프라인 행사를 조율하고 개발팀의 요청과 운영 기준을 서로 전달했습니다. 기술 프로젝트가 정해진 일정 안에서 진행되도록 실무 운영을 맡았습니다.</li>
+        <li>보안 전공자이자 5기 수료자로서 참가팀에 어떤 방향으로 설계하면 좋을지 기술 피드백을 줬고, 참가자 대상 선배와의 만남에 연사로 참여했습니다.</li>
       </ul>
+      <a class="detail-link" href="dreamplus-operations">프로젝트 상세 보기 <span aria-hidden="true">→</span></a>
     </div>
   </article>
-  <article class="xp" id="ict-convergence-security-crew-2nd">
+  <article class="xp" id="security-crew">
     <h3 class="xp-title">ICT Convergence Security Crew 2nd</h3>
     <div class="xp-meta">
       <p class="xp-when"><span class="xp-period">2025.05–2025.12</span><span class="xp-org">KISIA (Korea Information Security Industry Association)</span></p>
@@ -88,13 +89,12 @@
     <div class="xp-body">
       <p class="award"><span class="award-label">Award</span>ICT융합보안 우수크루상</p>
       <ul class="points">
-        <li>4개 대학 10명의 AI 보안 연구팀을 이끌었습니다. 각 주제의 데이터 확보 여부, 구현 난도, 평가 방법과 일정을 검토한 뒤 연구 범위와 팀 구성을 조정했습니다.</li>
-        <li>DeFi 취약점 탐지와 LLM 보안 연구 8편을 학술대회에 발표했고 이 중 5편이 수상했습니다. 연구 계획부터 결과물 제출까지 관리한 성과로 ICT융합보안 우수크루상을 받았습니다.</li>
+        <li>4개 대학 10명이 참여한 AI 보안 연구팀에서 DeFi 취약점 탐지와 LLM 보안 연구를 총괄했습니다. 데이터 확보 가능성, 구현 난도, 평가 지표를 기준으로 각 연구의 범위와 팀 구성을 조정하고 결과물 완성까지 관리했습니다.</li>
       </ul>
-      <a class="detail-link" href="archive.html">관련 자료 보기 <span aria-hidden="true">→</span></a>
+      <a class="detail-link" href="security-crew">프로젝트 상세 보기 <span aria-hidden="true">→</span></a>
     </div>
   </article>
-  <article class="xp" id="hash">
+  <article class="xp" id="hash-club">
     <h3 class="xp-title">HASH</h3>
     <div class="xp-meta">
       <p class="xp-when"><span class="xp-period">2021.01–2022.12</span><span class="xp-org">Cybersecurity Club</span></p>
@@ -107,7 +107,7 @@
         <li>신입 회원이 기초교육부터 실전 문제 풀이까지 이어서 학습하도록 6주 교육, 분야별 심화 스터디와 멘토링을 운영했습니다.</li>
         <li>Wargame 서버와 실습 문제를 직접 만들었습니다. 다음 기수도 같은 교육과 CTF를 운영할 수 있도록 자료와 환경을 남겼습니다.</li>
       </ul>
-      <a class="detail-link" href="archive.html">관련 자료 보기 <span aria-hidden="true">→</span></a>
+      <a class="detail-link" href="hash-club">프로젝트 상세 보기 <span aria-hidden="true">→</span></a>
     </div>
   </article>
 </section>
@@ -119,5 +119,6 @@
 </footer>
 
 <script src="assets/js/media.js"></script>
+<script src="assets/js/apple.js"></script>
 </body>
 </html>

@@ -8,20 +8,21 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/apple.css">
 </head>
 <body class="">
 <a class="skip-link" href="#main">본문 바로가기</a>
 
 <aside class="topbar" aria-label="사이트 메뉴">
   <div class="topbar-inner">
-    <a class="brand" href="index.html">Namryeong Kim</a>
+    <a class="brand" href="./">Namryeong Kim</a>
     <nav aria-label="주요 메뉴">
       <ul class="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="projects.html" aria-current="page">Projects</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="archive.html">Archive</a></li>
+        <li><a href="./">Home</a></li>
+        <li><a href="projects" aria-current="page">Projects</a></li>
+        <li><a href="experience">Experience</a></li>
+        <li><a href="publications">Publications</a></li>
+        <li><a href="archive">Archive</a></li>
       </ul>
     </nav>
     <p class="sidebar-note">Blockchain research<br>and implementation</p>
@@ -32,64 +33,236 @@
 
 <section class="hero hero-compact" aria-labelledby="hero-title">
   <h1 class="hero-lead" id="hero-title">Projects</h1>
-  <p class="hero-body">직접 구현한 도구와 진행 중인 연구를 모았습니다.</p>
+  <p class="hero-body">직접 구현한 도구와 연구를 이어진 순서대로 모았습니다.</p>
 </section>
 
-<section class="section section-projects" id="projects" aria-labelledby="projects-title">
-  <div class="section-heading">
-    <h2 class="section-title" id="projects-title">Project Gallery</h2>
-    <p>대표 작업부터 살펴볼 수 있습니다.</p>
-  </div>
-  <div class="project-gallery">
-  <a class="project-card" href="safedevanalyzer.html" id="safedevanalyzer">
-    <span class="project-preview has-image"><img src="assets/files/feature-overview.jpg" alt="SafeDevAnalyzer 대표 화면" loading="lazy"></span>
-    <span class="project-card-body">
-      <span class="project-kind">Tool / Smart Contract</span>
-      <strong class="project-title">SafeDevAnalyzer</strong>
-      <span class="project-summary">스마트 컨트랙트를 배포하기 전에 코드와 취약점을 확인하는 VS Code 도구입니다.</span>
-      <span class="project-proof">3인 팀장, Protocol Camp 5기 대상</span>
-    </span>
-  </a>
-  <a class="project-card" href="defisense.html" id="defisense">
-    <span class="project-preview has-image"><img src="assets/files/current-method.svg" alt="DeFiSense 대표 화면" loading="lazy"></span>
-    <span class="project-card-body">
-      <span class="project-kind">Research / On-chain</span>
-      <strong class="project-title">DeFiSense</strong>
-      <span class="project-summary">여러 프로토콜을 거친 거래를 연결해 공격 과정과 자금 이동, 손익의 원인을 복원합니다.</span>
-      <span class="project-proof">Ongoing Research</span>
-    </span>
-  </a>
-  <a class="project-card" href="rpbft-reliable-practical-byzantine-fault-tolerance-mechanism.html" id="rpbft-reliable-practical-byzantine-fault-tolerance-mechanism">
-    <span class="project-preview has-image"><img src="assets/files/mechanism.jpg" alt="rPBFT: Reliable Practical Byzantine Fault Tolerance Mechanism for Faulty Distributed Networks 대표 화면" loading="lazy"></span>
-    <span class="project-card-body">
-      <span class="project-kind">Research / Distributed Ledger</span>
-      <strong class="project-title">rPBFT: Reliable Practical Byzantine Fault Tolerance Mechanism for Faulty Distributed Networks</strong>
-      <span class="project-summary">비악의적 장애가 발생한 분산 네트워크에서 합의 성능과 안정성을 함께 비교했습니다.</span>
-      <span class="project-proof">공동 제1저자, IEEE Transactions on Big Data 2026</span>
-    </span>
-  </a>
-  <a class="project-card" href="join.html" id="join">
-    <span class="project-preview has-image"><img src="assets/files/architecture.jpg" alt="JOIN 대표 화면" loading="lazy"></span>
-    <span class="project-card-body">
-      <span class="project-kind">Tool / Static Analysis</span>
-      <strong class="project-title">JOIN</strong>
-      <span class="project-summary">버전과 분석 환경이 다른 외부 컨트랙트를 같은 절차로 검토하는 Python CLI입니다.</span>
-      <span class="project-proof">Static Analysis Development 담당</span>
-    </span>
-  </a>
-  <a class="project-card" href="t-did-did-vc-threat-classification-and-detection-framework.html" id="t-did-did-vc-threat-classification-and-detection-framework">
-    <span class="project-preview has-image"><img src="assets/files/five-message-overview.png" alt="T-DID: DID/VC Threat Classification and Detection Framework 대표 화면" loading="lazy"></span>
-    <span class="project-card-body">
-      <span class="project-kind">Research / Digital Identity</span>
-      <strong class="project-title">T-DID: DID/VC Threat Classification and Detection Framework</strong>
-      <span class="project-summary">DID/VC 환경에서 수행된 보안 검사를 사후에 확인할 수 있는 위협 분류와 로그 구조를 설계합니다.</span>
-      <span class="project-proof">Ongoing Research</span>
-    </span>
-  </a>
-  </div>
+<section class="section section-flow" id="research-flow" aria-labelledby="research-flow-title">
+  <div class="section-heading"><h2 class="section-title" id="research-flow-title">연구 흐름</h2></div>
+  <p class="section-note">앞 프로젝트의 한계가 다음 프로젝트의 출발점이 된 순서대로 묶었습니다.</p>
+  <section class="flow-track">
+    <h3 class="flow-track-title">한화생명 드림플러스와 이어 온 활동</h3>
+    <p class="flow-track-desc">한화생명 드림플러스의 교육 프로그램에 참가자로 두 번 참여했고, 이후 운영 매니저로 두 번 일했습니다.</p>
+    <ol class="flow-steps">
+    <li class="flow-step">
+      <a class="flow-card" href="join?flow=flow-1">
+        <span class="flow-when">2023.03</span>
+        <span class="flow-thumb"><img src="assets/files/join.jpg" alt="" loading="lazy"></span>
+        <span class="flow-body">
+          <span class="flow-kind">Tool / Static Analysis</span>
+          <strong class="flow-title">DREAMPLUS Academy 2기</strong>
+          <span class="flow-what">DREAMPLUS Academy 2기에서 스마트 컨트랙트 정적 분석 도구 JOIN을 개발했습니다.</span>
+        </span>
+      </a>
+      <p class="flow-why"><span aria-hidden="true">↓</span> 교육을 마친 뒤 같은 프로그램 계열의 운영을 도왔습니다.</p>
+    </li>
+    <li class="flow-step">
+      <a class="flow-card no-thumb" href="dreamplus-operations?flow=flow-1">
+        <span class="flow-when">2023.07</span>
+        <span class="flow-body">
+          <span class="flow-kind">Operations / Hanwha Life DREAMPLUS</span>
+          <strong class="flow-title">SWF Accelerator</strong>
+          <span class="flow-what">SWF Accelerator에서 Community Manager로 일했습니다.</span>
+        </span>
+      </a>
+      <p class="flow-why"><span aria-hidden="true">↓</span> 이어서 Protocol Camp 5기에 참가자로 지원했습니다.</p>
+    </li>
+    <li class="flow-step">
+      <a class="flow-card" href="safedevanalyzer?flow=flow-1">
+        <span class="flow-when">2023.09</span>
+        <span class="flow-thumb"><img src="assets/files/safedev.jpg" alt="" loading="lazy"></span>
+        <span class="flow-body">
+          <span class="flow-kind">Tool / Smart Contract</span>
+          <strong class="flow-title">Protocol Camp 5기</strong>
+          <span class="flow-what">Protocol Camp 5기에서 3인 팀의 팀장으로 SafeDevAnalyzer를 개발해 최우수상을 받았습니다.</span>
+        </span>
+      </a>
+      <p class="flow-why"><span aria-hidden="true">↓</span> 다음 기수에는 운영 쪽에서 참가팀을 도왔습니다.</p>
+    </li>
+    <li class="flow-step">
+      <a class="flow-card no-thumb" href="dreamplus-operations?flow=flow-1">
+        <span class="flow-when">2024.03</span>
+        <span class="flow-body">
+          <span class="flow-kind">Operations / Hanwha Life DREAMPLUS</span>
+          <strong class="flow-title">Protocol Camp 6기</strong>
+          <span class="flow-what">Protocol Camp 6기에서 진행 상황을 매주 정리해 공유했고, 직전 기수 수료자로서 참가팀의 설계 방향에 기술 피드백을 줬습니다.</span>
+        </span>
+      </a>
+    </li>
+    </ol>
+  </section>
+  <section class="flow-track">
+    <h3 class="flow-track-title">스마트 컨트랙트 보안: 코드 점검에서 거래 분석으로</h3>
+    <p class="flow-track-desc">배포 전 코드 점검 도구에서 시작해, 코드만으로 설명되지 않는 사고를 실제 거래 기록으로 분석하는 연구로 옮겨 왔습니다.</p>
+    <ol class="flow-steps">
+    <li class="flow-step">
+      <a class="flow-card" href="join?flow=flow-2">
+        <span class="flow-when">2023.03</span>
+        <span class="flow-thumb"><img src="assets/files/join.jpg" alt="" loading="lazy"></span>
+        <span class="flow-body">
+          <span class="flow-kind">Tool / Static Analysis</span>
+          <strong class="flow-title">JOIN</strong>
+          <span class="flow-what">버전이 다른 컨트랙트를 같은 절차로 점검하는 명령줄 도구를 만들었습니다.</span>
+        </span>
+      </a>
+      <p class="flow-why"><span aria-hidden="true">↓</span> 터미널 도구라 개발자가 쓰기 어려웠고, 보안 점검이 개발 과정과 떨어져 있었습니다.</p>
+    </li>
+    <li class="flow-step">
+      <a class="flow-card" href="safedevanalyzer?flow=flow-2">
+        <span class="flow-when">2023.09</span>
+        <span class="flow-thumb"><img src="assets/files/safedev.jpg" alt="" loading="lazy"></span>
+        <span class="flow-body">
+          <span class="flow-kind">Tool / Smart Contract</span>
+          <strong class="flow-title">SafeDevAnalyzer</strong>
+          <span class="flow-what">개발, 테스트, 보안 점검을 VS Code 안에서 이어서 하게 했습니다.</span>
+        </span>
+      </a>
+      <p class="flow-why"><span aria-hidden="true">↓</span> 코드 유사도 탐지는 로직이 바뀌어도 같다고 판정해 제외했고, 이 문제를 따로 연구했습니다.</p>
+    </li>
+    <li class="flow-step">
+      <a class="flow-card" href="code-similarity-attack-surface-framework?flow=flow-2">
+        <span class="flow-when">2024</span>
+        <span class="flow-thumb"><img src="assets/files/fig2-framework-process.png" alt="" loading="lazy"></span>
+        <span class="flow-body">
+          <span class="flow-kind">Research / Smart Contract</span>
+          <strong class="flow-title">Code Similarity</strong>
+          <span class="flow-what">오픈소스를 수정해 쓸 때 원본에서 달라진 코드를 먼저 찾는 방법을 제안했습니다.</span>
+        </span>
+      </a>
+      <p class="flow-why"><span aria-hidden="true">↓</span> 코드만 읽는 분석은 거래 순서나 가격 정보와 얽힌 사고를 설명하지 못했습니다.</p>
+    </li>
+    <li class="flow-step">
+      <a class="flow-card" href="rag-cot-defi-ack2025?flow=flow-2">
+        <span class="flow-when">2025</span>
+        <span class="flow-thumb"><img src="assets/files/fig1-framework.png" alt="" loading="lazy"></span>
+        <span class="flow-body">
+          <span class="flow-kind">Research / AI Security</span>
+          <strong class="flow-title">RAG-CoT</strong>
+          <span class="flow-what">과거 해킹 사례를 근거로 취약점 유형과 문제가 된 함수를 짚게 했습니다.</span>
+        </span>
+      </a>
+      <p class="flow-why"><span aria-hidden="true">↓</span> 취약한 함수를 찾아도 실제 거래에서 누가 손실을 부담했는지는 알 수 없었습니다.</p>
+    </li>
+    <li class="flow-step">
+      <a class="flow-card" href="defisense?flow=flow-2">
+        <span class="flow-when">2026</span>
+        <span class="flow-thumb"><img src="assets/files/defisense.jpg" alt="" loading="lazy"></span>
+        <span class="flow-body">
+          <span class="flow-kind">Research / On-chain</span>
+          <strong class="flow-title">DeFiSense</strong>
+          <span class="flow-what">공개 거래 기록만으로 가격 조작 공격을 탐지하고 자금 흐름을 복원했습니다.</span>
+        </span>
+      </a>
+      <p class="flow-why"><span aria-hidden="true">↓</span> 사고 분석의 대상을 AI 에이전트가 거래를 직접 실행하는 환경으로 넓혔습니다.</p>
+    </li>
+    <li class="flow-step">
+      <a class="flow-card" href="llm-agents-on-chain-cross-layer-security?flow=flow-2">
+        <span class="flow-when">2026</span>
+        <span class="flow-thumb"><img src="assets/files/rev-fig1-tri-layer-architecture.png" alt="" loading="lazy"></span>
+        <span class="flow-body">
+          <span class="flow-kind">Research / AI Agent</span>
+          <strong class="flow-title">On-Chain LLM Agents</strong>
+          <span class="flow-what">AI 에이전트가 온체인 거래를 실행할 때 생기는 문제 경로와 설계 원칙을 정리했습니다.</span>
+        </span>
+      </a>
+    </li>
+    </ol>
+  </section>
+  <section class="flow-track">
+    <h3 class="flow-track-title">분산원장 합의: 학부연구생 때의 평가 연구에서 rPBFT까지</h3>
+    <p class="flow-track-desc">학부연구생 때 합의 구조를 같은 기준으로 평가하는 연구로 시작해, 석사과정에서 장애 상황에도 성능을 유지하는 합의 구조를 설계하고 국제 저널에 게재했습니다.</p>
+    <ol class="flow-steps">
+    <li class="flow-step">
+      <a class="flow-card" href="pbft-evaluation-framework-kiice?flow=flow-3">
+        <span class="flow-when">2021</span>
+        <span class="flow-thumb"><img src="assets/files/framework-4.png" alt="" loading="lazy"></span>
+        <span class="flow-body">
+          <strong class="flow-title">평가 기준 제안</strong>
+          <span class="flow-what">연구마다 달랐던 합의 구조의 평가 기준을 하나로 맞추는 구조를 제안했습니다.</span>
+        </span>
+      </a>
+      <p class="flow-why"><span aria-hidden="true">↓</span> 제안한 평가 구조를 실제로 구현해 수치로 확인할 필요가 있었습니다.</p>
+    </li>
+    <li class="flow-step">
+      <a class="flow-card" href="pbft-evaluation-kci?flow=flow-3">
+        <span class="flow-when">2022</span>
+        <span class="flow-thumb"><img src="assets/files/framework.png" alt="" loading="lazy"></span>
+        <span class="flow-body">
+          <strong class="flow-title">구현과 측정</strong>
+          <span class="flow-what">노드 100~1,000대에서 처리량과 지연, 고장 노드를 견디는 정도를 측정했습니다.</span>
+        </span>
+      </a>
+      <p class="flow-why"><span aria-hidden="true">↓</span> 노드가 늘면 성능이 급락하고 고장 노드가 늘면 합의가 무너지는 것을 직접 측정했습니다.</p>
+    </li>
+    <li class="flow-step">
+      <a class="flow-card" href="rpbft-wisa2024?flow=flow-3">
+        <span class="flow-when">2024</span>
+        <span class="flow-thumb"><img src="assets/files/overview.png" alt="" loading="lazy"></span>
+        <span class="flow-body">
+          <strong class="flow-title">rPBFT 첫 발표</strong>
+          <span class="flow-what">고장이 잦은 노드를 기록해 빼고 합의하는 rPBFT의 기본 구성을 처음 발표했습니다.</span>
+        </span>
+      </a>
+      <p class="flow-why"><span aria-hidden="true">↓</span> 비교 대상이 기본 PBFT 하나였고 선행 연구 분석과 통신량 분석이 부족했습니다.</p>
+    </li>
+    <li class="flow-step">
+      <a class="flow-card" href="fault-tolerant-consensus-icct?flow=flow-3">
+        <span class="flow-when">2025</span>
+        <span class="flow-thumb"><img src="assets/files/architecture-3.png" alt="" loading="lazy"></span>
+        <span class="flow-body">
+          <strong class="flow-title">rPBFT 논문화</strong>
+          <span class="flow-what">선행 연구를 세 계열로 비교하고 장애 구간별 지연시간을 세 방식으로 비교했습니다.</span>
+        </span>
+      </a>
+      <p class="flow-why"><span aria-hidden="true">↓</span> 더 큰 규모와 다른 합의 방식과의 비교, 악의적 노드 조건의 검증이 남았습니다.</p>
+    </li>
+    <li class="flow-step">
+      <a class="flow-card" href="rpbft?flow=flow-3">
+        <span class="flow-when">2026</span>
+        <span class="flow-thumb"><img src="assets/files/rpbft.jpg" alt="" loading="lazy"></span>
+        <span class="flow-body">
+          <span class="flow-kind">Research / Distributed Ledger</span>
+          <strong class="flow-title">rPBFT 저널 게재</strong>
+          <span class="flow-what">최대 1,000노드에서 PBFT, HotStuff와 비교해 IEEE Transactions on Big Data에 게재했습니다.</span>
+        </span>
+      </a>
+    </li>
+    </ol>
+  </section>
+  <section class="flow-track">
+    <h3 class="flow-track-title">디지털 신원</h3>
+    <p class="flow-track-desc">신원 인증이 성공했는지뿐 아니라 어떤 보안 검사가 실제로 수행됐는지를 기록으로 남기는 구조를 연구합니다.</p>
+    <ol class="flow-steps">
+    <li class="flow-step">
+      <a class="flow-card" href="tdid?flow=flow-4">
+        <span class="flow-when">2025~2026</span>
+        <span class="flow-thumb"><img src="assets/files/tdid.jpg" alt="" loading="lazy"></span>
+        <span class="flow-body">
+          <span class="flow-kind">Research / Digital Identity</span>
+          <strong class="flow-title">T-DID</strong>
+          <span class="flow-what">위협이 성립했는지 판정하는 데 필요한 기록을 정의하고 판정 구조를 설계했습니다.</span>
+        </span>
+      </a>
+    </li>
+    </ol>
+  </section>
+  <section class="flow-track">
+    <h3 class="flow-track-title">연구 운영</h3>
+    <p class="flow-track-desc">여러 대학의 연구자가 참여한 AI 보안 연구팀을 총괄했습니다.</p>
+    <ol class="flow-steps">
+    <li class="flow-step">
+      <a class="flow-card" href="security-crew?flow=flow-5">
+        <span class="flow-when">2025</span>
+        <span class="flow-thumb"><img src="assets/files/crew.jpg" alt="" loading="lazy"></span>
+        <span class="flow-body">
+          <span class="flow-kind">Leadership / AI Security Research</span>
+          <strong class="flow-title">ICT융합보안크루 2기</strong>
+          <span class="flow-what">4개 대학 10명의 연구 범위와 일정, 산출물을 관리해 8편을 발표했습니다.</span>
+        </span>
+      </a>
+    </li>
+    </ol>
+  </section>
 </section>
-
-
 
 <section class="section section-software" id="registered-software-copyrights" aria-labelledby="registered-software-copyrights-title">
   <h2 class="section-title" id="registered-software-copyrights-title">Registered Software Copyrights</h2>
@@ -130,5 +303,6 @@
 </footer>
 
 <script src="assets/js/media.js"></script>
+<script src="assets/js/apple.js"></script>
 </body>
 </html>

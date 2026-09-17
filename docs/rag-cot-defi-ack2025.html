@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Retrieval-Augmented Chain-of-Thought 프레임워크를 활용한 DeFi 스마트 컨트랙트 취약점 탐지 | Namryeong Kim</title>
+    <meta name="description" content="Namryeong Kim | Blockchain Security Research, On-chain Risk Analysis, Distributed Ledger Reliability">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/apple.css">
+</head>
+<body class="detail-page">
+<a class="skip-link" href="#main">본문 바로가기</a>
+
+<aside class="topbar" aria-label="사이트 메뉴">
+  <div class="topbar-inner">
+    <a class="brand" href="./">Namryeong Kim</a>
+    <nav aria-label="주요 메뉴">
+      <ul class="nav-list">
+        <li><a href="./">Home</a></li>
+        <li><a href="projects">Projects</a></li>
+        <li><a href="experience">Experience</a></li>
+        <li><a href="publications" aria-current="page">Publications</a></li>
+        <li><a href="archive">Archive</a></li>
+      </ul>
+    </nav>
+    <p class="sidebar-note">Blockchain research<br>and implementation</p>
+  </div>
+</aside>
+
+<main id="main" class="wrap site-main">
+
+<nav class="breadcrumb" aria-label="현재 위치"><a href="publications">Publications</a><span aria-hidden="true">/</span><span>RAG-CoT</span></nav>
+<section class="project-hero">
+  <p class="project-kind">Research / AI Security</p>
+  <h1 class="is-long">Retrieval-Augmented Chain-of-Thought 프레임워크를 활용한 DeFi 스마트 컨트랙트 취약점 탐지</h1>
+  <p class="project-hero-summary">과거 해킹 사례 585건을 근거로 찾아 주고, LLM이 취약점 유형과 문제가 된 함수까지 짚도록 만든 탐지 방법입니다.</p>
+  <dl class="project-meta"><div><dt>역할</dt><dd>제1저자, 발표</dd></div><div><dt>게재</dt><dd>ACK 2025, 한국정보처리학회, 2025.11.07</dd></div></dl>
+</section>
+<dl class="stat-row" data-count="3"><div class="stat"><dt>취약점 범주 정확도 / 취약 함수 특정 정확도</dt><dd>60% / 60%</dd><p class="stat-note">논문 본문 기준 ChatGPT-SCVD 46%/15%, GPT-only 48%/35%. 실험 모델은 GPT-4o-mini</p></div><div class="stat"><dt>검색 근거로 수집한 DeFi 해킹 및 취약 사례</dt><dd>585건</dd><p class="stat-note">DeFiHackLabs, ChainLight 2023/2024 보고서, REKT Database</p></div><div class="stat"><dt>평균 지연 시간과 비용 절감</dt><dd>28%, 38%</dd><p class="stat-note">선행 연구 ChatGPT-SCVD 대비. 15.5초와 0.68 USD, 비교 대상은 21.5초와 1.10 USD</p></div></dl>
+
+<nav class="detail-toc" aria-label="프로젝트 상세 목차"><a href="#detail-background-title">제안 배경</a><a href="#detail-related-title">선행 연구</a><a href="#detail-solution-title">해결책</a><a href="#detail-proof-title">입증</a><a href="#detail-learning-title">기여와 다음 단계</a><a href="#detail-fit-title">실무 활용</a></nav>
+<p class="detail-origin"><a href="security-crew">ICT융합보안크루 2기에서 수행한 연구입니다 <span aria-hidden="true">→</span></a></p>
+<section class="detail-section detail-group detail-group-background" aria-labelledby="detail-background-title">
+  <h2 id="detail-background-title">제안 배경</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">DeFi 취약점은 함수 간 실행 순서와 외부 연결에서 나타나 판단하기 어렵습니다.</p><dl class="detail-kv"><div><dt>상황</dt><dd>여러 컨트랙트가 연결돼 거래를 처리하며 2024년 해킹 피해는 약 20억 달러였습니다.</dd></div><div><dt>필요</dt><dd>코드와 거래 흐름, 경제적 맥락을 함께 참조하는 탐지 방법이 필요했습니다.</dd></div></dl>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-related" aria-labelledby="detail-related-title">
+  <h2 id="detail-related-title">선행 연구</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">정적 분석은 복잡한 흐름을 복원하지 못했고, LLM은 판단 근거가 불분명했습니다.</p><dl class="detail-kv"><div><dt>정적 분석</dt><dd>복잡한 DeFi 로직에서는 오탐과 미탐이 생깁니다.</dd></div><div><dt>LLM 단독</dt><dd>사전 지식에만 의존해 판단 근거가 불분명하고 결과가 달라질 수 있었습니다.</dd></div></dl>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-solution" aria-labelledby="detail-solution-title">
+  <h2 id="detail-solution-title">해결책</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">실제 해킹 사례를 근거로 주고 현재 코드와 순서대로 비교한 뒤 결과를 다시 검증합니다.</p><dl class="detail-kv"><div><dt>사례 DB</dt><dd>해킹과 취약 사례 585건에 공격 원인과 취약 함수를 연결했습니다.</dd></div><div><dt>검증</dt><dd>1차 분석 뒤 경제적 조건과 실행 순서를 다시 확인해 최종 결과를 정합니다.</dd></div></dl>
+      <div class="inline-evidence">
+        <figure class="evidence-image"><a href="assets/files/fig1-framework-3.png" target="_blank" rel="noopener"><img src="assets/files/fig1-framework-3.png" alt="검색, 단계별 추론, 교차 검증, 보고의 4계층 구조입니다." loading="lazy"></a><figcaption>검색, 단계별 추론, 교차 검증, 보고의 4계층 구조입니다.</figcaption></figure>
+      </div>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-proof" aria-labelledby="detail-proof-title">
+  <h2 id="detail-proof-title">입증</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">취약점 유형과 취약 함수를 각각 60% 정확도로 찾아 비교 대상보다 높았습니다.</p><dl class="detail-kv"><div><dt>실험 설정</dt><dd>취약점 유형과 문제가 된 함수를 얼마나 정확히 찾는지 평가했습니다.</dd></div><div><dt>결과</dt><dd>선행 연구는 유형 46%와 함수 15%였고 지연 시간은 28%, 비용은 38% 줄었습니다.</dd></div><div><dt>한계</dt><dd>수학적 오류 유형은 50%였고 비용은 LLM 단독 방식보다 높았습니다.</dd></div></dl>
+      <div class="inline-evidence">
+        <figure class="evidence-image"><a href="assets/files/slide-table-accuracy.png" target="_blank" rel="noopener"><img src="assets/files/slide-table-accuracy.png" alt="방법별 유형 정확도와 취약 함수 특정 정확도를 정리한 표입니다." loading="lazy"></a><figcaption>방법별 유형 정확도와 취약 함수 특정 정확도를 정리한 표입니다.</figcaption></figure>
+        <figure class="evidence-image"><a href="assets/files/fig3-by-category.png" target="_blank" rel="noopener"><img src="assets/files/fig3-by-category.png" alt="유형별 정확도로 재진입은 100%, 수학적 오류는 50%입니다." loading="lazy"></a><figcaption>유형별 정확도로 재진입은 100%, 수학적 오류는 50%입니다.</figcaption></figure>
+        <figure class="evidence-image"><a href="assets/files/slide-table-latency-cost.png" target="_blank" rel="noopener"><img src="assets/files/slide-table-latency-cost.png" alt="방법별 평균 지연 시간과 비용을 정리한 표입니다." loading="lazy"></a><figcaption>방법별 평균 지연 시간과 비용을 정리한 표입니다.</figcaption></figure>
+      </div>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-learning" aria-labelledby="detail-learning-title">
+  <h2 id="detail-learning-title">기여와 다음 단계</h2>
+  <article class="detail-block">
+    <h3>기여</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">취약 여부만이 아니라 수정이 필요한 함수까지 찾는지를 따로 측정했습니다.</p><dl class="detail-kv"><div><dt>역할</dt><dd>제1저자로 연구를 수행하고 학회에서 발표했습니다.</dd></div><div><dt>배운 점</dt><dd>원인을 좁혀 실제 수정으로 이어질 정보를 남기는 것이 중요하다는 점을 배웠습니다.</dd></div></dl>
+    </div>
+  </article>
+  <article class="detail-block">
+    <h3>후속 연구</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">수학적 연산 취약점의 정확도를 높이는 것이 남은 과제입니다.</p><dl class="detail-kv"><div><dt>한계</dt><dd>수학적 연산 취약점의 정확도가 50%에 머뭅니다.</dd></div><div><dt>향후 과제</dt><dd>정적 분석과 통합하고 탐지 결과를 운영에 연계하는 것입니다.</dd></div></dl>
+    </div>
+  </article>
+</section>
+<section class="detail-section detail-group detail-group-fit" aria-labelledby="detail-fit-title">
+  <h2 id="detail-fit-title">실무 활용</h2>
+  <article class="detail-block detail-block-solo">
+    <h3 class="visually-hidden">내용</h3>
+    <div class="detail-block-content">
+      <p class="detail-lead">AI 분석 도구를 도입할 때 결과를 어디까지 믿을 수 있는지 평가하는 데 쓸 수 있습니다.</p><dl class="detail-kv"><div><dt>활용 장면</dt><dd>AI가 취약하다고 판정했지만 근거와 수정 위치가 불분명할 때입니다.</dd></div><div><dt>활용 방법</dt><dd>과거 사고와 코드 위치를 근거로 요구하고, 자동화할 부분과 사람이 다시 확인할 부분을 나눕니다.</dd></div></dl>
+    </div>
+  </article>
+</section>
+<section class="detail-section flow-nav" aria-labelledby="flow-nav-title"><h2 id="flow-nav-title">이어지는 흐름</h2><div class="flow-nav-block" data-flow="flow-2"><p class="flow-nav-track">스마트 컨트랙트 보안: 코드 점검에서 거래 분석으로</p><div class="flow-nav-grid"><a class="flow-nav-card" href="code-similarity-attack-surface-framework?flow=flow-2"><span class="flow-nav-label">이전</span><strong>Code Similarity</strong><span>코드만 읽는 분석은 거래 순서나 가격 정보와 얽힌 사고를 설명하지 못했습니다.</span></a><a class="flow-nav-card" href="defisense?flow=flow-2"><span class="flow-nav-label">다음</span><strong>DeFiSense</strong><span>취약한 함수를 찾아도 실제 거래에서 누가 손실을 부담했는지는 알 수 없었습니다.</span></a></div><ol class="flow-nav-steps"><li><a href="join?flow=flow-2"><span>2023.03</span><strong>JOIN</strong></a></li><li><a href="safedevanalyzer?flow=flow-2"><span>2023.09</span><strong>SafeDevAnalyzer</strong></a></li><li><a href="code-similarity-attack-surface-framework?flow=flow-2"><span>2024</span><strong>Code Similarity</strong></a></li><li class="is-current"><span>2025</span><strong>RAG-CoT</strong></li><li><a href="defisense?flow=flow-2"><span>2026</span><strong>DeFiSense</strong></a></li><li><a href="llm-agents-on-chain-cross-layer-security?flow=flow-2"><span>2026</span><strong>On-Chain LLM Agents</strong></a></li></ol></div><p class="flow-nav-links"><a href="projects#research-flow">전체 흐름 보기 <span aria-hidden="true">→</span></a><a href="./">홈으로 <span aria-hidden="true">→</span></a></p></section>
+
+</main>
+
+<footer class="site-footer">
+  <div>© 2026 Namryeong Kim</div>
+</footer>
+
+<script src="assets/js/media.js"></script>
+<script src="assets/js/apple.js"></script>
+</body>
+</html>
