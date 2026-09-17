@@ -66,7 +66,7 @@
     <div class="detail-block-content">
       <p class="detail-lead">데이터 두 개와 둘을 섞은 복구용 패킷 하나를 세 링크에 나눠 보냅니다.</p><dl class="detail-kv"><div><dt>전송 방식</dt><dd>세 링크에 데이터 A, B와 둘을 비트 단위로 섞은 복구용 패킷을 하나씩 싣습니다.</dd></div><div><dt>복구 방법</dt><dd>A가 사라져도 지상국은 B와 복구용 패킷으로 A를 계산해 되살립니다.</dd></div></dl>
       <div class="inline-evidence">
-        <figure class="evidence-image"><a href="assets/files/fig1-conventional-vs-proposed-3.png" target="_blank" rel="noopener"><img src="assets/files/fig1-conventional-vs-proposed-3.png" alt="빨간 테두리가 제안 방식이고 세 번째 링크의 A⊕B가 복구용 패킷입니다." loading="lazy"></a><figcaption>빨간 테두리가 제안 방식이고 세 번째 링크의 A⊕B가 복구용 패킷입니다.</figcaption></figure>
+        <figure class="evidence-image"><a href="assets/files/fig1-conventional-vs-proposed-411d9c.png" target="_blank" rel="noopener"><img src="assets/files/fig1-conventional-vs-proposed-411d9c.png" alt="빨간 테두리가 제안 방식이고 세 번째 링크의 A⊕B가 복구용 패킷입니다." loading="lazy"></a><figcaption>빨간 테두리가 제안 방식이고 세 번째 링크의 A⊕B가 복구용 패킷입니다.</figcaption></figure>
       </div>
     </div>
   </article>
@@ -78,9 +78,9 @@
     <div class="detail-block-content">
       <p class="detail-lead">시뮬레이션에서 링크 하나가 끊겼을 때 복구 실패율이 65.9%에서 32.0%로 줄었습니다.</p><dl class="detail-kv"><div><dt>실험 설정</dt><dd>Python 시뮬레이션으로 나눠 보내는 방식, 세 번 반복해 보내는 방식과 비교했습니다.</dd></div><div><dt>결과</dt><dd>비트 오류율은 23.5%에서 9.08%로 낮아졌고 10Kbit 전송 지연은 0.1초로 두 방식의 중간이었습니다.</dd></div><div><dt>한계</dt><dd>실제 위성 링크 실험은 없고 공격도 링크 하나 제거로 단순하게 모델링했습니다.</dd></div></dl>
       <div class="inline-evidence">
-        <figure class="evidence-image"><a href="assets/files/fig2-latency.png" target="_blank" rel="noopener"><img src="assets/files/fig2-latency.png" alt="제안 방식(초록)의 지연은 중복 전송보다 낮고 분산 전송보다 조금 높습니다." loading="lazy"></a><figcaption>제안 방식(초록)의 지연은 중복 전송보다 낮고 분산 전송보다 조금 높습니다.</figcaption></figure>
-        <figure class="evidence-image"><a href="assets/files/fig3-throughput.png" target="_blank" rel="noopener"><img src="assets/files/fig3-throughput.png" alt="데이터 크기별 처리량이며 제안 방식은 두 기존 방식의 중간입니다." loading="lazy"></a><figcaption>데이터 크기별 처리량이며 제안 방식은 두 기존 방식의 중간입니다.</figcaption></figure>
-        <figure class="evidence-image"><a href="assets/files/table1-ber-rfr.png" target="_blank" rel="noopener"><img src="assets/files/table1-ber-rfr.png" alt="링크 하나를 끊었을 때 두 방식의 비트 오류율과 복구 실패율을 비교한 표입니다." loading="lazy"></a><figcaption>링크 하나를 끊었을 때 두 방식의 비트 오류율과 복구 실패율을 비교한 표입니다.</figcaption></figure>
+        <figure class="evidence-image fig-half"><a href="assets/files/fig2-latency-aa055c.png" target="_blank" rel="noopener"><img src="assets/files/fig2-latency-aa055c.png" alt="제안 방식(초록)의 지연은 중복 전송보다 낮고 분산 전송보다 조금 높습니다." loading="lazy"></a><figcaption>제안 방식(초록)의 지연은 중복 전송보다 낮고 분산 전송보다 조금 높습니다.</figcaption></figure>
+        <figure class="evidence-image fig-half"><a href="assets/files/fig3-throughput-219728.png" target="_blank" rel="noopener"><img src="assets/files/fig3-throughput-219728.png" alt="데이터 크기별 처리량이며 제안 방식은 두 기존 방식의 중간입니다." loading="lazy"></a><figcaption>데이터 크기별 처리량이며 제안 방식은 두 기존 방식의 중간입니다.</figcaption></figure>
+        <figure class="evidence-image"><a href="assets/files/table1-ber-rfr-ba3e8d.png" target="_blank" rel="noopener"><img src="assets/files/table1-ber-rfr-ba3e8d.png" alt="링크 하나를 끊었을 때 두 방식의 비트 오류율과 복구 실패율을 비교한 표입니다." loading="lazy"></a><figcaption>링크 하나를 끊었을 때 두 방식의 비트 오류율과 복구 실패율을 비교한 표입니다.</figcaption></figure>
       </div>
     </div>
   </article>
@@ -100,7 +100,7 @@
     </div>
   </article>
 </section>
-<section class="detail-section flow-nav"><p class="flow-nav-links"><a href="publications">논문 목록으로 <span aria-hidden="true">→</span></a><a href="projects#research-flow">연구 흐름 보기 <span aria-hidden="true">→</span></a><a href="./">홈으로 <span aria-hidden="true">→</span></a></p></section>
+<section class="detail-section paper-nav" data-list="publications" hidden aria-labelledby="paper-nav-title"><h2 id="paper-nav-title">논문 목록에서 이어지는 연구</h2><div class="flow-nav-grid"><a class="flow-nav-card" href="defi-access-control-static-analysis-ack2025"><span class="flow-nav-label">이전 논문</span><strong>DeFi 스마트 컨트랙트 접근 제어 취약점 탐지를 위한 정적 분석 기법</strong><span>ACK 2025, 한국정보처리학회, 2025.11.07</span></a><a class="flow-nav-card" href="code-similarity-attack-surface-detection"><span class="flow-nav-label">다음 논문</span><strong>코드 유사도 기법을 활용한 스마트 컨트랙트 공격 표면 탐지 방법</strong><span>한국융합보안학회 2024 추계학술대회, 2024.11.08</span></a></div></section><section class="detail-section flow-nav"><p class="flow-nav-links"><a href="publications">논문 목록으로 <span aria-hidden="true">→</span></a><a href="projects#research-flow">연구 흐름 보기 <span aria-hidden="true">→</span></a><a href="./">홈으로 <span aria-hidden="true">→</span></a></p></section>
 
 </main>
 

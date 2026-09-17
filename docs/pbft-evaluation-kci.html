@@ -48,7 +48,7 @@
     <div class="detail-block-content">
       <p class="detail-lead">PBFT와 그 개선안을 같은 기준으로 시험하고 비교할 방법이 부족했습니다.</p><dl class="detail-kv"><div><dt>PBFT</dt><dd>일부 노드가 고장 나도 나머지가 같은 장부에 합의하게 하는 알고리즘입니다.</dd></div><div><dt>문제</dt><dd>모든 노드가 서로 메시지를 보내므로 노드가 늘수록 네트워크 부하가 커집니다.</dd></div></dl>
       <div class="inline-evidence">
-        <figure class="evidence-image"><a href="assets/files/pbft-flow.png" target="_blank" rel="noopener"><img src="assets/files/pbft-flow.png" alt="두 단계에서 모든 노드가 서로 메시지를 주고받는 부분을 보면 됩니다." loading="lazy"></a><figcaption>두 단계에서 모든 노드가 서로 메시지를 주고받는 부분을 보면 됩니다.</figcaption></figure>
+        <figure class="evidence-image"><a href="assets/files/pbft-flow-d6e2b8.png" target="_blank" rel="noopener"><img src="assets/files/pbft-flow-d6e2b8.png" alt="두 단계에서 모든 노드가 서로 메시지를 주고받는 부분을 보면 됩니다." loading="lazy"></a><figcaption>두 단계에서 모든 노드가 서로 메시지를 주고받는 부분을 보면 됩니다.</figcaption></figure>
       </div>
     </div>
   </article>
@@ -69,7 +69,7 @@
     <div class="detail-block-content">
       <p class="detail-lead">평가 기준을 셋으로 통일하고 합의 부분만 갈아 끼울 수 있는 평가 구조를 만들었습니다.</p><dl class="detail-kv"><div><dt>구조</dt><dd>네트워크, 합의, 평가로 나눠 합의 알고리즘을 바꿔도 같은 조건으로 잽니다.</dd></div><div><dt>지표</dt><dd>확장성은 처리량과 지연시간으로, 내결함성은 견디는 결함 노드 수로 봅니다.</dd></div></dl>
       <div class="inline-evidence">
-        <figure class="evidence-image"><a href="assets/files/framework-3.png" target="_blank" rel="noopener"><img src="assets/files/framework-3.png" alt="네트워크, 합의, 평가를 분리해 합의 알고리즘만 갈아 끼우는 구조입니다." loading="lazy"></a><figcaption>네트워크, 합의, 평가를 분리해 합의 알고리즘만 갈아 끼우는 구조입니다.</figcaption></figure>
+        <figure class="evidence-image"><a href="assets/files/framework-887e9f.png" target="_blank" rel="noopener"><img src="assets/files/framework-887e9f.png" alt="네트워크, 합의, 평가를 분리해 합의 알고리즘만 갈아 끼우는 구조입니다." loading="lazy"></a><figcaption>네트워크, 합의, 평가를 분리해 합의 알고리즘만 갈아 끼우는 구조입니다.</figcaption></figure>
       </div>
     </div>
   </article>
@@ -81,8 +81,8 @@
     <div class="detail-block-content">
       <p class="detail-lead">노드가 늘면 처리량이 급감했고, 결함 노드가 1/3을 넘으면 합의 성공률이 급감했습니다.</p><dl class="detail-kv"><div><dt>실험 설정</dt><dd>Python 시뮬레이션으로 정상 노드를 100대에서 1000대까지 늘리며 측정했습니다.</dd></div><div><dt>결과</dt><dd>블록 1MB에서 처리량은 59.3Mbps에서 0.91Mbps로 줄었고 300대 중 결함 99대까지 합의했습니다.</dd></div><div><dt>한계</dt><dd>평가 대상은 기본 PBFT 하나이며 개선 알고리즘과 비교한 실험은 없습니다.</dd></div></dl>
       <div class="inline-evidence">
-        <figure class="evidence-image"><a href="assets/files/throughput-latency.png" target="_blank" rel="noopener"><img src="assets/files/throughput-latency.png" alt="노드가 100대에서 1000대로 늘 때 처리량은 줄고 합의 시간은 늡니다." loading="lazy"></a><figcaption>노드가 100대에서 1000대로 늘 때 처리량은 줄고 합의 시간은 늡니다.</figcaption></figure>
-        <figure class="evidence-image"><a href="assets/files/fault-tolerance.png" target="_blank" rel="noopener"><img src="assets/files/fault-tolerance.png" alt="결함 노드 99대까지 합의 성공률 100%, 198대부터 0%입니다." loading="lazy"></a><figcaption>결함 노드 99대까지 합의 성공률 100%, 198대부터 0%입니다.</figcaption></figure>
+        <figure class="evidence-image fig-half"><a href="assets/files/throughput-latency-882cf6.png" target="_blank" rel="noopener"><img src="assets/files/throughput-latency-882cf6.png" alt="노드가 100대에서 1000대로 늘 때 처리량은 줄고 합의 시간은 늡니다." loading="lazy"></a><figcaption>노드가 100대에서 1000대로 늘 때 처리량은 줄고 합의 시간은 늡니다.</figcaption></figure>
+        <figure class="evidence-image fig-half"><a href="assets/files/fault-tolerance-953173.png" target="_blank" rel="noopener"><img src="assets/files/fault-tolerance-953173.png" alt="결함 노드 99대까지 합의 성공률 100%, 198대부터 0%입니다." loading="lazy"></a><figcaption>결함 노드 99대까지 합의 성공률 100%, 198대부터 0%입니다.</figcaption></figure>
       </div>
     </div>
   </article>
@@ -102,7 +102,7 @@
     </div>
   </article>
 </section>
-<section class="detail-section flow-nav" aria-labelledby="flow-nav-title"><h2 id="flow-nav-title">이어지는 흐름</h2><div class="flow-nav-block" data-flow="flow-3"><p class="flow-nav-track">분산원장 합의: 학부연구생 때의 평가 연구에서 rPBFT까지</p><div class="flow-nav-grid"><a class="flow-nav-card" href="pbft-evaluation-framework-kiice?flow=flow-3"><span class="flow-nav-label">이전</span><strong>평가 기준 제안</strong><span>제안한 평가 구조를 실제로 구현해 수치로 확인할 필요가 있었습니다.</span></a><a class="flow-nav-card" href="rpbft-wisa2024?flow=flow-3"><span class="flow-nav-label">다음</span><strong>rPBFT 첫 발표</strong><span>노드가 늘면 성능이 급락하고 고장 노드가 늘면 합의가 무너지는 것을 직접 측정했습니다.</span></a></div><ol class="flow-nav-steps"><li><a href="pbft-evaluation-framework-kiice?flow=flow-3"><span>2021</span><strong>평가 기준 제안</strong></a></li><li class="is-current"><span>2022</span><strong>구현과 측정</strong></li><li><a href="rpbft-wisa2024?flow=flow-3"><span>2024</span><strong>rPBFT 첫 발표</strong></a></li><li><a href="fault-tolerant-consensus-icct?flow=flow-3"><span>2025</span><strong>rPBFT 논문화</strong></a></li><li><a href="rpbft?flow=flow-3"><span>2026</span><strong>rPBFT 저널 게재</strong></a></li></ol></div><p class="flow-nav-links"><a href="projects#research-flow">전체 흐름 보기 <span aria-hidden="true">→</span></a><a href="./">홈으로 <span aria-hidden="true">→</span></a></p></section>
+<section class="detail-section paper-nav" data-list="publications" hidden aria-labelledby="paper-nav-title"><h2 id="paper-nav-title">논문 목록에서 이어지는 연구</h2><div class="flow-nav-grid"><a class="flow-nav-card" href="code-similarity-attack-surface-framework"><span class="flow-nav-label">이전 논문</span><strong>Code Similarity</strong><span>융합보안논문지, Vol. 24, No. 5, pp. 161–169, 2024.12</span></a><div class="flow-nav-card is-empty"><span class="flow-nav-label">다음 논문</span><strong>없음</strong><span>목록의 마지막 논문입니다.</span></div></div></section><section class="detail-section flow-nav" aria-labelledby="flow-nav-title"><h2 id="flow-nav-title">이어지는 흐름</h2><div class="flow-nav-block" data-flow="flow-3"><p class="flow-nav-track">분산원장 합의: 학부연구생 때의 평가 연구에서 rPBFT까지</p><div class="flow-nav-grid"><a class="flow-nav-card" href="pbft-evaluation-framework-kiice?flow=flow-3"><span class="flow-nav-label">이전 연구</span><strong>평가 기준 제안</strong><span>제안한 평가 구조를 실제로 구현해 수치로 확인할 필요가 있었습니다.</span></a><a class="flow-nav-card" href="rpbft-wisa2024?flow=flow-3"><span class="flow-nav-label">다음 연구</span><strong>rPBFT 첫 발표</strong><span>노드가 늘면 성능이 급락하고 고장 노드가 늘면 합의가 무너지는 것을 직접 측정했습니다.</span></a></div><ol class="flow-nav-steps"><li><a href="pbft-evaluation-framework-kiice?flow=flow-3"><span>2021</span><strong>평가 기준 제안</strong></a></li><li class="is-current"><span>2022</span><strong>구현과 측정</strong></li><li><a href="rpbft-wisa2024?flow=flow-3"><span>2024</span><strong>rPBFT 첫 발표</strong></a></li><li><a href="fault-tolerant-consensus-icct?flow=flow-3"><span>2025</span><strong>rPBFT 논문화</strong></a></li><li><a href="rpbft?flow=flow-3"><span>2026</span><strong>rPBFT 저널 게재</strong></a></li></ol></div><p class="flow-nav-links is-other-track"><a href="join?flow=flow-1">다른 흐름 보기: 한화생명 드림플러스와 이어 온 활동 <span aria-hidden="true">→</span></a></p><p class="flow-nav-links"><a href="projects#research-flow">전체 흐름 보기 <span aria-hidden="true">→</span></a><a href="./">홈으로 <span aria-hidden="true">→</span></a></p></section>
 
 </main>
 

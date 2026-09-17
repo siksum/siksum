@@ -39,7 +39,7 @@
   <dl class="project-meta"><div><dt>역할</dt><dd>공저자</dd></div><div><dt>게재</dt><dd>CISC-S&#x27;22, 한국정보보호학회, 2022</dd></div></dl>
 </section>
 
-<nav class="detail-toc" aria-label="프로젝트 상세 목차"><a href="#detail-background-title">제안 배경</a><a href="#detail-related-title">선행 연구</a><a href="#detail-solution-title">해결책</a><a href="#detail-proof-title">입증</a><a href="#detail-learning-title">기여와 다음 단계</a></nav>
+<nav class="detail-toc" aria-label="프로젝트 상세 목차"><a href="#detail-background-title">제안 배경</a><a href="#detail-related-title">선행 연구</a><a href="#detail-solution-title">해결책</a><a href="#detail-proof-title">입증</a><a href="#detail-learning-title">기여와 다음 단계</a><a href="#detail-photos-title">활동 사진</a></nav>
 <section class="detail-section detail-group detail-group-background" aria-labelledby="detail-background-title">
   <h2 id="detail-background-title">제안 배경</h2>
   <article class="detail-block detail-block-solo">
@@ -47,7 +47,7 @@
     <div class="detail-block-content">
       <p class="detail-lead">소셜 로그인 토큰 하나가 탈취되면 피해가 여러 서비스와 클라우드로 번집니다.</p><dl class="detail-kv"><div><dt>동작 방식</dt><dd>OAuth 2.0은 한 번의 인증으로 다른 서비스의 접근 권한까지 부여합니다.</dd></div><div><dt>실제 사례</dt><dd>2022년 4월 GitHub에서 탈취된 토큰으로 여러 조직의 데이터가 무단 다운로드됐습니다.</dd></div></dl>
       <div class="inline-evidence">
-        <figure class="evidence-image"><a href="assets/files/slide-oauth-flow.png" target="_blank" rel="noopener"><img src="assets/files/slide-oauth-flow.png" alt="사용자가 비밀번호를 넘기지 않고 인가 서버가 토큰을 발급하는 과정을 보면 됩니다." loading="lazy"></a><figcaption>사용자가 비밀번호를 넘기지 않고 인가 서버가 토큰을 발급하는 과정을 보면 됩니다.</figcaption></figure>
+        <figure class="evidence-image"><a href="assets/files/slide-oauth-flow-8b8da9.png" target="_blank" rel="noopener"><img src="assets/files/slide-oauth-flow-8b8da9.png" alt="사용자가 비밀번호를 넘기지 않고 인가 서버가 토큰을 발급하는 과정을 보면 됩니다." loading="lazy"></a><figcaption>사용자가 비밀번호를 넘기지 않고 인가 서버가 토큰을 발급하는 과정을 보면 됩니다.</figcaption></figure>
       </div>
     </div>
   </article>
@@ -68,7 +68,7 @@
     <div class="detail-block-content">
       <p class="detail-lead">클라우드 환경의 토큰 탈취 시나리오를 작성하고 취약점 두 가지에 대책을 제시했습니다.</p><dl class="detail-kv"><div><dt>위험 시나리오</dt><dd>상위 관리자의 접근 토큰이 탈취되면 그 관리자가 맡은 모든 사용자의 클라우드가 노출됩니다.</dd></div><div><dt>대책</dt><dd>로그인 뒤 돌아갈 주소는 완전 일치로 검증하고 서비스 비밀값 확인은 의무화하도록 제시했습니다.</dd></div></dl>
       <div class="inline-evidence">
-        <figure class="evidence-image"><a href="assets/files/slide-risk-scenario-3.png" target="_blank" rel="noopener"><img src="assets/files/slide-risk-scenario-3.png" alt="클라우드에서 토큰 탈취가 다수 사용자 데이터 유출로 번지는 경로를 보면 됩니다." loading="lazy"></a><figcaption>클라우드에서 토큰 탈취가 다수 사용자 데이터 유출로 번지는 경로를 보면 됩니다.</figcaption></figure>
+        <figure class="evidence-image"><a href="assets/files/slide-risk-scenario-bbe61b.png" target="_blank" rel="noopener"><img src="assets/files/slide-risk-scenario-bbe61b.png" alt="클라우드에서 토큰 탈취가 다수 사용자 데이터 유출로 번지는 경로를 보면 됩니다." loading="lazy"></a><figcaption>클라우드에서 토큰 탈취가 다수 사용자 데이터 유출로 번지는 경로를 보면 됩니다.</figcaption></figure>
       </div>
     </div>
   </article>
@@ -80,8 +80,8 @@
     <div class="detail-block-content">
       <p class="detail-lead">직접 만든 로그인 사이트에서 인가 코드를 가로채 토큰을 받았고 정량 지표는 없습니다.</p><dl class="detail-kv"><div><dt>실험 설정</dt><dd>네이버와 카카오 로그인을 연동한 사이트를 만들고 오가는 패킷을 분석했습니다.</dd></div><div><dt>결과</dt><dd>응답 패킷에서 인가 코드를 가로채 접근 토큰과 갱신 토큰이 담긴 응답을 받았습니다.</dd></div><div><dt>한계</dt><dd>인가 코드가 일회용이어서 공격자가 먼저 쓰면 정상 사용자의 로그인이 실패합니다.</dd></div></dl>
       <div class="inline-evidence">
-        <figure class="evidence-image"><a href="assets/files/slide-covert-redirect.png" target="_blank" rel="noopener"><img src="assets/files/slide-covert-redirect.png" alt="돌아갈 주소를 일부만 비교하면 공격자 페이지로 코드가 넘어가는 예시입니다." loading="lazy"></a><figcaption>돌아갈 주소를 일부만 비교하면 공격자 페이지로 코드가 넘어가는 예시입니다.</figcaption></figure>
-        <figure class="evidence-image"><a href="assets/files/slide-countermeasure-table.png" target="_blank" rel="noopener"><img src="assets/files/slide-countermeasure-table.png" alt="두 취약점의 대책과 카카오, 구글, 네이버의 적용 현황을 정리한 표입니다." loading="lazy"></a><figcaption>두 취약점의 대책과 카카오, 구글, 네이버의 적용 현황을 정리한 표입니다.</figcaption></figure>
+        <figure class="evidence-image"><a href="assets/files/slide-covert-redirect-1723d1.png" target="_blank" rel="noopener"><img src="assets/files/slide-covert-redirect-1723d1.png" alt="돌아갈 주소를 일부만 비교하면 공격자 페이지로 코드가 넘어가는 예시입니다." loading="lazy"></a><figcaption>돌아갈 주소를 일부만 비교하면 공격자 페이지로 코드가 넘어가는 예시입니다.</figcaption></figure>
+        <figure class="evidence-image"><a href="assets/files/slide-countermeasure-table-c4742d.png" target="_blank" rel="noopener"><img src="assets/files/slide-countermeasure-table-c4742d.png" alt="두 취약점의 대책과 카카오, 구글, 네이버의 적용 현황을 정리한 표입니다." loading="lazy"></a><figcaption>두 취약점의 대책과 카카오, 구글, 네이버의 적용 현황을 정리한 표입니다.</figcaption></figure>
       </div>
     </div>
   </article>
@@ -101,7 +101,13 @@
     </div>
   </article>
 </section>
-<section class="detail-section flow-nav"><p class="flow-nav-links"><a href="publications">논문 목록으로 <span aria-hidden="true">→</span></a><a href="projects#research-flow">연구 흐름 보기 <span aria-hidden="true">→</span></a><a href="./">홈으로 <span aria-hidden="true">→</span></a></p></section>
+<section class="detail-section detail-photos" aria-labelledby="detail-photos-title">
+  <h2 id="detail-photos-title">활동 사진</h2>
+  <div class="photo-grid">
+    <figure class="evidence-image photo-portrait"><a href="assets/files/cisc-s22-venue-ffe7a3.jpg" target="_blank" rel="noopener"><img src="assets/files/cisc-s22-venue-ffe7a3.jpg" alt="2022년 6월 부산 벡스코에서 열린 CISC-S&#x27;22 등록대 앞입니다." loading="lazy"></a></figure>
+  </div>
+</section>
+<section class="detail-section paper-nav" data-list="publications" hidden aria-labelledby="paper-nav-title"><h2 id="paper-nav-title">논문 목록에서 이어지는 연구</h2><div class="flow-nav-grid"><a class="flow-nav-card" href="metaverse-security-threats"><span class="flow-nav-label">이전 논문</span><strong>메타버스 내 보안 위협 분석 및 대책에 관한 연구</strong><span>한국융합보안학회 2022 하계학술대회, 2022.07.22</span></a><a class="flow-nav-card" href="sgx-deidentification-ai-framework"><span class="flow-nav-label">다음 논문</span><strong>개인정보보호를 위한 SGX 기반 학습데이터 비식별화 인공지능 학습 프레임워크</strong><span>KCSE 2022, 제24회 한국소프트웨어공학 학술대회, 2022.01</span></a></div></section><section class="detail-section flow-nav"><p class="flow-nav-links"><a href="publications">논문 목록으로 <span aria-hidden="true">→</span></a><a href="projects#research-flow">연구 흐름 보기 <span aria-hidden="true">→</span></a><a href="./">홈으로 <span aria-hidden="true">→</span></a></p></section>
 
 </main>
 

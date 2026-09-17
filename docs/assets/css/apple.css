@@ -71,7 +71,7 @@ a:hover { color: var(--accent); text-decoration: underline; }
 .topbar nav { margin: 0; min-width: max-content; }
 .sidebar-note { display: none; }
 
-.brand { font-size: .9375rem; font-weight: 600; letter-spacing: -.01em; }
+.brand { font-size: 1.0625rem; font-weight: 600; letter-spacing: -.01em; }
 
 .nav-list,
 .topbar .nav-list { display: flex; flex-wrap: nowrap; gap: 0 28px; }
@@ -82,7 +82,7 @@ a:hover { color: var(--accent); text-decoration: underline; }
   padding: 0;
   border: 0;
   color: rgba(0, 0, 0, .8);
-  font-size: .75rem;
+  font-size: .9375rem;
   font-weight: 400;
   line-height: var(--topbar-h);
 }
@@ -109,8 +109,19 @@ a:hover { color: var(--accent); text-decoration: underline; }
 
 /* ---------- 홈 히어로 ---------- */
 .hero {
-  padding-block: clamp(72px, 12vw, 132px) clamp(56px, 8vw, 88px);
+  padding-block: clamp(56px, 8vw, 96px) clamp(48px, 7vw, 80px);
   text-align: center;
+}
+
+.hero-photo {
+  display: block;
+  width: clamp(168px, 17vw, 208px);
+  height: clamp(168px, 17vw, 208px);
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 30%;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .1);
 }
 
 .hero-name {
@@ -122,11 +133,11 @@ a:hover { color: var(--accent); text-decoration: underline; }
 }
 
 .hero-lead {
-  max-width: 16em;
+  max-width: 20em;
   margin-inline: auto;
-  font-size: clamp(2.125rem, 5.4vw, 3.75rem);
+  font-size: clamp(1.75rem, 3.6vw, 2.625rem);
   font-weight: 700;
-  line-height: 1.24;
+  line-height: 1.32;
   letter-spacing: -.025em;
 }
 
@@ -134,9 +145,9 @@ a:hover { color: var(--accent); text-decoration: underline; }
   max-width: 36em;
   margin: 26px auto 0;
   color: var(--muted);
-  font-size: clamp(1.0625rem, 1.6vw, 1.3125rem);
+  font-size: clamp(1rem, 1.3vw, 1.125rem);
   font-weight: 500;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .hero-compact { padding-block: clamp(64px, 9vw, 104px) 40px; }
@@ -388,6 +399,10 @@ a:hover { color: var(--accent); text-decoration: underline; }
   .topbar-inner { gap: 20px; padding: 0 var(--gutter); }
   .nav-list, .topbar .nav-list { gap: 0 20px; }
 }
+@media (max-width: 560px) {
+  .brand { font-size: .9375rem; }
+  .nav-list a, .topbar .nav-list a { font-size: .75rem; }
+}
 
 @media (max-width: 767px) {
   :root { --gutter: 20px; --tile-radius: 22px; }
@@ -434,6 +449,12 @@ a:hover { color: var(--accent); text-decoration: underline; }
   border-block: 1px solid var(--line);
   text-align: center;
 }
+
+/* 항목이 다섯이면 한 줄에 다 놓는다(4+1로 갈라지면 어색하다). */
+.stat-row[data-count="5"] { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; }
+.stat-row[data-count="5"] .stat dd { font-size: clamp(1.5rem, 2.6vw, 2.25rem); }
+.stat-row[data-count="5"] .stat dt { font-size: .9375rem; }
+@media (max-width: 860px) { .stat-row[data-count="5"] { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
 .stat { display: flex; flex-direction: column; gap: 6px; }
 .stat dd { order: -1; color: var(--ink); font-size: clamp(2rem, 4.2vw, 3.25rem); font-weight: 700; line-height: 1.1; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
@@ -689,3 +710,70 @@ a:hover { color: var(--accent); text-decoration: underline; }
 .flow-card:hover .flow-title { color: var(--accent); }
 .flow-nav-card, .flow-nav-card:hover, .flow-nav-card:hover * { text-decoration: none !important; }
 @media (max-width: 640px) { .flow-card.no-thumb { grid-template-columns: 1fr; } }
+
+/* ---------- 활동 사진: 작은 격자 ---------- */
+.photo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; max-width: 980px; margin-top: 24px; }
+.photo-grid .evidence-image { margin: 0; }
+.photo-grid .evidence-image a { display: block; border-radius: 12px; overflow: hidden; background: var(--bg-soft); }
+.photo-grid .evidence-image img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 30%; }
+.photo-grid .photo-portrait img { object-fit: contain; }
+.photo-grid figcaption { margin-top: 8px; font-size: .8125rem; line-height: 1.45; color: var(--muted); text-align: left; }
+@media (max-width: 720px) { .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } }
+
+/* ---------- 도판 크기: 가로 도판은 폭을 줄이고, 세로로 긴 화면 캡처는 두 칸으로 ---------- */
+.detail-page .inline-evidence { display: flex; flex-wrap: wrap; gap: 24px 20px; justify-content: center; max-width: 980px; }
+.detail-page .inline-evidence .evidence-image { flex: 0 1 100%; max-width: 760px; }
+.detail-page .inline-evidence .evidence-image.fig-tall { flex: 0 1 calc(50% - 10px); max-width: 440px; }
+.detail-page .inline-evidence .evidence-image img { max-height: 460px; }
+.detail-page .inline-evidence .evidence-image.fig-tall img { max-height: 520px; }
+.detail-page .inline-evidence figcaption { font-size: .875rem; }
+.detail-photos .photo-grid { margin-top: 8px; }
+@media (max-width: 720px) { .detail-page .inline-evidence .evidence-image.fig-tall { flex-basis: 100%; } }
+
+/* 사진이 2장이나 4장이면 두 칸(2x2)으로 놓는다 */
+.photo-grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+
+/* 한 구간에 도판이 둘 이상이면 두 칸 */
+.detail-page .inline-evidence .evidence-image.fig-half { flex: 0 1 calc(50% - 10px); max-width: 470px; }
+.detail-page .inline-evidence .evidence-image.fig-half img { max-height: 340px; }
+@media (max-width: 720px) { .detail-page .inline-evidence .evidence-image.fig-half { flex-basis: 100%; max-width: 760px; } }
+
+/* 활동 사진은 본문 폭을 꽉 채운다 */
+.detail-photos .photo-grid, .photo-grid { max-width: none; width: 100%; }
+.photo-grid figcaption { font-size: .875rem; }
+
+/* 연구 갈래 탭 (접근 구간 아래, 갈래별 내용과 그림) */
+.tracks { margin-top: 28px; }
+.track-tabs { display: flex; flex-wrap: wrap; gap: 6px; border-bottom: 1px solid var(--line); margin-bottom: 20px; }
+.track-tab {
+  appearance: none; background: none; border: 0; border-bottom: 2px solid transparent;
+  padding: 10px 14px; margin-bottom: -1px; cursor: pointer;
+  font: inherit; font-size: .9375rem; font-weight: 600; color: var(--muted);
+}
+.track-tab:hover { color: var(--ink); }
+.track-tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--ink); }
+.track-tab:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; border-radius: 6px; }
+.track-panel > p { margin: 0 0 14px; }
+.track-panel .track-title { font-weight: 600; color: var(--ink); }
+/* 슬라이드를 캡처한 그림이라 글씨가 작다. 한 줄에 둘까지만 놓는다. */
+.track-figs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 22px; }
+.track-figs .evidence-image { margin: 0; }
+.track-figs .evidence-image a { display: block; background: var(--bg-soft); border-radius: 14px; padding: 10px; }
+.track-figs .evidence-image img { display: block; width: 100%; height: auto; border-radius: 8px; }
+.track-figs figcaption { margin-top: 8px; font-size: .8125rem; color: var(--muted); }
+@media (max-width: 720px) { .track-figs { grid-template-columns: 1fr; } }
+/* 갈래에 그림이 하나뿐이면 반 칸으로 두지 않는다. */
+.track-figs > .evidence-image:only-child { grid-column: 1 / -1; max-width: 620px; margin-inline: auto; }
+
+/* 이어지는 흐름: 갈래 고르기와 빈 이전/다음 칸 */
+.flow-picks { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 20px; }
+.flow-pick {
+  appearance: none; background: var(--bg-soft); border: 1px solid var(--line); border-radius: 999px;
+  padding: 7px 14px; cursor: pointer; font: inherit; font-size: .875rem; color: var(--muted);
+}
+.flow-pick[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: #fff; }
+.flow-nav-card.is-empty { color: var(--muted); }
+.flow-nav-card.is-empty strong { color: var(--muted); font-weight: 600; }
+
+/* 논문 목록 순서의 앞뒤 논문 */
+.paper-nav .flow-nav-grid { margin-top: 20px; }
